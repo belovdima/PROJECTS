@@ -4,6 +4,9 @@ import C2 from './Components/C2'
 import C3 from './Components/C3'
 import {Header} from './Components/Header'
 
+import "./CSS/reset.css"
+import "./CSS/App.css"
+
 function App() {
   
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -58,11 +61,11 @@ const onTouchStart = (e) => {
 
 
   return (
-    <div>
+    <div className='app'>
       <Header onHeaderClick={resetSlide}/>
       <div  onTouchStart={onTouchStart} onTouchMove={onTouchMove} onTouchEnd={onTouchEnd}>{slides[currentSlide]}</div>
-      <button onClick={setPrevSlide}>Назад</button>
-      <button onClick={setNextSlide}>Вперед</button>
+      {/* <button onClick={setPrevSlide}>Назад</button>
+      <button onClick={setNextSlide}>Вперед</button> */}
     </div>
   );
 };
