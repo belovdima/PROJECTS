@@ -1,0 +1,55 @@
+.message-wrapper {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+    padding-left: 50px;
+}
+
+.message-container {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-width: 600px;
+    height: 300px;
+    padding: 20px;
+    margin: 50px 0;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    direction: rtl;
+}
+
+.message-content {
+    padding: 0 20px;
+    direction: ltr;
+}
+
+.message-content p {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 16px;
+}
+
+.message-content strong {
+    font-weight: bold;
+}
+
+.message-container::-webkit-scrollbar {
+    width: 12px;
+}
+
+.message-container::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: #ff79c6;
+}
+
+.message-container::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #f1f1f1;
+}
+
+.c2_writing {
+    padding-top: 50px;
+    padding-left: 50px;
+    font-size: 75px;
+}

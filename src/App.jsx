@@ -11,7 +11,12 @@ function App() {
   
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const slides = [<C1 key={1}/>, <C2 key={2}/>, <C3 key={3}/>];
+  const setSecondSlide = () => {
+    setCurrentSlide(1)
+  }
+
+  const slides = [<C1 key={1} Go={setSecondSlide}/>, <C2 key={2}/>, <C3 key={3}/>];
+  
 
   const setPrevSlide = useCallback(() => {
     if (currentSlide !== 0) {
@@ -57,6 +62,9 @@ const onTouchStart = (e) => {
   const resetSlide = () => {
     setCurrentSlide(0)
   }
+
+
+
 
 
 

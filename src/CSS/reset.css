@@ -136,3 +136,8 @@ svg * {
         animation-iteration-count: 1 !important;
     }
 }
+
+body {
+    background: linear-gradient(to bottom right, #e0e2ff, #ffccd5);
+    font-family: Arial, sans-serif;
+}

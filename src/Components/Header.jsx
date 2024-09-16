@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import "./../CSS/Header.css"
 
 export const Header = ({onHeaderClick}) => {
