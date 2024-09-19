@@ -1,111 +1,102 @@
 @charset "UTF-8";
 @font-face {
-    font-family: RampartOne;
-    font-style: normal;
-    font-weight: 400;
-    src: url(~/../../../assets/fonts/RampartOne-Regular.woff2) format(woff2);
-    font-display: swap;
+  font-family: RampartOne;
+  font-style: normal;
+  font-weight: 400;
+  src: url(~/../../../assets/fonts/RampartOne-Regular.woff2) format(woff2);
+  font-display: swap;
 }
 @font-face {
-    font-family: RubikBubbles;
-    font-style: normal;
-    font-weight: 400;
-    src: url(~/../../../assets/fonts/RubikBubbles-Regular.woff2) format(woff2);
-    font-display: swap;
+  font-family: RubikBubbles;
+  font-style: normal;
+  font-weight: 400;
+  src: url(~/../../../assets/fonts/RubikBubbles-Regular.woff2) format(woff2);
+  font-display: swap;
 }
 @font-face {
-    font-family: RubikGlitchPop;
-    font-style: normal;
-    font-weight: 400;
-    src: url(~/../../../assets/fonts/RubikGlitchPop-Regular.woff2) format(woff2);
-    font-display: swap;
+  font-family: RubikGlitchPop;
+  font-style: normal;
+  font-weight: 400;
+  src: url(~/../../../assets/fonts/RubikGlitchPop-Regular.woff2) format(woff2);
+  font-display: swap;
 }
 @font-face {
-    font-family: MontserratAlternates;
-    font-style: normal;
-    font-weight: 700;
-    src: url(~/../../../assets/fonts/MontserratAlternates-Bold.woff2)
-        format(woff2);
-    font-display: swap;
+  font-family: MontserratAlternates;
+  font-style: normal;
+  font-weight: 700;
+  src: url(~/../../../assets/fonts/MontserratAlternates-Bold.woff2) format(woff2);
+  font-display: swap;
 }
 @font-face {
-    font-family: MontserratAlternates;
-    font-style: italic;
-    font-weight: 700;
-    src: url(~/../../../assets/fonts/MontserratAlternates-BoldItalic.woff2)
-        format(woff2);
-    font-display: swap;
+  font-family: MontserratAlternates;
+  font-style: italic;
+  font-weight: 700;
+  src: url(~/../../../assets/fonts/MontserratAlternates-BoldItalic.woff2) format(woff2);
+  font-display: swap;
 }
 @font-face {
-    font-family: MontserratAlternates;
-    font-style: normal;
-    font-weight: 100;
-    src: url(~/../../../assets/fonts/MontserratAlternates-Thin.woff2)
-        format(woff2);
-    font-display: swap;
+  font-family: MontserratAlternates;
+  font-style: normal;
+  font-weight: 100;
+  src: url(~/../../../assets/fonts/MontserratAlternates-Thin.woff2) format(woff2);
+  font-display: swap;
 }
 @font-face {
-    font-family: MontserratAlternates;
-    font-style: italic;
-    font-weight: 100;
-    src: url(~/../../../assets/fonts/MontserratAlternates-ThinItalic.woff2)
-        format(woff2);
-    font-display: swap;
+  font-family: MontserratAlternates;
+  font-style: italic;
+  font-weight: 100;
+  src: url(~/../../../assets/fonts/MontserratAlternates-ThinItalic.woff2) format(woff2);
+  font-display: swap;
 }
 @font-face {
-    font-family: MontserratAlternates;
-    font-style: normal;
-    font-weight: 500;
-    src: url(~/../../../assets/fonts/MontserratAlternates-Medium.woff2)
-        format(woff2);
-    font-display: swap;
+  font-family: MontserratAlternates;
+  font-style: normal;
+  font-weight: 500;
+  src: url(~/../../../assets/fonts/MontserratAlternates-Medium.woff2) format(woff2);
+  font-display: swap;
 }
 @font-face {
-    font-family: MontserratAlternates;
-    font-style: italic;
-    font-weight: 500;
-    src: url(~/../../../assets/fonts/MontserratAlternates-Medium.woff2)
-        format(woff2);
-    font-display: swap;
+  font-family: MontserratAlternates;
+  font-style: italic;
+  font-weight: 500;
+  src: url(~/../../../assets/fonts/MontserratAlternates-Medium.woff2) format(woff2);
+  font-display: swap;
 }
 @font-face {
-    font-family: MontserratAlternates;
-    font-style: normal;
-    font-weight: 400;
-    src: url(~/../../../assets/fonts/MontserratAlternates-Regular.woff2)
-        format(woff2);
-    font-display: swap;
+  font-family: MontserratAlternates;
+  font-style: normal;
+  font-weight: 400;
+  src: url(~/../../../assets/fonts/MontserratAlternates-Regular.woff2) format(woff2);
+  font-display: swap;
 }
 @font-face {
-    font-family: MontserratAlternates;
-    font-style: normal;
-    font-weight: 300;
-    src: url(~/../../../assets/fonts/MontserratAlternates-Light.woff2)
-        format(woff2);
-    font-display: swap;
+  font-family: MontserratAlternates;
+  font-style: normal;
+  font-weight: 300;
+  src: url(~/../../../assets/fonts/MontserratAlternates-Light.woff2) format(woff2);
+  font-display: swap;
 }
 @font-face {
-    font-family: MontserratAlternates;
-    font-style: italic;
-    font-weight: 300;
-    src: url(~/../../../assets/fonts/MontserratAlternates-LightItalic.woff2)
-        format(woff2);
-    font-display: swap;
+  font-family: MontserratAlternates;
+  font-style: italic;
+  font-weight: 300;
+  src: url(~/../../../assets/fonts/MontserratAlternates-LightItalic.woff2) format(woff2);
+  font-display: swap;
 }
 /* нормализация */
 html,
 body {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 *,
 *::before,
 *::after {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 /*  
@@ -113,7 +104,7 @@ body {
  у которых есть атрибут class
 */
 :where(ul, ol):where([class]) {
-    padding-left: 0;
+  padding-left: 0;
 }
 
 /*
@@ -122,7 +113,7 @@ body {
 */
 body,
 :where(blockquote, figure):where([class]) {
-    margin: 0;
+  margin: 0;
 }
 
 /*
@@ -130,17 +121,17 @@ body,
  у которых есть атрибут class
 */
 :where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
-    margin-block: 0;
+  margin-block: 0;
 }
 
 :where(dd[class]) {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 :where(fieldset[class]) {
-    padding: 0;
-    margin-left: 0;
-    border: none;
+  padding: 0;
+  margin-left: 0;
+  border: none;
 }
 
 /**
@@ -148,7 +139,7 @@ body,
  у которого есть атрибут class
 */
 :where(ul[class]) {
-    list-style: none;
+  list-style: none;
 }
 
 /**
@@ -157,8 +148,8 @@ body,
  чтобы избежать взаимодействие с более сложным селектором
 */
 p {
-    --paragraphMarginBottom: 24px;
-    margin-block: 0;
+  --paragraphMarginBottom: 24px;
+  margin-block: 0;
 }
 
 /**
@@ -166,61 +157,61 @@ p {
  который расположен не последним среди своих соседних элементов
 */
 p:where(:not([class]):not(:last-child)) {
-    margin-bottom: var(--paragraphMarginBottom);
+  margin-bottom: var(--paragraphMarginBottom);
 }
 
 /**
  Упрощаем работу с изображениями
 */
 img {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 /**
  Наследуем свойства шрифт для полей ввода
 */
 html {
-    /**
+  /**
    Пригодится в большинстве ситуаций
    (когда, например, нужно будет "прижать" футер к низу сайта)
   */
-    height: 100%;
-    /**
+  height: 100%;
+  /**
    Плавный скролл
   */
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
-    /**
+  /**
    Пригодится в большинстве ситуаций
    (когда, например, нужно будет "прижать" футер к низу сайта)
   */
-    min-height: 100%;
-    /**
+  min-height: 100%;
+  /**
    Унифицированный интерлиньяж
   */
-    line-height: 1.5;
+  line-height: 1.5;
 }
 
 /**
  Приводим к единому цвету svg-элементы
 */
 svg *[fill] {
-    fill: currentColor;
+  fill: currentColor;
 }
 
 svg *[stroke] {
-    stroke: currentColor;
+  stroke: currentColor;
 }
 
 /**
  Чиним баг задержки смены цвета при взаимодействии с svg-элементами
 */
 svg * {
-    -webkit-transition-property: fill, stroke;
-    transition-property: fill, stroke;
+  -webkit-transition-property: fill, stroke;
+  transition-property: fill, stroke;
 }
 
 /**
@@ -228,18 +219,39 @@ svg * {
  которые предпочитают их не использовать
 */
 @media (prefers-reduced-motion: reduce) {
-    * {
-        scroll-behavior: auto !important;
-        -webkit-transition-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
-        -webkit-animation-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
-        -webkit-animation-iteration-count: 1 !important;
-        animation-iteration-count: 1 !important;
-    }
+  * {
+    scroll-behavior: auto !important;
+    -webkit-transition-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+    -webkit-animation-duration: 0.01ms !important;
+            animation-duration: 0.01ms !important;
+    -webkit-animation-iteration-count: 1 !important;
+            animation-iteration-count: 1 !important;
+  }
 }
 /*  */
 /*  */
 /*  */
 /*  */
 /*  */
+.page {
+  background-color: #2e2e2e;
+}
+
+.page__auth--form {
+  width: 300px;
+  height: 500px;
+  background-color: #191919;
+  border: solid 2px #4d4d4d;
+  border-radius: 15px;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 25%;
+  color: #f5f5f5;
+}
+.page__auth--form .w__login {
+  font-size: 40px;
+}
