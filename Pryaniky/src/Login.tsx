@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 
 export const Login = () => {
 
-    const API_url = "https://test.v5.pryaniky/ru/data/v3/testmethods/docs/login"
+    const API_url = "https://test.v5.pryaniky.com/ru/data/v3/testmethods/docs/login"
     const [formJson, setFormjson] = useState()
     const [error, setError] = useState(null)
 
@@ -31,7 +31,7 @@ export const Login = () => {
 
             if (response.ok) {
                 localStorage.setItem('token', data.token); // Сохраняем токен
-                Navigate('/table'); // Перенаправляем на страницу таблицы
+                <Navigate to="/table" replace={true} /> // Перенаправляем на страницу таблицы
             } else {
                 setError(data.message || 'Ошибка авторизации');
             }
@@ -40,6 +40,7 @@ export const Login = () => {
         }
 
         const token = localStorage.getItem('token'); // Получаем токен из localStorage
+        
         const response = await fetch('https://test.v5.pryaniky.com/ru/data/v3/testmethods/docs/userdocs/get', {
             method: 'GET',
             headers: {
