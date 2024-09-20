@@ -1,88 +1,15 @@
 @charset "UTF-8";
 @font-face {
-  font-family: RampartOne;
-  font-style: normal;
-  font-weight: 400;
-  src: url(~/../../../assets/fonts/RampartOne-Regular.woff2) format(woff2);
+  font-family: Roboto;
+  src: url("~/../../../assets/fonts/Roboto-Regular.woff2");
   font-display: swap;
 }
-@font-face {
-  font-family: RubikBubbles;
-  font-style: normal;
-  font-weight: 400;
-  src: url(~/../../../assets/fonts/RubikBubbles-Regular.woff2) format(woff2);
-  font-display: swap;
+* {
+  font-family: Roboto;
+  font-weight: normal;
+  font-size: 20px;
 }
-@font-face {
-  font-family: RubikGlitchPop;
-  font-style: normal;
-  font-weight: 400;
-  src: url(~/../../../assets/fonts/RubikGlitchPop-Regular.woff2) format(woff2);
-  font-display: swap;
-}
-@font-face {
-  font-family: MontserratAlternates;
-  font-style: normal;
-  font-weight: 700;
-  src: url(~/../../../assets/fonts/MontserratAlternates-Bold.woff2) format(woff2);
-  font-display: swap;
-}
-@font-face {
-  font-family: MontserratAlternates;
-  font-style: italic;
-  font-weight: 700;
-  src: url(~/../../../assets/fonts/MontserratAlternates-BoldItalic.woff2) format(woff2);
-  font-display: swap;
-}
-@font-face {
-  font-family: MontserratAlternates;
-  font-style: normal;
-  font-weight: 100;
-  src: url(~/../../../assets/fonts/MontserratAlternates-Thin.woff2) format(woff2);
-  font-display: swap;
-}
-@font-face {
-  font-family: MontserratAlternates;
-  font-style: italic;
-  font-weight: 100;
-  src: url(~/../../../assets/fonts/MontserratAlternates-ThinItalic.woff2) format(woff2);
-  font-display: swap;
-}
-@font-face {
-  font-family: MontserratAlternates;
-  font-style: normal;
-  font-weight: 500;
-  src: url(~/../../../assets/fonts/MontserratAlternates-Medium.woff2) format(woff2);
-  font-display: swap;
-}
-@font-face {
-  font-family: MontserratAlternates;
-  font-style: italic;
-  font-weight: 500;
-  src: url(~/../../../assets/fonts/MontserratAlternates-Medium.woff2) format(woff2);
-  font-display: swap;
-}
-@font-face {
-  font-family: MontserratAlternates;
-  font-style: normal;
-  font-weight: 400;
-  src: url(~/../../../assets/fonts/MontserratAlternates-Regular.woff2) format(woff2);
-  font-display: swap;
-}
-@font-face {
-  font-family: MontserratAlternates;
-  font-style: normal;
-  font-weight: 300;
-  src: url(~/../../../assets/fonts/MontserratAlternates-Light.woff2) format(woff2);
-  font-display: swap;
-}
-@font-face {
-  font-family: MontserratAlternates;
-  font-style: italic;
-  font-weight: 300;
-  src: url(~/../../../assets/fonts/MontserratAlternates-LightItalic.woff2) format(woff2);
-  font-display: swap;
-}
+
 /* нормализация */
 html,
 body {
@@ -234,24 +161,46 @@ svg * {
 /*  */
 /*  */
 /*  */
-.page {
-  background-color: #2e2e2e;
+.desert {
+  position: absolute;
+  z-index: -1;
 }
 
 .page__auth--form {
-  width: 300px;
-  height: 500px;
-  background-color: #191919;
-  border: solid 2px #4d4d4d;
-  border-radius: 15px;
   position: absolute;
+  top: 25%;
   left: 50%;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 410px;
+  height: 557px;
+  padding: 40px 80px;
+  border: 2.134px solid rgba(193, 183, 88, 0.1);
+  border-radius: 29px;
+  background: rgba(193, 160, 88, 0.28);
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
-  top: 25%;
-  color: #f5f5f5;
+  gap: 40px;
+  -webkit-backdrop-filter: blur(8.8932294846px);
+          backdrop-filter: blur(8.8932294846px);
 }
 .page__auth--form .w__login {
-  font-size: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 100px;
+  font-size: 50px;
+  font-weight: 700;
 }

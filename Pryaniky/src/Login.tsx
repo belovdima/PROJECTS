@@ -27,7 +27,7 @@ export const Login = () => {
 
             const data = await response.json();
 
-            if (response.ok) {
+            if (response.ok && data.data && data.data.token) {
                 localStorage.setItem('token', data.token);
                 navigate("/table", { replace: true }); 
             } else {
@@ -41,19 +41,20 @@ export const Login = () => {
 
     return (
         <div className="page page__auth">
+            <img src="~/../../public/desert.jpg" alt="desert" className="desert" width={1920} height={1080}/>
             <div className="page__auth--form">
                 <form method="post" onSubmit={handleSubmit}>
                     <h3 className="w__login">Login Here</h3>
 
                     <label className="w__username" htmlFor="username">Username</label>
-                    <input type="text" placeholder="Login" id="username" name="Login" required />
+                    <input className="i__username" type="text" placeholder="Login" id="username" name="Login" required />
 
-                    <label htmlFor="password">Password</label>
+                    <label className="w__password" htmlFor="password">Password</label>
                     <input type="password" placeholder="Password" id="password" name="Password" required />
 
                     {error && <p>{error}</p>} 
 
-                    <button type="submit">Log In</button>
+                    <button className="button__login" type="submit">Log In</button>
                 </form>
             </div>
         </div>

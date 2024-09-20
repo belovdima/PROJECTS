@@ -7,8 +7,10 @@ function App() {
         <Router>
             <Routes>
                 <Route path="/login" element={<Login />} />
-                <Route path="/table" element={<Table />} /> {/* Страница таблицы */}
+                <Route path="/table" element={<Table />} />
+                <Route path="*" element={<Login/>} /> {/* Редирект на /login, если путь не найден */}
             </Routes>
+
         </Router>
     );
 }

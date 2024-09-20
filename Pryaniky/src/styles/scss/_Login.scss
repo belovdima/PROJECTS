@@ -1,21 +1,30 @@
-.page {
-    background-color: $accent-color;
+.desert {
+    position: absolute;
+    z-index: -1;
 }
 
 .page__auth--form {
-    width: 300px;
-    height: 500px;
-    background-color: $black-color;
-    border: solid 2px $text-color;
-    border-radius: 15px;
-    // transform: translate(50%, 50%);
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     top: 25%;
-    color: $background1-color;
+    left: 50%;
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+    width: 410px;
+    height: 557px;
+    padding: 40px 80px;
+    border: 2.134px solid rgba(193, 183, 88, 0.1);
+    border-radius: 29px;
+    background: rgba(193, 160, 88, 0.28);
+    transform: translateX(-50%);
+    gap: 40px;
+    backdrop-filter: blur(8.893229484558105px);
 
     & .w__login {
-        font-size: 40px;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 100px;
+        font-size: 50px;
+        font-weight: 700;
     }
 }
