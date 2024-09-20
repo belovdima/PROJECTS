@@ -1,15 +1,10 @@
 @charset "UTF-8";
 @font-face {
   font-family: Roboto;
-  src: url("~/../../../assets/fonts/Roboto-Regular.woff2");
-  font-display: swap;
+  font-style: normal;
+  font-weight: 400;
+  src: url(./../../assets/fonts/Roboto-Regular.woff2);
 }
-* {
-  font-family: Roboto;
-  font-weight: normal;
-  font-size: 20px;
-}
-
 /* нормализация */
 html,
 body {
@@ -204,7 +199,56 @@ svg * {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-bottom: 5.208333vw;
-  font-size: 50px;
+  padding-bottom: 40px;
+  color: white;
+  font-family: Roboto;
+  font-size: 75px;
   font-weight: 700;
+}
+.page__auth--form .input__places {
+  display: grid;
+  grid-gap: 40px;
+}
+.page__auth--form .d__username {
+  display: grid;
+  height: 50px;
+  color: white;
+  font-family: Roboto;
+  font-size: 25px;
+  font-weight: 700;
+}
+.page__auth--form .i__username {
+  height: 30px;
+  border-color: transparent;
+  border-radius: 10px;
+  font-family: Roboto;
+  font-size: 20px;
+}
+.page__auth--form .d__password {
+  display: grid;
+  height: 50px;
+  margin-bottom: 20px;
+  color: white;
+  font-family: Roboto;
+  font-size: 25px;
+  font-weight: 700;
+}
+.page__auth--form .i__password {
+  height: 30px;
+  border-color: transparent;
+  border-radius: 10px;
+  font-family: Roboto;
+  font-size: 20px;
+}
+.page__auth--form .button__login {
+  position: relative;
+  top: 25px;
+  left: 50%;
+  width: 100px;
+  height: 50px;
+  border-color: transparent;
+  border-radius: 13px;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
 }

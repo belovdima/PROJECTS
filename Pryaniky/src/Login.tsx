@@ -44,13 +44,19 @@ export const Login = () => {
             <img src="~/../../public/desert.jpg" alt="desert" className="desert"/>
             <div className="page__auth--form">
                 <form method="post" onSubmit={handleSubmit}>
-                    <h3 className="w__login">Login Here</h3>
+                    <h3 className="w__login">Login</h3>
 
-                    <label className="w__username" htmlFor="username">Username</label>
-                    <input className="i__username" type="text" placeholder="Login" id="username" name="Login" required />
-
-                    <label className="w__password" htmlFor="password">Password</label>
-                    <input type="password" placeholder="Password" id="password" name="Password" required />
+                    <div className="input__places">
+                        <div className="d__username">
+                            <label className="w__username" htmlFor="username">Username</label>
+                            <input className="i__username" type="text" placeholder="Login" id="username" name="Login" required />
+                        </div>
+                        <div className="d__password">
+                            <label className="w__password" htmlFor="password">Password</label>
+                            <input className="i__password" type="password" placeholder="Password" id="password" name="Password" required />
+                        </div>
+                    </div>
+                    
 
                     {error && <p>{error}</p>} 
 
