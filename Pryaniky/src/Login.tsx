@@ -28,7 +28,7 @@ export const Login = () => {
             const data = await response.json();
 
             if (response.ok && data.data && data.data.token) {
-                localStorage.setItem('token', data.token);
+                localStorage.setItem('token', data.data.token);
                 navigate("/table", { replace: true }); 
             } else {
                 setError(data.message || 'Ошибка авторизации');
@@ -41,7 +41,7 @@ export const Login = () => {
 
     return (
         <div className="page page__auth">
-            <img src="~/../../public/desert.jpg" alt="desert" className="desert" width={1920} height={1080}/>
+            <img src="~/../../public/desert.jpg" alt="desert" className="desert"/>
             <div className="page__auth--form">
                 <form method="post" onSubmit={handleSubmit}>
                     <h3 className="w__login">Login Here</h3>
