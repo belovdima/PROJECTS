@@ -6,7 +6,7 @@ function App() {
     return (
         <Router>
             <Routes>
-                <Route path="/" element={<Login />} />
+                <Route path="/login" element={<Login />} />
                 <Route path="/table" element={<Table />} /> {/* Страница таблицы */}
             </Routes>
         </Router>

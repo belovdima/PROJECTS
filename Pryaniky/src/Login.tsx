@@ -1,12 +1,10 @@
 import { FormEvent, useState } from "react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; 
 
 export const Login = () => {
-
-    const API_url = "https://test.v5.pryaniky.com/ru/data/v3/testmethods/docs/login"
-    const [formJson, setFormjson] = useState()
-    const [error, setError] = useState(null)
-
+    const API_url = "https://test.v5.pryaniky.com/ru/data/v3/testmethods/docs/login";
+    const [error, setError] = useState<string | null>(null);
+    const navigate = useNavigate();
 
     async function handleSubmit(e: FormEvent) {
         e.preventDefault();
@@ -30,27 +28,18 @@ export const Login = () => {
             const data = await response.json();
 
             if (response.ok) {
-                localStorage.setItem('token', data.token); // Сохраняем токен
-                <Navigate to="/table" replace={true} /> // Перенаправляем на страницу таблицы
+                localStorage.setItem('token', data.token);
+                navigate("/table", { replace: true }); 
             } else {
                 setError(data.message || 'Ошибка авторизации');
             }
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
         } catch (err) {
             setError('Ошибка сети');
         }
-
-        const token = localStorage.getItem('token'); // Получаем токен из localStorage
-        
-        const response = await fetch('https://test.v5.pryaniky.com/ru/data/v3/testmethods/docs/userdocs/get', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'x-auth': token // Добавляем токен в заголовок
-            }
-        });
     }
-    
-    return(
+
+    return (
         <div className="page page__auth">
             <div className="page__auth--form">
                 <form method="post" onSubmit={handleSubmit}>
@@ -62,11 +51,11 @@ export const Login = () => {
                     <label htmlFor="password">Password</label>
                     <input type="password" placeholder="Password" id="password" name="Password" required />
 
-                    {error && <p>{error}</p>} {/* Вывод ошибки */}
+                    {error && <p>{error}</p>} 
 
                     <button type="submit">Log In</button>
                 </form>
             </div>
         </div>
     );
-}
+};
