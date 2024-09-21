@@ -72,8 +72,8 @@ export const Table = () => {
             <button className="logout" onClick={handleClick}>Обратно на главную</button>
 
             {data && data.length > 0 ? (
-                <table>
-                    <thead>
+                <table className="table">
+                    <thead className="thead">
                         <tr>
                             <th>Company Signature Date</th>
                             <th>Company Signature Name</th>

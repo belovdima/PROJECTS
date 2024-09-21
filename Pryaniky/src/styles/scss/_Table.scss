@@ -1,0 +1,18 @@
+.table {
+    width: 100%;
+    border: 2px solid rgb(140 140 140);
+    border-collapse: collapse;
+    font-family: Roboto;
+    font-size: 20px;
+}
+
+th,
+td {
+    border: 1px solid rgb(160 160 160);
+    text-align: center;
+}
+
+td:hover {
+    background-color: rgb(170, 170, 170);
+    transition: $transition;
+}
