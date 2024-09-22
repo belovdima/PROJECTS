@@ -4,13 +4,13 @@ import { useNavigate } from "react-router-dom";
 // Интерфейс для структуры данных таблицы
 interface DocumentData {
     id: string;
-    companySigDate: string;
+    companySigDate: string; // Дата в формате ISO строки
     companySignatureName: string;
     documentName: string;
     documentStatus: string;
     documentType: string;
     employeeNumber: string;
-    employeeSigDate: string;
+    employeeSigDate: string; // Дата в формате ISO строки
     employeeSignatureName: string;
 }
 
@@ -21,18 +21,13 @@ export const Table = () => {
     const [error, setError] = useState<string | null>(null);
     const navigate = useNavigate();
 
-    // Функция для выхода
-    const handleClick = () => {
-        localStorage.clear();
-        navigate("/login", { replace: true });
-    };
-
-    const API_url = 'https://test.v5.pryaniky.com/ru/data/v3/testmethods/docs/userdocs/get';
+    const API_GET_URL = 'https://test.v5.pryaniky.com/ru/data/v3/testmethods/docs/userdocs/get';
+    const API_POST_URL = 'https://test.v5.pryaniky.com/ru/data/v3/testmethods/docs/userdocs/create';
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(API_url, {
+                const response = await fetch(API_GET_URL, {
                     method: 'GET',
                     headers: {
                         'Content-type': 'application/json',
@@ -46,7 +41,6 @@ export const Table = () => {
 
                 const result = await response.json();
 
-                // Проверяем ответ на ошибки
                 if (result.error_code !== 0) {
                     throw new Error(result.error_text);
                 }
@@ -62,6 +56,72 @@ export const Table = () => {
         fetchData();
     }, []);
 
+    // Состояние для новой записи
+    const [newRow, setNewRow] = useState<DocumentData>({
+        id: '', // Идентификатор будет генерироваться сервером
+        companySigDate: '',
+        companySignatureName: '',
+        documentName: '',
+        documentStatus: '',
+        documentType: '',
+        employeeNumber: '',
+        employeeSigDate: '',
+        employeeSignatureName: ''
+    });
+
+    // Обработчик изменений в полях формы
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = event.target;
+        setNewRow((prev) => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    // Функция добавления новой записи
+    const addTd = async () => {
+        try {
+            const response = await fetch(API_POST_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-auth': localStorage.getItem("token") || ''
+                },
+                body: JSON.stringify(newRow)
+            });
+
+            if (!response.ok) {
+                throw new Error('Failed to add new row');
+            }
+
+            const result = await response.json();
+
+            // Проверка успешного добавления
+            if (result.error_code !== 0) {
+                throw new Error(result.error_text);
+            }
+
+            // Обновление таблицы с новой записью
+            setData((prevData) => prevData ? [...prevData, result.data] : [result.data]);
+
+            // Очистка полей формы
+            setNewRow({
+                id: '',
+                companySigDate: '',
+                companySignatureName: '',
+                documentName: '',
+                documentStatus: '',
+                documentType: '',
+                employeeNumber: '',
+                employeeSigDate: '',
+                employeeSignatureName: ''
+            });
+
+        } catch (err) {
+            setError((err as Error).message);
+        }
+    };
+
     // Обработка загрузки и ошибок
     if (loading) return <div>Загрузка...</div>;
     if (error) return <div>Ошибка: {error}</div>;
@@ -69,7 +129,7 @@ export const Table = () => {
     return (
         <div>
             <h1>Таблица с данными</h1>
-            <button className="logout" onClick={handleClick}>Обратно на главную</button>
+            <button className="logout" onClick={() => { localStorage.clear(); navigate("/login", { replace: true }); }}>Обратно на главную</button>
 
             {data && data.length > 0 ? (
                 <table className="table">
@@ -103,6 +163,21 @@ export const Table = () => {
             ) : (
                 <div>Нет данных для отображения</div>
             )}
+
+            <div className="add">
+                <h1>Добавить строку</h1>
+                <div>
+                    <input type="text" name="companySigDate" placeholder="Company Sig Date (ISO)" value={newRow.companySigDate} onChange={handleInputChange} />
+                    <input type="text" name="companySignatureName" placeholder="Company Signature Name" value={newRow.companySignatureName} onChange={handleInputChange} />
+                    <input type="text" name="documentName" placeholder="Document Name" value={newRow.documentName} onChange={handleInputChange} />
+                    <input type="text" name="documentStatus" placeholder="Document Status" value={newRow.documentStatus} onChange={handleInputChange} />
+                    <input type="text" name="documentType" placeholder="Document Type" value={newRow.documentType} onChange={handleInputChange} />
+                    <input type="text" name="employeeNumber" placeholder="Employee Number" value={newRow.employeeNumber} onChange={handleInputChange} />
+                    <input type="text" name="employeeSigDate" placeholder="Employee Sig Date (ISO)" value={newRow.employeeSigDate} onChange={handleInputChange} />
+                    <input type="text" name="employeeSignatureName" placeholder="Employee Signature Name" value={newRow.employeeSignatureName} onChange={handleInputChange} />
+                    <button onClick={addTd}>Add</button>
+                </div>
+            </div>
         </div>
     );
 };
