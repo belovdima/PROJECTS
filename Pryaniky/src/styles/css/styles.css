@@ -260,6 +260,7 @@ svg * {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-family: Roboto;
 }
 
 .logout {
@@ -269,10 +270,7 @@ svg * {
   height: 38px;
   margin-top: 5px;
   margin-bottom: 5px;
-}
-
-.th__number {
-  width: 80px;
+  font-family: Roboto;
 }
 
 .table {
@@ -282,19 +280,24 @@ svg * {
   border-collapse: collapse;
   font-family: Roboto;
   font-size: 20px;
+  font-family: Roboto;
 }
-
-th,
-td {
+.table th,
+.table td {
   height: 70px;
   border: 1px solid rgb(160, 160, 160);
   text-align: center;
+  font-family: Roboto;
 }
-
-td:hover {
+.table th:hover,
+.table td:hover {
   background-color: rgb(170, 170, 170);
   -webkit-transition: 0.2s;
   transition: 0.2s;
+}
+
+.th__number {
+  width: 80px;
 }
 
 .add__w {
@@ -304,26 +307,22 @@ td:hover {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  font-family: Roboto;
 }
 
 .add__input {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-family: Roboto;
 }
-
 .add__input--buttons {
   width: 80px;
 }
-
-.btn-add {
+.add__input--buttons .btn-add,
+.add__input--buttons .btn-save {
   width: 80px;
 }
-
-.btn-save {
-  width: 80px;
-}
-
 .add__input--input input {
   height: 48px;
   width: 229.75px;

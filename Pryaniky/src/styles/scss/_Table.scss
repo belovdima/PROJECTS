@@ -1,6 +1,7 @@
 .table__topic {
     display: flex;
     justify-content: center;
+    font-family: Roboto;
 }
 
 .logout {
@@ -10,55 +11,59 @@
     height: 38px;
     margin-top: 5px;
     margin-bottom: 5px;
+    font-family: Roboto;
+}
+
+.table {
+    table-layout: fixed; // Фиксированная раскладка таблицы
+    width: 100%;
+    border: 2px solid rgb(140, 140, 140);
+    border-collapse: collapse;
+    font-family: Roboto;
+    font-size: 20px;
+    font-family: Roboto;
+
+    th,
+    td {
+        height: 70px;
+        border: 1px solid rgb(160, 160, 160);
+        text-align: center;
+        font-family: Roboto;
+
+        &:hover {
+            background-color: rgb(170, 170, 170);
+            transition: $transition;
+        }
+    }
 }
 
 .th__number {
     width: 80px;
 }
 
-.table {
-    table-layout: fixed; // Фиксированная раскладка таблицы
-    width: 100%;
-    border: 2px solid rgb(140 140 140);
-    border-collapse: collapse;
-    font-family: Roboto;
-    font-size: 20px;
-}
-
-th,
-td {
-    height: 70px;
-    border: 1px solid rgb(160 160 160);
-    text-align: center;
-}
-
-td:hover {
-    background-color: rgb(170, 170, 170);
-    transition: $transition;
-}
-
 .add__w {
     display: flex;
     justify-content: center;
+    font-family: Roboto;
 }
 
 .add__input {
     display: flex;
-}
+    font-family: Roboto;
 
-.add__input--buttons {
-    width: 80px;
-}
+    &--buttons {
+        width: 80px;
 
-.btn-add {
-    width: 80px;
-}
+        .btn-add,
+        .btn-save {
+            width: 80px;
+        }
+    }
 
-.btn-save {
-    width: 80px;
-}
-
-.add__input--input input {
-    height: 48px;
-    width: 229.75px;
+    &--input {
+        input {
+            height: 48px;
+            width: 229.75px;
+        }
+    }
 }
