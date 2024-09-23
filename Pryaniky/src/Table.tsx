@@ -141,33 +141,37 @@ export const Table = () => {
 
     // Функция удаления
     const handleDelete = async (id: string) => {
-        try {
-            const response = await fetch(`${API_DELETE_URL}/${id}`, {
-                // Убрал фигурные скобки вокруг API_DELETE_URL
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "x-auth": localStorage.getItem("token") || "",
-                },
-            });
+        const question = confirm(`Are you sure you want to detele this row?`);
+        if (question === true) {
+            try {
+                const response = await fetch(`${API_DELETE_URL}/${id}`, {
+                    // Убрал фигурные скобки вокруг API_DELETE_URL
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "x-auth": localStorage.getItem("token") || "",
+                    },
+                });
 
-            if (!response.ok) {
-                throw new Error("Ошибка при удалении строки");
+                if (!response.ok) {
+                    throw new Error("Ошибка при удалении строки");
+                }
+
+                const result = await response.json();
+
+                if (result.error_code !== 0) {
+                    throw new Error(result.error_text);
+                }
+
+                // Успешное удаление: обновить данные
+                setData(
+                    (prevData) =>
+                        prevData?.filter((row) => row.id !== id) || null
+                );
+            } catch (error) {
+                console.error("Ошибка удаления:", error);
+                setError((error as Error).message);
             }
-
-            const result = await response.json();
-
-            if (result.error_code !== 0) {
-                throw new Error(result.error_text);
-            }
-
-            // Успешное удаление: обновить данные
-            setData(
-                (prevData) => prevData?.filter((row) => row.id !== id) || null
-            );
-        } catch (error) {
-            console.error("Ошибка удаления:", error);
-            setError((error as Error).message);
         }
     };
 
