@@ -25,14 +25,15 @@ export const Table = () => {
     const navigate = useNavigate();
 
     const API_GET_URL =
-        "https://test.v5.pryaniky.com/ru/data/v3/testmethods/docs/userdocs/get";
+        "https://test.v5.pryaniky.com/ru/data/v3/testmethods/docs/userdocs/get"; //URL для получения данных
     const API_POST_URL =
-        "https://test.v5.pryaniky.com/ru/data/v3/testmethods/docs/userdocs/create";
+        "https://test.v5.pryaniky.com/ru/data/v3/testmethods/docs/userdocs/create"; //URL для создания
     const API_DELETE_URL =
         "https://test.v5.pryaniky.com/ru/data/v3/testmethods/docs/userdocs/delete"; // URL для удаления
     const API_EDIT_URL =
         "https://test.v5.pryaniky.com/ru/data/v3/testmethods/docs/userdocs/set"; // URL для редактирования
 
+    //useEffect для получения данных
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -132,12 +133,13 @@ export const Table = () => {
         }
     };
 
+    // Функция редактирования
     const handleEdit = (item: DocumentData) => {
-        // Устанавливаем редактируемую строку
         setEditingRow(item);
-        setNewRow(item); // Также заполняем форму данными из выбранной строки
+        setNewRow(item);
     };
 
+    // Функция удаления
     const handleDelete = async (id: string) => {
         try {
             const response = await fetch(`${API_DELETE_URL}/${id}`, {
@@ -169,6 +171,7 @@ export const Table = () => {
         }
     };
 
+    // Функция сохранения изменений
     const saveChanges = async () => {
         if (!editingRow) {
             console.error("Не выбрана строка для редактирования");
@@ -200,7 +203,7 @@ export const Table = () => {
                         : []
                 );
                 setEditingRow(null);
-                // Очищаем форму после успешного сохранения
+
                 setNewRow({
                     id: "",
                     companySigDate: "",
@@ -224,21 +227,21 @@ export const Table = () => {
 
     return (
         <div>
-            <h1>Таблица с данными</h1>
+            <h1 className="table__topic">Таблица с данными</h1>
             <button
                 className="logout"
                 onClick={() => {
                     localStorage.clear();
                     navigate("/login", { replace: true });
                 }}>
-                Обратно на главную
+                Выйти из аккаунта
             </button>
 
             {data && data.length > 0 ? (
                 <table className="table">
                     <thead className="thead">
                         <tr>
-                            <th>Номер строки</th>
+                            <th className="th__number">№</th>
                             <th>Company Signature Date</th>
                             <th>Company Signature Name</th>
                             <th>Document Name</th>
@@ -292,75 +295,83 @@ export const Table = () => {
             )}
 
             <div className="add">
-                <h1>Добавить данные</h1>
+                <h1 className="add__w">Добавить данные</h1>
                 <div className="add__input">
-                    <input
-                        className="company-signature-date"
-                        type="text"
-                        name="companySigDate"
-                        placeholder="Company Sig Date (ISO)"
-                        value={newRow.companySigDate}
-                        onChange={handleInputChange}
-                    />
-                    <input
-                        className="company-signature-name"
-                        type="text"
-                        name="companySignatureName"
-                        placeholder="Company Signature Name"
-                        value={newRow.companySignatureName}
-                        onChange={handleInputChange}
-                    />
-                    <input
-                        className="document-name"
-                        type="text"
-                        name="documentName"
-                        placeholder="Document Name"
-                        value={newRow.documentName}
-                        onChange={handleInputChange}
-                    />
-                    <input
-                        className="document-status"
-                        type="text"
-                        name="documentStatus"
-                        placeholder="Document Status"
-                        value={newRow.documentStatus}
-                        onChange={handleInputChange}
-                    />
-                    <input
-                        className="document-type"
-                        type="text"
-                        name="documentType"
-                        placeholder="Document Type"
-                        value={newRow.documentType}
-                        onChange={handleInputChange}
-                    />
-                    <input
-                        className="employee-number"
-                        type="text"
-                        name="employeeNumber"
-                        placeholder="Employee Number"
-                        value={newRow.employeeNumber}
-                        onChange={handleInputChange}
-                    />
-                    <input
-                        className="employee-signature-date"
-                        type="text"
-                        name="employeeSigDate"
-                        placeholder="Employee Sig Date (ISO)"
-                        value={newRow.employeeSigDate}
-                        onChange={handleInputChange}
-                    />
-                    <input
-                        className="employee-signature-name"
-                        type="text"
-                        name="employeeSignatureName"
-                        placeholder="Employee Signature Name"
-                        value={newRow.employeeSignatureName}
-                        onChange={handleInputChange}
-                    />
+                    <div className="add__input--buttons">
+                        <button className="btn-add" onClick={addTd}>
+                            Add
+                        </button>
+                        <button className="btn-save" onClick={saveChanges}>
+                            Save
+                        </button>
+                    </div>
+                    <div className="add__input--input">
+                        <input
+                            className="company-signature-date"
+                            type="text"
+                            name="companySigDate"
+                            placeholder="Company Sig Date (ISO)"
+                            value={newRow.companySigDate}
+                            onChange={handleInputChange}
+                        />
+                        <input
+                            className="company-signature-name"
+                            type="text"
+                            name="companySignatureName"
+                            placeholder="Company Signature Name"
+                            value={newRow.companySignatureName}
+                            onChange={handleInputChange}
+                        />
+                        <input
+                            className="document-name"
+                            type="text"
+                            name="documentName"
+                            placeholder="Document Name"
+                            value={newRow.documentName}
+                            onChange={handleInputChange}
+                        />
+                        <input
+                            className="document-status"
+                            type="text"
+                            name="documentStatus"
+                            placeholder="Document Status"
+                            value={newRow.documentStatus}
+                            onChange={handleInputChange}
+                        />
+                        <input
+                            className="document-type"
+                            type="text"
+                            name="documentType"
+                            placeholder="Document Type"
+                            value={newRow.documentType}
+                            onChange={handleInputChange}
+                        />
+                        <input
+                            className="employee-number"
+                            type="text"
+                            name="employeeNumber"
+                            placeholder="Employee Number"
+                            value={newRow.employeeNumber}
+                            onChange={handleInputChange}
+                        />
+                        <input
+                            className="employee-signature-date"
+                            type="text"
+                            name="employeeSigDate"
+                            placeholder="Employee Sig Date (ISO)"
+                            value={newRow.employeeSigDate}
+                            onChange={handleInputChange}
+                        />
+                        <input
+                            className="employee-signature-name"
+                            type="text"
+                            name="employeeSignatureName"
+                            placeholder="Employee Signature Name"
+                            value={newRow.employeeSignatureName}
+                            onChange={handleInputChange}
+                        />
+                    </div>
                 </div>
-                <button onClick={addTd}>Add</button>
-                <button onClick={saveChanges}>Сохранить изменения</button>
             </div>
         </div>
     );

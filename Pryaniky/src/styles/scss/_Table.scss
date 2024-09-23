@@ -1,4 +1,23 @@
+.table__topic {
+    display: flex;
+    justify-content: center;
+}
+
+.logout {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    height: 38px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.th__number {
+    width: 80px;
+}
+
 .table {
+    table-layout: fixed; // Фиксированная раскладка таблицы
     width: 100%;
     border: 2px solid rgb(140 140 140);
     border-collapse: collapse;
@@ -8,6 +27,7 @@
 
 th,
 td {
+    height: 70px;
     border: 1px solid rgb(160 160 160);
     text-align: center;
 }
@@ -15,4 +35,30 @@ td {
 td:hover {
     background-color: rgb(170, 170, 170);
     transition: $transition;
+}
+
+.add__w {
+    display: flex;
+    justify-content: center;
+}
+
+.add__input {
+    display: flex;
+}
+
+.add__input--buttons {
+    width: 80px;
+}
+
+.btn-add {
+    width: 80px;
+}
+
+.btn-save {
+    width: 80px;
+}
+
+.add__input--input input {
+    height: 48px;
+    width: 229.75px;
 }
