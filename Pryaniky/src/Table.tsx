@@ -22,6 +22,7 @@ export const Table = () => {
     const [editingRow, setEditingRow] = useState<DocumentData | null>(null);
     const [hoveredRow, setHoveredRow] = useState<number | null>(null);
     const [theme, setTheme] = useState<boolean>(true);
+    const [active, setActive] = useState<boolean>(false);
 
     const changeTheme = () => {
         setTheme(!theme);
@@ -139,9 +140,11 @@ export const Table = () => {
     };
 
     // Функция редактирования
+    // Функция редактирования
     const handleEdit = (item: DocumentData) => {
         setEditingRow(item);
         setNewRow(item);
+        setActive(true); // Открывает форму редактирования
     };
 
     // Функция удаления
@@ -230,6 +233,28 @@ export const Table = () => {
         }
     };
 
+    const showAdd = () => {
+        if (active) {
+            // Если модальное окно уже активно, просто закрываем его
+            setActive(false);
+        } else {
+            // Если модальное окно не активно, открываем для добавления новой записи
+            setEditingRow(null); // Сбрасываем редактируемую строку
+            setNewRow({
+                id: "", // Очищаем поля для новой записи
+                companySigDate: "",
+                companySignatureName: "",
+                documentName: "",
+                documentStatus: "",
+                documentType: "",
+                employeeNumber: "",
+                employeeSigDate: "",
+                employeeSignatureName: "",
+            });
+            setActive(true); // Открываем модальное окно
+        }
+    };
+
     // Обработка загрузки и ошибок
     if (loading) return <div>Загрузка...</div>;
     if (error) return <div>Ошибка: {error}</div>;
@@ -249,6 +274,9 @@ export const Table = () => {
                 {theme
                     ? "Переключить на ночной режим"
                     : "Переключить на дневной режим"}
+            </button>
+            <button className="btn-add__show" onClick={showAdd}>
+                Добавить данные +
             </button>
 
             {data && data.length > 0 ? (
@@ -308,17 +336,28 @@ export const Table = () => {
                 <div>Нет данных для отображения</div>
             )}
 
-            <div className="add">
+            {active && <div className="overlay" onClick={showAdd}></div>}
+
+            <div className={active ? "add-active" : "add-hidden"}>
                 <h1 className="add__w">Добавить данные</h1>
                 <div className="add__input">
                     <div className="add__input--buttons">
-                        <button className="btn-add" onClick={addTd}>
-                            Add
-                        </button>
-                        <button className="btn-save" onClick={saveChanges}>
-                            Save
+                        {!editingRow ? (
+                            <button className="btn-add" onClick={addTd}>
+                                Add
+                            </button>
+                        ) : (
+                            <button className="btn-save" onClick={saveChanges}>
+                                Save
+                            </button>
+                        )}
+                        <button
+                            className="close"
+                            onClick={() => setActive(false)}>
+                            Закрыть без изменений
                         </button>
                     </div>
+
                     <div className="add__input--input">
                         <input
                             className="company-signature-date"

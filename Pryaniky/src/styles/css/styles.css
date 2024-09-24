@@ -283,6 +283,16 @@ svg * {
   font-family: Roboto;
 }
 
+.btn-add__show {
+  position: absolute;
+  left: 500px;
+  top: 0px;
+  height: 38px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: Roboto;
+}
+
 .table {
   table-layout: fixed;
   width: 100%;
@@ -341,4 +351,34 @@ svg * {
 .add__input--input input {
   height: 48px;
   width: 229.75px;
+}
+
+.add-hidden {
+  display: none;
+}
+
+.add-active {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  z-index: 1000;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  pointer-events: auto;
 }
