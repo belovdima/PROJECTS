@@ -1,43 +1,73 @@
-.table__topic {
+.header {
     display: flex;
-    justify-content: center;
-    font-family: Roboto;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .logout {
-    position: absolute;
-    right: 10px;
-    top: 0px;
     height: 38px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    align-items: center;
     font-family: Roboto;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: #a30d11;
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    display: flex;
+    gap: 8px;
+    line-height: normal;
+    border-color: transparent;
+}
+
+.svg__logout {
+    color: white;
 }
 
 .change-theme {
-    position: absolute;
-    left: 10px;
-    top: 0px;
     height: 38px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    align-items: center;
     font-family: Roboto;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: #26264f;
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    display: flex;
+    gap: 8px;
+    line-height: normal;
+    border-color: transparent;
 }
 
 .btn-add__show {
-    position: absolute;
-    left: 500px;
-    top: 0px;
     height: 38px;
-    margin-top: 5px;
-    margin-bottom: 5px;
+    align-items: center;
     font-family: Roboto;
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: #624de3;
+    color: #fff;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    display: flex;
+    gap: 8px;
+    line-height: normal;
+    border-color: transparent;
 }
 
 .table {
     table-layout: fixed; // Фиксированная раскладка таблицы
     width: 100%;
-    border: 2px solid rgb(140, 140, 140);
     border-collapse: collapse;
     font-family: Roboto;
     font-size: 20px;
@@ -45,26 +75,46 @@
 
     th {
         height: 70px;
-        border: 1px solid rgb(160, 160, 160);
         text-align: center;
-        font-family: Roboto;
+        font-family: Montserrat;
+        font-size: 20px;
+        font-style: normal;
         font-weight: 700;
     }
     td {
-        height: 70px;
-        border: 1px solid rgb(160, 160, 160);
+        height: 80px;
         text-align: center;
-        font-family: Roboto;
+        font-family: Montserrat;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
 
         &:hover {
-            background-color: rgb(170, 170, 170);
+            background-color: #eaeaea;
             transition: $transition;
         }
     }
 }
 
+.action__buttons {
+    display: grid;
+    align-items: center;
+}
+
+.svg__edit {
+    color: #cd6200;
+}
+
+.svg__delete {
+    color: #a30d11;
+}
+
 .th__number {
     width: 80px;
+}
+
+tr {
+    background-color: #9388d8;
 }
 
 .add__w {
@@ -119,4 +169,12 @@
     background-color: rgba(0, 0, 0, 0.7); // Полупрозрачный черный фон
     z-index: 999; // Чтобы быть поверх всего контента
     pointer-events: auto; // Клики только по overlay
+}
+
+.even {
+    background-color: #d6d0ff;
+}
+
+.odd {
+    background-color: #fff;
 }

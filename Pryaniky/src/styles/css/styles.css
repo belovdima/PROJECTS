@@ -5,6 +5,30 @@
   font-weight: 400;
   src: url(./../../assets/fonts/Roboto-Regular.woff2);
 }
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  src: url(./../../assets/fonts/Montserrat-Medium.woff2);
+}
+@font-face {
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: 500;
+  src: url(./../../assets/fonts/Montserrat-MediumItalic.woff2);
+}
+@font-face {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 700;
+  src: url(./../../assets/fonts/Montserrat-Bold.woff2);
+}
+@font-face {
+  font-family: Montserrat;
+  font-style: italic;
+  font-weight: 700;
+  src: url(./../../assets/fonts/Montserrat-BoldItalic.woff2);
+}
 /* нормализация */
 html,
 body {
@@ -253,50 +277,94 @@ svg * {
           transform: translateX(-50%);
 }
 
-.table__topic {
+.header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  font-family: Roboto;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-inline: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .logout {
-  position: absolute;
-  right: 10px;
-  top: 0px;
   height: 38px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-family: Roboto;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: #a30d11;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+  line-height: normal;
+  border-color: transparent;
+}
+
+.svg__logout {
+  color: white;
 }
 
 .change-theme {
-  position: absolute;
-  left: 10px;
-  top: 0px;
   height: 38px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-family: Roboto;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: #26264f;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+  line-height: normal;
+  border-color: transparent;
 }
 
 .btn-add__show {
-  position: absolute;
-  left: 500px;
-  top: 0px;
   height: 38px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-family: Roboto;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background-color: #624de3;
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+  line-height: normal;
+  border-color: transparent;
 }
 
 .table {
   table-layout: fixed;
   width: 100%;
-  border: 2px solid rgb(140, 140, 140);
   border-collapse: collapse;
   font-family: Roboto;
   font-size: 20px;
@@ -304,25 +372,47 @@ svg * {
 }
 .table th {
   height: 70px;
-  border: 1px solid rgb(160, 160, 160);
   text-align: center;
-  font-family: Roboto;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
   font-weight: 700;
 }
 .table td {
-  height: 70px;
-  border: 1px solid rgb(160, 160, 160);
+  height: 80px;
   text-align: center;
-  font-family: Roboto;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
 }
 .table td:hover {
-  background-color: rgb(170, 170, 170);
+  background-color: #eaeaea;
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
 
+.action__buttons {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.svg__edit {
+  color: #cd6200;
+}
+
+.svg__delete {
+  color: #a30d11;
+}
+
 .th__number {
   width: 80px;
+}
+
+tr {
+  background-color: #9388d8;
 }
 
 .add__w {
@@ -381,4 +471,12 @@ svg * {
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 999;
   pointer-events: auto;
+}
+
+.even {
+  background-color: #d6d0ff;
+}
+
+.odd {
+  background-color: #fff;
 }
