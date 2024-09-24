@@ -1,149 +1,113 @@
+$primary-color: #624de3;
+$secondary-color: #a30d11;
+$theme-color: #26264f;
+$table-hover-color: #eaeaea;
+$even-row-color: #d6d0ff;
+$odd-row-color: #fff;
+$header-padding: 10px 20px;
+$button-height: 38px;
+$input-height: 48px;
+
+// Основные стили
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-inline: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: $header-padding;
+
+    .logout,
+    .change-theme,
+    .btn-add__show {
+        height: $button-height;
+        align-items: center;
+        font-family: "Montserrat", sans-serif;
+        padding: 8px 12px;
+        border-radius: 8px;
+        color: #fff;
+        font-size: 12px;
+        font-weight: 700;
+        display: flex;
+        gap: 8px;
+        line-height: normal;
+        border-color: transparent;
+
+        &.logout {
+            background-color: $secondary-color;
+        }
+
+        &.change-theme {
+            background-color: $theme-color;
+        }
+
+        &.btn-add__show {
+            background-color: $primary-color;
+        }
+    }
+
+    .svg__logout {
+        color: white;
+    }
 }
 
-.logout {
-    height: 38px;
-    align-items: center;
-    font-family: Roboto;
-    padding: 8px 12px;
-    border-radius: 8px;
-    background-color: #a30d11;
-    color: #fff;
-    font-family: Montserrat;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 700;
-    display: flex;
-    gap: 8px;
-    line-height: normal;
-    border-color: transparent;
-}
-
-.svg__logout {
-    color: white;
-}
-
-.change-theme {
-    height: 38px;
-    align-items: center;
-    font-family: Roboto;
-    padding: 8px 12px;
-    border-radius: 8px;
-    background-color: #26264f;
-    color: #fff;
-    font-family: Montserrat;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 700;
-    display: flex;
-    gap: 8px;
-    line-height: normal;
-    border-color: transparent;
-}
-
-.btn-add__show {
-    height: 38px;
-    align-items: center;
-    font-family: Roboto;
-    padding: 8px 12px;
-    border-radius: 8px;
-    background-color: #624de3;
-    color: #fff;
-    font-family: Montserrat;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 700;
-    display: flex;
-    gap: 8px;
-    line-height: normal;
-    border-color: transparent;
-}
-
+// Таблица
 .table {
     table-layout: fixed; // Фиксированная раскладка таблицы
     width: 100%;
     border-collapse: collapse;
-    font-family: Roboto;
     font-size: 20px;
-    font-family: Roboto;
 
     th {
         height: 70px;
         text-align: center;
-        font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
         font-size: 20px;
-        font-style: normal;
         font-weight: 700;
+        border-bottom: solid 1px black;
     }
+
     td {
         height: 80px;
         text-align: center;
-        font-family: Montserrat;
+        font-family: "Montserrat", sans-serif;
         font-size: 20px;
-        font-style: normal;
         font-weight: 500;
 
         &:hover {
-            background-color: #eaeaea;
+            background-color: $table-hover-color;
             transition: $transition;
         }
     }
+
+    .th__number {
+        width: 80px;
+    }
+
+    tr {
+        &.even {
+            background-color: $even-row-color;
+        }
+
+        &.odd {
+            background-color: $odd-row-color;
+        }
+    }
 }
 
+// Кнопки действий
 .action__buttons {
     display: grid;
     align-items: center;
-}
 
-.svg__edit {
-    color: #cd6200;
-}
-
-.svg__delete {
-    color: #a30d11;
-}
-
-.th__number {
-    width: 80px;
-}
-
-tr {
-    background-color: #9388d8;
-}
-
-.add__w {
-    display: flex;
-    justify-content: center;
-    font-family: Roboto;
-}
-
-.add__input {
-    display: flex;
-    font-family: Roboto;
-
-    &--buttons {
-        width: 80px;
-
-        .btn-add,
-        .btn-save {
-            width: 80px;
-        }
+    .svg__edit {
+        color: #cd6200;
     }
 
-    &--input {
-        input {
-            height: 48px;
-            width: 229.75px;
-        }
+    .svg__delete {
+        color: $secondary-color;
     }
 }
 
+// Модальное окно добавления
 .add-hidden {
     display: none;
 }
@@ -152,6 +116,7 @@ tr {
     position: absolute;
     width: 100%;
     top: 50%;
+    height: auto;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: white;
@@ -160,6 +125,7 @@ tr {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+// Оверлей
 .overlay {
     position: fixed;
     top: 0;
@@ -171,10 +137,80 @@ tr {
     pointer-events: auto; // Клики только по overlay
 }
 
-.even {
-    background-color: #d6d0ff;
+.add__input--buttons {
+    display: flex;
+    font-size: 40px;
+    font-weight: 700;
+    padding: 8px 12px;
+    justify-content: space-between;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    height: 70px;
 }
 
-.odd {
-    background-color: #fff;
+.btn-add {
+    height: $button-height;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #1f9254;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    background-color: #ebf9f1;
+    border-radius: 22px;
+    gap: 8px;
+    line-height: normal;
+    border-color: transparent;
+}
+
+.btn-save {
+    height: $button-height;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #cd6200;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    background-color: #fef2e5;
+    border-radius: 22px;
+    gap: 8px;
+    line-height: normal;
+    border-color: transparent;
+}
+
+.close {
+    height: $button-height;
+    align-items: center;
+    font-family: "Montserrat", sans-serif;
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: #a30d11;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    background-color: #fbe7e8;
+    border-radius: 22px;
+    gap: 8px;
+    line-height: normal;
+    border-color: transparent;
+}
+
+.add__w {
+    position: absolute;
+    left: 50%;
+    font-size: 30px;
+    transform: translateX(-50%);
+}
+
+.a__input {
+    height: 60px;
+    width: 12.5%;
+    font-size: 20px;
+    font-family: "Montserrat", sans-serif;
+    border-radius: 8px;
+    border: 1px solid #9e9e9e;
 }

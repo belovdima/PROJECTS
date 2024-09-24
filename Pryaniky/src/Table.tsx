@@ -452,7 +452,6 @@ export const Table = () => {
             {active && <div className="overlay" onClick={showAdd}></div>}
 
             <div className={active ? "add-active" : "add-hidden"}>
-                <h1 className="add__w">Добавить данные</h1>
                 <div className="add__input">
                     <div className="add__input--buttons">
                         {!editingRow ? (
@@ -464,6 +463,7 @@ export const Table = () => {
                                 Save
                             </button>
                         )}
+                        <div className="add__w">Добавить данные</div>
                         <button
                             className="close"
                             onClick={() => setActive(false)}>
@@ -473,7 +473,7 @@ export const Table = () => {
 
                     <div className="add__input--input">
                         <input
-                            className="company-signature-date"
+                            className="a__input company-signature-date"
                             type="text"
                             name="companySigDate"
                             placeholder="Company Sig Date (ISO)"
@@ -481,7 +481,7 @@ export const Table = () => {
                             onChange={handleInputChange}
                         />
                         <input
-                            className="company-signature-name"
+                            className="a__input company-signature-name"
                             type="text"
                             name="companySignatureName"
                             placeholder="Company Signature Name"
@@ -489,7 +489,7 @@ export const Table = () => {
                             onChange={handleInputChange}
                         />
                         <input
-                            className="document-name"
+                            className="a__input document-name"
                             type="text"
                             name="documentName"
                             placeholder="Document Name"
@@ -497,7 +497,7 @@ export const Table = () => {
                             onChange={handleInputChange}
                         />
                         <input
-                            className="document-status"
+                            className="a__input document-status"
                             type="text"
                             name="documentStatus"
                             placeholder="Document Status"
@@ -505,7 +505,7 @@ export const Table = () => {
                             onChange={handleInputChange}
                         />
                         <input
-                            className="document-type"
+                            className="a__input document-type"
                             type="text"
                             name="documentType"
                             placeholder="Document Type"
@@ -513,7 +513,7 @@ export const Table = () => {
                             onChange={handleInputChange}
                         />
                         <input
-                            className="employee-number"
+                            className="a__input employee-number"
                             type="text"
                             name="employeeNumber"
                             placeholder="Employee Number"
@@ -521,7 +521,7 @@ export const Table = () => {
                             onChange={handleInputChange}
                         />
                         <input
-                            className="employee-signature-date"
+                            className="a__input employee-signature-date"
                             type="text"
                             name="employeeSigDate"
                             placeholder="Employee Sig Date (ISO)"
@@ -529,7 +529,7 @@ export const Table = () => {
                             onChange={handleInputChange}
                         />
                         <input
-                            className="employee-signature-name"
+                            className="a__input employee-signature-name"
                             type="text"
                             name="employeeSignatureName"
                             placeholder="Employee Signature Name"
