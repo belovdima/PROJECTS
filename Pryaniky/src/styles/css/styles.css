@@ -273,6 +273,16 @@ svg * {
   font-family: Roboto;
 }
 
+.change-theme {
+  position: absolute;
+  left: 10px;
+  top: 0px;
+  height: 38px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: Roboto;
+}
+
 .table {
   table-layout: fixed;
   width: 100%;
@@ -282,14 +292,19 @@ svg * {
   font-size: 20px;
   font-family: Roboto;
 }
-.table th,
+.table th {
+  height: 70px;
+  border: 1px solid rgb(160, 160, 160);
+  text-align: center;
+  font-family: Roboto;
+  font-weight: 700;
+}
 .table td {
   height: 70px;
   border: 1px solid rgb(160, 160, 160);
   text-align: center;
   font-family: Roboto;
 }
-.table th:hover,
 .table td:hover {
   background-color: rgb(170, 170, 170);
   -webkit-transition: 0.2s;

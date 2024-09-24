@@ -21,6 +21,11 @@ export const Table = () => {
     const [error, setError] = useState<string | null>(null);
     const [editingRow, setEditingRow] = useState<DocumentData | null>(null);
     const [hoveredRow, setHoveredRow] = useState<number | null>(null);
+    const [theme, setTheme] = useState<boolean>(true);
+
+    const changeTheme = () => {
+        setTheme(!theme);
+    };
 
     const navigate = useNavigate();
 
@@ -230,7 +235,7 @@ export const Table = () => {
     if (error) return <div>Ошибка: {error}</div>;
 
     return (
-        <div>
+        <div className={theme ? "light-mode" : "dark-mode"}>
             <h1 className="table__topic">Таблица с данными</h1>
             <button
                 className="logout"
@@ -239,6 +244,11 @@ export const Table = () => {
                     navigate("/login", { replace: true });
                 }}>
                 Выйти из аккаунта
+            </button>
+            <button className="change-theme" onClick={changeTheme}>
+                {theme
+                    ? "Переключить на ночной режим"
+                    : "Переключить на дневной режим"}
             </button>
 
             {data && data.length > 0 ? (
