@@ -476,7 +476,14 @@ export const Table = () => {
                                 Save
                             </button>
                         )}
-                        <div className="add__w">Add a post</div>
+
+                        <div className="add__w">
+                            {!editingRow ? (
+                                <div>Add a post</div>
+                            ) : (
+                                <div>Edit a post</div>
+                            )}
+                        </div>
                         <button
                             className="close"
                             onClick={() => setActive(false)}>
