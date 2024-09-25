@@ -30,6 +30,7 @@ body.dark-mode {
         border-radius: 8px;
         color: #fff;
         background-color: #2e3035;
+        cursor: pointer;
         font-family: "Montserrat", sans-serif;
         font-size: 12px;
         font-weight: 700;
@@ -51,6 +52,7 @@ body.dark-mode {
         border-color: transparent;
         border-radius: 8px;
         color: #fff;
+        cursor: pointer;
         font-family: "Montserrat", sans-serif;
         font-size: 12px;
         font-weight: 700;
@@ -166,10 +168,12 @@ body.dark-mode {
 
     .svg__edit {
         color: #cd6200;
+        cursor: pointer;
     }
 
     .svg__delete {
         color: $secondary-color;
+        cursor: pointer;
     }
 }
 
@@ -249,6 +253,7 @@ body.dark-mode {
     padding: 8px 12px;
     border-color: transparent;
     border-radius: 8px;
+    cursor: pointer;
     font-family: "Montserrat", sans-serif;
     font-size: 20px;
     font-weight: 700;

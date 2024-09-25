@@ -180,13 +180,8 @@ svg * {
 /*  */
 /*  */
 /*  */
-.desert {
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover; /* Растягивает изображение по всему экрану */
+body {
+  background-color: rgb(43, 43, 43);
 }
 
 .page__auth--form {
@@ -206,9 +201,9 @@ svg * {
   width: 21.354167vw;
   height: 29.010417vw;
   padding: 40px 80px;
-  border: 2.134px solid rgba(193, 183, 88, 0.1);
+  border: 2.134px solid rgb(60, 60, 60);
   border-radius: 29px;
-  background: rgba(193, 160, 88, 0.28);
+  background-color: rgb(50, 50, 50);
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
@@ -225,7 +220,7 @@ svg * {
           justify-content: center;
   padding-bottom: 40px;
   color: white;
-  font-family: Roboto;
+  font-family: "Montserrat", sans-serif;
   font-size: 75px;
   font-weight: 700;
 }
@@ -237,7 +232,7 @@ svg * {
   display: grid;
   height: 50px;
   color: white;
-  font-family: Roboto;
+  font-family: "Montserrat", sans-serif;
   font-size: 25px;
   font-weight: 700;
 }
@@ -245,7 +240,7 @@ svg * {
   height: 30px;
   border-color: transparent;
   border-radius: 10px;
-  font-family: Roboto;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
 }
 .page__auth--form .d__password {
@@ -253,7 +248,7 @@ svg * {
   height: 50px;
   margin-bottom: 20px;
   color: white;
-  font-family: Roboto;
+  font-family: "Montserrat", sans-serif;
   font-size: 25px;
   font-weight: 700;
 }
@@ -261,20 +256,22 @@ svg * {
   height: 30px;
   border-color: transparent;
   border-radius: 10px;
-  font-family: Roboto;
+  font-family: "Montserrat", sans-serif;
   font-size: 20px;
 }
 .page__auth--form .button__login {
   position: relative;
   top: 25px;
   left: 50%;
-  width: 100px;
+  width: 150px;
   height: 50px;
   border-color: transparent;
   border-radius: 13px;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
 }
 
 body {
@@ -302,7 +299,7 @@ body.dark-mode {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 10px 20px;
+  padding: 20px 20px;
 }
 .header .change-theme {
   display: -webkit-box;
@@ -318,6 +315,7 @@ body.dark-mode {
   border-radius: 8px;
   color: #fff;
   background-color: #2e3035;
+  cursor: pointer;
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-weight: 700;
@@ -341,6 +339,7 @@ body.dark-mode {
   border-color: transparent;
   border-radius: 8px;
   color: #fff;
+  cursor: pointer;
   font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-weight: 700;
@@ -433,9 +432,11 @@ body.dark-mode {
 }
 .action__buttons .svg__edit {
   color: #cd6200;
+  cursor: pointer;
 }
 .action__buttons .svg__delete {
   color: #a30d11;
+  cursor: pointer;
 }
 
 .add-hidden {
@@ -522,6 +523,7 @@ body.dark-mode {
   padding: 8px 12px;
   border-color: transparent;
   border-radius: 8px;
+  cursor: pointer;
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
   font-weight: 700;

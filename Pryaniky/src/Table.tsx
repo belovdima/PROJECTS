@@ -476,11 +476,11 @@ export const Table = () => {
                                 Save
                             </button>
                         )}
-                        <div className="add__w">Добавить данные</div>
+                        <div className="add__w">Add a post</div>
                         <button
                             className="close"
                             onClick={() => setActive(false)}>
-                            Закрыть без изменений
+                            Close without saving
                         </button>
                     </div>
 
@@ -489,7 +489,7 @@ export const Table = () => {
                             className="a__input company-signature-date"
                             type="text"
                             name="companySigDate"
-                            placeholder="Company Sig Date (ISO)"
+                            placeholder="C. S. Date (ISO)"
                             value={newRow.companySigDate}
                             onChange={handleInputChange}
                         />
@@ -497,7 +497,7 @@ export const Table = () => {
                             className="a__input company-signature-name"
                             type="text"
                             name="companySignatureName"
-                            placeholder="Company Signature Name"
+                            placeholder="C. S. Name"
                             value={newRow.companySignatureName}
                             onChange={handleInputChange}
                         />
@@ -537,7 +537,7 @@ export const Table = () => {
                             className="a__input employee-signature-date"
                             type="text"
                             name="employeeSigDate"
-                            placeholder="Employee Sig Date (ISO)"
+                            placeholder="E. S. Date (ISO)"
                             value={newRow.employeeSigDate}
                             onChange={handleInputChange}
                         />
@@ -545,7 +545,7 @@ export const Table = () => {
                             className="a__input employee-signature-name"
                             type="text"
                             name="employeeSignatureName"
-                            placeholder="Employee Signature Name"
+                            placeholder="E. S. Name"
                             value={newRow.employeeSignatureName}
                             onChange={handleInputChange}
                         />
