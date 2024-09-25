@@ -27,6 +27,20 @@ export const Table = () => {
     const changeTheme = () => {
         setTheme(!theme);
     };
+    useEffect(() => {
+        if (theme) {
+            document.body.classList.add("light-mode");
+            document.body.classList.remove("dark-mode");
+        } else {
+            document.body.classList.add("dark-mode");
+            document.body.classList.remove("light-mode");
+        }
+
+        // Убираем классы при размонтировании компонента
+        return () => {
+            document.body.classList.remove("light-mode", "dark-mode");
+        };
+    }, [theme]);
 
     const navigate = useNavigate();
 
@@ -139,7 +153,6 @@ export const Table = () => {
         }
     };
 
-    // Функция редактирования
     // Функция редактирования
     const handleEdit = (item: DocumentData) => {
         setEditingRow(item);

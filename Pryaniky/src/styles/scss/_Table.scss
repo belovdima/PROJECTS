@@ -1,42 +1,63 @@
-$primary-color: #624de3;
-$secondary-color: #a30d11;
-$theme-color: #26264f;
-$table-hover-color: #eaeaea;
-$even-row-color: #d6d0ff;
-$odd-row-color: #fff;
-$header-padding: 10px 20px;
-$button-height: 38px;
-$input-height: 48px;
-
 // Основные стили
+
+body {
+    transition: $transition;
+}
+
+body.light-mode {
+    color: #000; /* Текст для светлой темы */
+    background-color: #fff; /* Цвет для светлой темы */
+}
+
+body.dark-mode {
+    color: #fff; /* Текст для темной темы */
+    background-color: #1d1e42; /* Цвет для темной темы */
+}
+
 .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     padding: $header-padding;
 
-    .logout,
-    .change-theme,
-    .btn-add__show {
-        height: $button-height;
+    .change-theme {
+        display: flex;
         align-items: center;
-        font-family: "Montserrat", sans-serif;
+        height: $button-height;
+        line-height: normal;
         padding: 8px 12px;
+        border-color: transparent;
         border-radius: 8px;
         color: #fff;
+        background-color: #2e3035;
+        font-family: "Montserrat", sans-serif;
         font-size: 12px;
         font-weight: 700;
-        display: flex;
         gap: 8px;
+
+        svg {
+            stroke: #aa86fd;
+            fill: #aa86fd;
+        }
+    }
+
+    .logout,
+    .btn-add__show {
+        display: flex;
+        align-items: center;
+        height: $button-height;
         line-height: normal;
+        padding: 8px 12px;
         border-color: transparent;
+        border-radius: 8px;
+        color: #fff;
+        font-family: "Montserrat", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        gap: 8px;
 
         &.logout {
             background-color: $secondary-color;
-        }
-
-        &.change-theme {
-            background-color: $theme-color;
         }
 
         &.btn-add__show {
@@ -49,20 +70,46 @@ $input-height: 48px;
     }
 }
 
+// Темная тема
+.dark-mode {
+    body {
+        background-color: $main-color-dark;
+    }
+
+    .header {
+        color: $text-color-dark;
+        background-color: $main-color-dark;
+    }
+
+    .logout,
+    .btn-add__show {
+        color: $text-color-dark;
+        background-color: $main-color-dark;
+    }
+    .change-theme {
+        color: white;
+        background-color: #1d1e20;
+        svg {
+            stroke: #ffaa18;
+            fill: #ffaa18;
+        }
+    }
+}
+
 // Таблица
 .table {
-    table-layout: fixed; // Фиксированная раскладка таблицы
     width: 100%;
+    table-layout: fixed;
     border-collapse: collapse;
     font-size: 20px;
 
     th {
         height: 70px;
+        border-bottom: solid 1px black;
         text-align: center;
         font-family: "Montserrat", sans-serif;
         font-size: 20px;
         font-weight: 700;
-        border-bottom: solid 1px black;
     }
 
     td {
@@ -71,11 +118,6 @@ $input-height: 48px;
         font-family: "Montserrat", sans-serif;
         font-size: 20px;
         font-weight: 500;
-
-        &:hover {
-            background-color: $table-hover-color;
-            transition: $transition;
-        }
     }
 
     .th__number {
@@ -89,6 +131,30 @@ $input-height: 48px;
 
         &.odd {
             background-color: $odd-row-color;
+        }
+    }
+}
+
+// Темная тема для таблицы
+.dark-mode {
+    .table {
+        tr {
+            &.even {
+                background-color: $even-row-color-dark;
+            }
+
+            &.odd {
+                background-color: $odd-row-color-dark;
+            }
+        }
+
+        th {
+            border-bottom: solid 1px white;
+            color: $text-color-dark;
+            background-color: $main-color-dark;
+        }
+        td {
+            color: $text-color-dark;
         }
     }
 }
@@ -114,103 +180,113 @@ $input-height: 48px;
 
 .add-active {
     position: absolute;
-    width: 100%;
+    z-index: 1000;
     top: 50%;
-    height: auto;
     left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
+    width: 100%;
+    height: auto;
     padding: 20px;
-    z-index: 1000; // Поверх overlay
+    background-color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translate(-50%, -50%);
+}
+
+// Темная тема для модального окна
+.dark-mode {
+    .add-active {
+        background-color: $main-color-dark;
+    }
 }
 
 // Оверлей
 .overlay {
     position: fixed;
+    z-index: 999;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); // Полупрозрачный черный фон
-    z-index: 999; // Чтобы быть поверх всего контента
-    pointer-events: auto; // Клики только по overlay
+    background-color: rgba(0, 0, 0, 0.7);
+    pointer-events: auto;
 }
 
+// Блок добавления
 .add__input--buttons {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    padding: 8px 12px;
+    font-family: "Montserrat", sans-serif;
     font-size: 40px;
     font-weight: 700;
-    padding: 8px 12px;
-    justify-content: space-between;
-    align-items: center;
-    font-family: "Montserrat", sans-serif;
-    height: 70px;
-}
-
-.btn-add {
-    height: $button-height;
-    align-items: center;
-    font-family: "Montserrat", sans-serif;
-    padding: 8px 12px;
-    border-radius: 8px;
-    color: #1f9254;
-    font-size: 20px;
-    font-weight: 700;
-    display: flex;
-    background-color: #ebf9f1;
-    border-radius: 22px;
-    gap: 8px;
-    line-height: normal;
-    border-color: transparent;
-}
-
-.btn-save {
-    height: $button-height;
-    align-items: center;
-    font-family: "Montserrat", sans-serif;
-    padding: 8px 12px;
-    border-radius: 8px;
-    color: #cd6200;
-    font-size: 20px;
-    font-weight: 700;
-    display: flex;
-    background-color: #fef2e5;
-    border-radius: 22px;
-    gap: 8px;
-    line-height: normal;
-    border-color: transparent;
-}
-
-.close {
-    height: $button-height;
-    align-items: center;
-    font-family: "Montserrat", sans-serif;
-    padding: 8px 12px;
-    border-radius: 8px;
-    color: #a30d11;
-    font-size: 20px;
-    font-weight: 700;
-    display: flex;
-    background-color: #fbe7e8;
-    border-radius: 22px;
-    gap: 8px;
-    line-height: normal;
-    border-color: transparent;
 }
 
 .add__w {
     position: absolute;
     left: 50%;
-    font-size: 30px;
     transform: translateX(-50%);
+    font-size: 30px;
 }
 
 .a__input {
-    height: 60px;
     width: 12.5%;
-    font-size: 20px;
-    font-family: "Montserrat", sans-serif;
-    border-radius: 8px;
+    height: 60px;
     border: 1px solid #9e9e9e;
+    border-radius: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+}
+
+// Кнопки
+.btn-add,
+.btn-save,
+.close {
+    display: flex;
+    align-items: center;
+    height: $button-height;
+    line-height: normal;
+    padding: 8px 12px;
+    border-color: transparent;
+    border-radius: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    gap: 8px;
+
+    &.btn-add {
+        border-radius: 22px;
+        color: #1f9254;
+        background-color: #ebf9f1;
+    }
+
+    &.btn-save {
+        border-radius: 22px;
+        color: #cd6200;
+        background-color: #fef2e5;
+    }
+
+    &.close {
+        border-radius: 22px;
+        color: $secondary-color;
+        background-color: #fbe7e8;
+    }
+}
+
+// Темная тема для кнопок
+.dark-mode {
+    .btn-add {
+        color: #1f9254;
+        background-color: #ebf9f1;
+    }
+
+    .btn-save {
+        color: #cd6200;
+        background-color: #fef2e5;
+    }
+
+    .close {
+        color: $secondary-color;
+        background-color: #fbe7e8;
+    }
 }
