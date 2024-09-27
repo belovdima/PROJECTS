@@ -7,6 +7,14 @@ interface Person {
     age: number;
     email: string;
     position: string;
+    status: string;
+    level: string;
+    format: string;
+    team: string;
+    sex: string;
+    birthday: string;
+    exWork: string;
+    photo: string;
 }
 
 interface PeopleState {

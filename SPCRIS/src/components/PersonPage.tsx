@@ -30,6 +30,14 @@ const PersonPage = () => {
             <p>Возраст: {selectedPerson.age}</p>
             <p>Email: {selectedPerson.email}</p>
             <p>Должнсть: {selectedPerson.position}</p>
+            <p>Роль в системе: {selectedPerson.status}</p>
+            <p>Уровень сотрудника: {selectedPerson.level}</p>
+            <p>Формат работы: {selectedPerson.format}</p>
+            <p>Команда: {selectedPerson.team}</p>
+            <p>Пол: {selectedPerson.sex}</p>
+            <p>Дата рождения: {selectedPerson.birthday}</p>
+            <p>Бывшее место работы: {selectedPerson.exWork}</p>
+            <p>Фото: {selectedPerson.photo}</p>
             <button
                 onClick={() => {
                     navigate("/mainpage", { replace: true });
