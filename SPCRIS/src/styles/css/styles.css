@@ -150,3 +150,72 @@ svg * {
 /*  */
 /*  */
 /*  */
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: auto;
+  height: 100px;
+  background-color: grey;
+  margin-inline: 20px;
+}
+.header .header__logo {
+  font-size: 50px;
+}
+.header .header__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 1000px;
+}
+.header .header__content a {
+  color: black;
+  text-decoration: none !important;
+}
+
+.main__w {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.people {
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  grid-template-columns: repeat(3, 400px);
+  grid-template-rows: repeat(3, 400px);
+  grid-column-gap: 100px;
+  grid-row-gap: 100px;
+}
+.people .people__inner {
+  border: solid 1px red;
+  border-radius: 50%;
+}
+.people .people__inner .people__inner--value {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 350px;
+  color: black;
+  font-size: 30px;
+  text-decoration: none !important;
+}
