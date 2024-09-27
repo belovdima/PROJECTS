@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { replace, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { RootState, AppDispatch } from "../redux/store";
 import { selectPerson } from "../redux/peopleSlice";
 import { useNavigate } from "react-router-dom";
 
-const PersonPage = () => {
+export const PersonPage = () => {
     const navigate = useNavigate();
     const { id } = useParams<{ id: string }>(); // Получаем параметр id из URL
     const dispatch = useDispatch<AppDispatch>();
@@ -47,5 +47,3 @@ const PersonPage = () => {
         </div>
     );
 };
-
-export default PersonPage;

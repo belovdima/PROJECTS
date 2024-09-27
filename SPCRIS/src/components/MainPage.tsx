@@ -4,7 +4,7 @@ import { RootState, AppDispatch } from "../redux/store";
 import { setPeople, selectPerson } from "../redux/peopleSlice";
 import { Link } from "react-router-dom";
 
-const MainPage = () => {
+export const MainPage = () => {
     const dispatch = useDispatch<AppDispatch>();
     const people = useSelector((state: RootState) => state.people.people);
 
@@ -152,14 +152,23 @@ const MainPage = () => {
 
     return (
         <div>
-            <h1>Список людей</h1>
-            <ul>
+            <div className="header">
+                <div className="header__logo">header logo</div>
+                <div className="header__content">
+                    <a href="./">Поиск по фильтрам</a>
+                    <a href="./">ABOUT</a>
+                    <a href="./">LOCATION</a>
+                </div>
+            </div>
+            <h1 className="main__w">Наши сотрудники</h1>
+            <ul className="people">
                 {people.map((person) => (
-                    <li key={person.id}>
+                    <li className="people__inner" key={person.id}>
                         <Link
+                            className="people__inner--value"
                             to={`/person/${person.id}`}
                             onClick={() => dispatch(selectPerson(person.id))}>
-                            {person.name} - {person.age} лет
+                            {person.name} - {person.position}
                         </Link>
                     </li>
                 ))}
@@ -167,5 +176,3 @@ const MainPage = () => {
         </div>
     );
 };
-
-export default MainPage;
