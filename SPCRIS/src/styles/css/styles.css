@@ -207,6 +207,12 @@ svg * {
   border: solid 1px red;
   border-radius: 50%;
 }
+.people .people__inner .people__inner--photo {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+}
 .people .people__inner .people__inner--value {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -214,7 +220,6 @@ svg * {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-top: 350px;
   color: black;
   font-size: 30px;
   text-decoration: none !important;

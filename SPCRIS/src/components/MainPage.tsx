@@ -24,7 +24,7 @@ export const MainPage = () => {
                 sex: "male",
                 birthday: "12-12-1990",
                 exWork: "Liverpool FC",
-                photo: "",
+                photo: "./../../public/fred.jpg",
             },
             {
                 id: 2,
@@ -169,6 +169,13 @@ export const MainPage = () => {
                             to={`/person/${person.id}`}
                             onClick={() => dispatch(selectPerson(person.id))}>
                             {person.name} - {person.position}
+                            <img
+                                className="people__inner--photo"
+                                width={100}
+                                height={100}
+                                src={person.photo}
+                                alt={`${person.name}'s photo`}
+                            />{" "}
                         </Link>
                     </li>
                 ))}

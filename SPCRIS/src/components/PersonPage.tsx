@@ -37,7 +37,12 @@ export const PersonPage = () => {
             <p>Пол: {selectedPerson.sex}</p>
             <p>Дата рождения: {selectedPerson.birthday}</p>
             <p>Бывшее место работы: {selectedPerson.exWork}</p>
-            <p>Фото: {selectedPerson.photo}</p>
+            <img
+                width={100}
+                height={100}
+                src={selectedPerson.photo}
+                alt={`${selectedPerson.name}'s photo`}
+            />
             <button
                 onClick={() => {
                     navigate("/mainpage", { replace: true });
