@@ -3,11 +3,12 @@
     justify-content: space-between;
     width: auto;
     height: 100px;
-    background-color: grey;
-    margin-inline: 20px;
+    border-bottom: solid 1px #f0f6fc;
+    padding-inline: 20px;
 
     & .header__logo {
         font-size: 50px;
+        filter: drop-shadow(1px 1px 4px #ffffff);
     }
 
     & .header__content {
@@ -17,7 +18,10 @@
         width: 1000px;
 
         & a {
-            color: black;
+            color: #f5f5f5;
+
+            font-family: Montserrat;
+            font-weight: 700;
             text-decoration: none !important;
         }
     }
@@ -28,6 +32,9 @@
     justify-content: center;
     margin-top: 10px;
     margin-bottom: 10px;
+    color: #f5f5f5;
+    font-family: Montserrat;
+    font-weight: 700;
 }
 
 .people {
@@ -36,26 +43,41 @@
     grid-template-columns: repeat(3, 400px);
     grid-template-rows: repeat(3, 400px);
     grid-column-gap: 100px;
-    grid-row-gap: 100px;
+    grid-row-gap: 170px;
 
     & .people__inner {
-        border: solid 1px red;
+        border-color: transparent;
         border-radius: 50%;
+        text-decoration: none;
+        pointer-events: none;
 
         & .people__inner--photo {
             position: relative;
             width: 400px;
             height: 400px;
             border-radius: 50%;
+            pointer-events: auto;
         }
 
-        & .people__inner--value {
-            display: flex;
-            justify-content: center;
-            // padding-top: 350px;
-            color: black;
+        & .people__inner--writing {
+            display: grid;
+            justify-content: center; /* Центрирует по горизонтали */
+            color: #f5f5f5;
+            font-family: Montserrat;
             font-size: 30px;
-            text-decoration: none !important;
+            text-decoration: none;
+
+            pointer-events: auto;
+            place-items: center; /* Центрирует по вертикали, если нужно */
+
+            & .writing--name {
+                font-family: Montserrat;
+                font-weight: 700;
+            }
+
+            & .writing--position {
+                font-size: 20px;
+            }
         }
     }
 }

@@ -13,149 +13,158 @@ export const MainPage = () => {
         const mockPeople = [
             {
                 id: 1,
-                name: "John Doe",
-                age: 30,
-                email: "john@example.com",
-                position: "Manager",
-                status: "employee",
-                level: "senior",
-                format: "remote",
-                team: "frontend",
-                sex: "male",
-                birthday: "12-12-1990",
-                exWork: "Liverpool FC",
-                photo: "./../../public/fred.jpg",
-            },
-            {
-                id: 2,
-                name: "Jane Smith",
-                age: 25,
-                email: "jane@example.com",
-                position: "Manager",
-                status: "employee",
-                level: "junior",
-                format: "office",
-                team: "backend",
-                sex: "male",
-                birthday: "20-10-2000",
-                exWork: "McDonalds",
-                photo: "",
-            },
-            {
-                id: 3,
-                name: "Michael Johnson",
-                age: 35,
-                email: "michael.johnson@example.com",
-                position: "Team Lead",
-                status: "employee",
-                level: "senior",
-                format: "hybrid",
-                team: "frontend",
-                sex: "male",
-                birthday: "15-05-1989",
-                exWork: "Google",
-                photo: "",
-            },
-            {
-                id: 4,
-                name: "Emily Davis",
-                age: 28,
-                email: "emily.davis@example.com",
-                position: "Developer",
-                status: "employee",
-                level: "middle",
-                format: "remote",
-                team: "backend",
-                sex: "female",
-                birthday: "07-08-1995",
-                exWork: "Microsoft",
-                photo: "",
-            },
-            {
-                id: 5,
-                name: "David Wilson",
-                age: 40,
-                email: "david.wilson@example.com",
-                position: "Product Manager",
+                name: "Michael Scott",
+                age: 45,
+                email: "michael.scott@dundermifflin.com",
+                position: "Regional Manager",
                 status: "employee",
                 level: "senior",
                 format: "office",
                 team: "management",
                 sex: "male",
-                birthday: "22-11-1983",
-                exWork: "Facebook",
-                photo: "",
+                birthday: "15-03-1965",
+                exWork: "Sears",
+                photo: "./../../public/michael.jpg",
+            },
+            {
+                id: 2,
+                name: "Jim Halpert",
+                age: 32,
+                email: "jim.halpert@dundermifflin.com",
+                position: "Sales Representative",
+                status: "employee",
+                level: "senior",
+                format: "office",
+                team: "sales",
+                sex: "male",
+                birthday: "01-10-1978",
+                exWork: "Staples",
+                photo: "./../../public/jim.jpg",
+            },
+            {
+                id: 3,
+                name: "Pam Beesly",
+                age: 30,
+                email: "pam.beesly@dundermifflin.com",
+                position: "Receptionist",
+                status: "employee",
+                level: "middle",
+                format: "office",
+                team: "administration",
+                sex: "female",
+                birthday: "25-09-1980",
+                exWork: "Art School",
+                photo: "./../../public/pam.jpg",
+            },
+            {
+                id: 4,
+                name: "Dwight Schrute",
+                age: 40,
+                email: "dwight.schrute@dundermifflin.com",
+                position: "Assistant Regional Manager",
+                status: "employee",
+                level: "senior",
+                format: "office",
+                team: "management",
+                sex: "male",
+                birthday: "20-01-1970",
+                exWork: "Schrute Farms",
+                photo: "./../../public/dwight.jpg",
+            },
+            {
+                id: 5,
+                name: "Stanley Hudson",
+                age: 55,
+                email: "stanley.hudson@dundermifflin.com",
+                position: "Sales Representative",
+                status: "employee",
+                level: "senior",
+                format: "office",
+                team: "sales",
+                sex: "male",
+                birthday: "08-02-1955",
+                exWork: "OfficeMax",
+                photo: "./../../public/stanley.jpg",
             },
             {
                 id: 6,
-                name: "Olivia Brown",
-                age: 32,
-                email: "olivia.brown@example.com",
-                position: "QA Engineer",
+                name: "Angela Martin",
+                age: 39,
+                email: "angela.martin@dundermifflin.com",
+                position: "Head of Accounting",
                 status: "employee",
-                level: "middle",
-                format: "hybrid",
-                team: "QA",
+                level: "senior",
+                format: "office",
+                team: "accounting",
                 sex: "female",
-                birthday: "03-03-1992",
-                exWork: "Spotify",
-                photo: "",
+                birthday: "11-06-1981",
+                exWork: "Scranton High School",
+                photo: "./../../public/angela.jpg",
             },
             {
                 id: 7,
-                name: "Daniel Miller",
-                age: 27,
-                email: "daniel.miller@example.com",
-                position: "Developer",
-                status: "employee",
-                level: "junior",
-                format: "office",
-                team: "frontend",
-                sex: "male",
-                birthday: "17-07-1996",
-                exWork: "Tesla",
-                photo: "",
-            },
-            {
-                id: 8,
-                name: "Sophia Taylor",
-                age: 29,
-                email: "sophia.taylor@example.com",
-                position: "HR Manager",
+                name: "Kevin Malone",
+                age: 38,
+                email: "kevin.malone@dundermifflin.com",
+                position: "Accountant",
                 status: "employee",
                 level: "middle",
                 format: "office",
-                team: "HR",
-                sex: "female",
-                birthday: "12-12-1994",
-                exWork: "Netflix",
-                photo: "",
+                team: "accounting",
+                sex: "male",
+                birthday: "01-05-1982",
+                exWork: "Scranton Bowling Alley",
+                photo: "./../../public/kevin.jpg",
+            },
+            {
+                id: 8,
+                name: "Ryan Howard",
+                age: 28,
+                email: "ryan.howard@dundermifflin.com",
+                position: "Temp",
+                status: "employee",
+                level: "junior",
+                format: "office",
+                team: "sales",
+                sex: "male",
+                birthday: "30-04-1982",
+                exWork: "Business School",
+                photo: "./../../public/ryan.jpg",
             },
             {
                 id: 9,
-                name: "James Anderson",
-                age: 26,
-                email: "james.anderson@example.com",
-                position: "Designer",
+                name: "Darryl Philbin",
+                age: 38,
+                email: "darryl.philbin@dundermifflin.com",
+                position: "Warehouse Foreman",
                 status: "employee",
-                level: "junior",
-                format: "remote",
-                team: "design",
+                level: "senior",
+                format: "office",
+                team: "warehouse",
                 sex: "male",
-                birthday: "18-09-1997",
-                exWork: "Adobe",
-                photo: "",
+                birthday: "18-06-1972",
+                exWork: "Unknown",
+                photo: "./../../public/darryl.jpg",
             },
         ];
+
+        console.log("Dispatching people:", mockPeople);
         dispatch(setPeople(mockPeople));
     }, [dispatch]);
 
     return (
         <div>
             <div className="header">
-                <div className="header__logo">header logo</div>
+                <div className="header__logo">
+                    <img
+                        src="./../../public/Dunder-Mifflin-Logo.png"
+                        height={100}
+                        width={177.7}
+                        alt=""
+                    />
+                </div>
                 <div className="header__content">
-                    <a href="./">Поиск по фильтрам</a>
+                    <a href="./filter">Поиск по фильтрам</a>
                     <a href="./">ABOUT</a>
                     <a href="./">LOCATION</a>
                 </div>
@@ -168,7 +177,6 @@ export const MainPage = () => {
                             className="people__inner--value"
                             to={`/person/${person.id}`}
                             onClick={() => dispatch(selectPerson(person.id))}>
-                            {person.name} - {person.position}
                             <img
                                 className="people__inner--photo"
                                 width={100}
@@ -176,6 +184,14 @@ export const MainPage = () => {
                                 src={person.photo}
                                 alt={`${person.name}'s photo`}
                             />{" "}
+                            <div className="people__inner--writing">
+                                <div className="writing--name">
+                                    {person.name}
+                                </div>
+                                <div className="writing--position">
+                                    {person.position}
+                                </div>
+                            </div>
                         </Link>
                     </li>
                 ))}
