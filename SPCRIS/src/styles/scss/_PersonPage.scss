@@ -1,0 +1,77 @@
+body {
+    background-color: #141414;
+}
+
+.person-card {
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 12px;
+
+    background-color: #3d3f43;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease;
+    font-family: Montserrat;
+
+    & .person-card__photo {
+        flex: 0 0 150px;
+        margin-right: 20px;
+
+        img {
+            width: 150px;
+            height: 150px;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+    }
+
+    & .person-card__info {
+        flex: 1;
+        color: #fff;
+
+        & .person-card__name {
+            margin-bottom: 10px;
+            color: #fff;
+            font-family: Montserrat;
+            font-size: 28px;
+
+            font-weight: 600;
+        }
+
+        & .person-card__details {
+            p {
+                margin: 8px 0;
+                color: #a9b49e;
+                font-family: Montserrat;
+                font-size: 16px;
+
+                strong {
+                    color: #fff;
+                    font-family: Montserrat;
+
+                    font-weight: 500;
+                }
+            }
+        }
+
+        & .person-card__button {
+            padding: 10px 20px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 6px;
+            color: #fff;
+            background-color: #007bff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: Montserrat;
+            font-size: 16px;
+
+            &:hover {
+                background-color: #0056b3;
+            }
+        }
+    }
+}

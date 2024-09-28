@@ -25,30 +25,56 @@ export const PersonPage = () => {
     }
 
     return (
-        <div>
-            <h1>{selectedPerson.name}</h1>
-            <p>Возраст: {selectedPerson.age}</p>
-            <p>Email: {selectedPerson.email}</p>
-            <p>Должнсть: {selectedPerson.position}</p>
-            <p>Роль в системе: {selectedPerson.status}</p>
-            <p>Уровень сотрудника: {selectedPerson.level}</p>
-            <p>Формат работы: {selectedPerson.format}</p>
-            <p>Команда: {selectedPerson.team}</p>
-            <p>Пол: {selectedPerson.sex}</p>
-            <p>Дата рождения: {selectedPerson.birthday}</p>
-            <p>Бывшее место работы: {selectedPerson.exWork}</p>
-            <img
-                width={100}
-                height={100}
-                src={selectedPerson.photo}
-                alt={`${selectedPerson.name}'s photo`}
-            />
-            <button
-                onClick={() => {
-                    navigate("/mainpage", { replace: true });
-                }}>
-                Домой
-            </button>
+        <div className="person-card">
+            <div className="person-card__photo">
+                <img
+                    src={selectedPerson.photo}
+                    alt={`${selectedPerson.name}'s photo`}
+                />
+            </div>
+            <div className="person-card__info">
+                <h1 className="person-card__name">{selectedPerson.name}</h1>
+                <div className="person-card__details">
+                    <p>
+                        <strong>Возраст:</strong> {selectedPerson.age}
+                    </p>
+                    <p>
+                        <strong>Email:</strong> {selectedPerson.email}
+                    </p>
+                    <p>
+                        <strong>Должность:</strong> {selectedPerson.position}
+                    </p>
+                    <p>
+                        <strong>Роль в системе:</strong> {selectedPerson.status}
+                    </p>
+                    <p>
+                        <strong>Уровень сотрудника:</strong>{" "}
+                        {selectedPerson.level}
+                    </p>
+                    <p>
+                        <strong>Формат работы:</strong> {selectedPerson.format}
+                    </p>
+                    <p>
+                        <strong>Команда:</strong> {selectedPerson.team}
+                    </p>
+                    <p>
+                        <strong>Пол:</strong> {selectedPerson.sex}
+                    </p>
+                    <p>
+                        <strong>Дата рождения:</strong>{" "}
+                        {selectedPerson.birthday}
+                    </p>
+                    <p>
+                        <strong>Бывшее место работы:</strong>{" "}
+                        {selectedPerson.exWork}
+                    </p>
+                </div>
+                <button
+                    className="person-card__button"
+                    onClick={() => navigate("/mainpage", { replace: true })}>
+                    На главную
+                </button>
+            </div>
         </div>
     );
 };
