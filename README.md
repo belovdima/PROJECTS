@@ -12,3 +12,9 @@
 
 https://github.com/user-attachments/assets/178a5928-b650-4eb9-9822-f8f83f981ef8
 
+<div align="center">
+  <h1>Тестовое задание для ЗАО НПЦ ИРС</h1> 
+</div>
+
+https://github.com/user-attachments/assets/dba8a75b-41e8-4b52-aab7-2eb18d3ee9b1
+
