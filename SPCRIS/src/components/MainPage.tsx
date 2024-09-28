@@ -3,10 +3,12 @@ import { useSelector, useDispatch } from "react-redux";
 import { RootState, AppDispatch } from "../redux/store";
 import { setPeople, selectPerson } from "../redux/peopleSlice";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const MainPage = () => {
     const dispatch = useDispatch<AppDispatch>();
     const people = useSelector((state: RootState) => state.people.people);
+    const navigate = useNavigate();
 
     // Заглушка данных, но в реальной жизни можно сделать fetch к API
     useEffect(() => {
@@ -157,6 +159,7 @@ export const MainPage = () => {
             <div className="header">
                 <div className="header__logo">
                     <img
+                        onClick={() => navigate("/mainpage", { replace: true })}
                         src="./../../public/Dunder-Mifflin-Logo.png"
                         height={100}
                         width={177.7}

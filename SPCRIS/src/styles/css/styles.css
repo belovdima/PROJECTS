@@ -209,6 +209,7 @@ a:active {
   padding-inline: 20px;
 }
 .header .header__logo {
+  cursor: pointer;
   font-size: 50px;
   -webkit-filter: drop-shadow(1px 1px 4px #ffffff);
           filter: drop-shadow(1px 1px 4px #ffffff);
