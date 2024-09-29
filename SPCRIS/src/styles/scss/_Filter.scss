@@ -1,28 +1,98 @@
+.filters {
+    width: 200px; // Ширина боковой панели с фильтрами
+    padding: 20px;
+    background-color: #2e2e2e;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: absolute; // Закрепляем фильтры сбоку
+    top: 100px; // Отступ сверху
+    left: 20px; // Отступ слева
+    overflow-y: auto; // Скролл при большом количестве фильтров
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+        color: #f0f0f0;
+        font-family: Montserrat;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    select {
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+        padding: 8px;
+        background-color: #1e1e1e;
+        color: #f0f0f0;
+        border: 1px solid #444;
+        border-radius: 5px;
+        font-family: Montserrat;
+        font-size: 14px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #3e3e3e;
+        }
+
+        &:focus {
+            outline: none;
+            border-color: #1a73e8;
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.5);
+        }
+    }
+
+    .filter-group {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+// Обертка для контейнера таблицы
 .table-container {
-    margin: 20px;
+    margin-left: 230px; // Отступ слева, чтобы освободить место для фильтров
     padding: 10px;
     background-color: #2e2e2e; // Темный фон для контейнера
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow-x: auto; // Добавляем прокрутку по оси X, если необходимо
 
     .people-table {
-        width: 100%;
+        width: auto; // Убираем фиксированную ширину
         border-collapse: collapse;
         text-align: left;
         background-color: #1e1e1e;
 
         th,
         td {
-            padding: 10px 15px;
+            padding: 8px 10px; // Уменьшаем отступы
             border-bottom: 1px solid #3e3e3e;
             color: #f0f0f0; // Светлый текст на темном фоне
             font-family: Montserrat;
+            position: relative; // Позволяет позиционировать кнопку относительно заголовка
         }
 
         th {
             background-color: #444;
             font-weight: bold;
             text-transform: uppercase;
+
+            // Отступ справа для заголовка, чтобы кнопка не накладывалась на текст
+            padding-right: 30px; // Добавляем отступ справа для заголовка
+
+            button {
+                position: absolute; // Позиционируем кнопку относительно заголовка
+                right: 10px; // Располагаем кнопку справа от заголовка
+                top: 50%; // Центруем кнопку по вертикали
+                transform: translateY(-50%); // Центрирование по вертикали
+                background: none; // Убираем фон кнопки
+                border: none; // Убираем границы кнопки
+                color: #f0f0f0; // Цвет кнопки
+                cursor: pointer; // Указываем, что кнопка кликабельная
+                font-size: 16px; // Размер текста кнопки
+            }
         }
 
         td {
@@ -50,28 +120,29 @@
             }
         }
     }
+}
 
-    .person-card__button {
-        display: inline-block;
-        margin-top: 15px;
-        padding: 10px 20px;
-        font-family: Montserrat;
+.person-card__button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-family: Montserrat;
+    width: 160px;
 
-        color: #fff;
-        background-color: #1a73e8;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        text-transform: uppercase;
-        font-weight: bold;
+    color: #fff;
+    background-color: #1a73e8;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
 
-        &:hover {
-            background-color: #1665c1;
-        }
+    &:hover {
+        background-color: #1665c1;
+    }
 
-        &:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.5);
-        }
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.5);
     }
 }

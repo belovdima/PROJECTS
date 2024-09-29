@@ -249,6 +249,19 @@ export const Filter = () => {
                     <option value="Sales Representative">
                         Sales Representative
                     </option>
+                    <option value="Receptionist">Receptionist</option>
+                    <option value="Assistant Regional Manager">
+                        Assistant Regional Manager
+                    </option>
+                    <option value="Sales Representative">
+                        Sales Representative
+                    </option>
+                    <option value="Head of Accounting">
+                        Head of Accounting
+                    </option>
+                    <option value="Accountant">Accountant</option>
+                    <option value="Temp">Temp</option>
+                    <option value="Warehouse Foreman">Warehouse Foreman</option>
                     {/* Добавь другие должности */}
                 </select>
 
@@ -292,6 +305,8 @@ export const Filter = () => {
                     <option value="management">Management</option>
                     <option value="sales">Sales</option>
                     <option value="accounting">Accounting</option>
+                    <option value="administration">Administration</option>
+                    <option value="warehouse">Warehouse</option>
                 </select>
 
                 <label>Пол:</label>
@@ -301,13 +316,18 @@ export const Filter = () => {
                     <option value="male">Мужской</option>
                     <option value="female">Женский</option>
                 </select>
+                <button
+                    className="person-card__button"
+                    onClick={() => navigate("/mainpage", { replace: true })}>
+                    На главную
+                </button>
             </div>
 
             <div className="table-container">
                 <table className="people-table">
                     <thead>
                         <tr>
-                            <th>
+                            <th className="id">
                                 ID
                                 <button onClick={() => sortBy("id")}>
                                     {sortConfig.direction === "ascending"
@@ -324,7 +344,7 @@ export const Filter = () => {
                                         : "↑"}
                                 </button>
                             </th>
-                            <th>
+                            <th className="age">
                                 Возраст
                                 <button onClick={() => sortBy("age")}>
                                     {sortConfig.direction === "ascending"
@@ -398,11 +418,6 @@ export const Filter = () => {
                         )}
                     </tbody>
                 </table>
-                <button
-                    className="person-card__button"
-                    onClick={() => navigate("/mainpage", { replace: true })}>
-                    На главную
-                </button>
             </div>
         </div>
     );
