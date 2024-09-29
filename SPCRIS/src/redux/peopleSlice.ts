@@ -1,7 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface Person {
-    // Описываем тип данных человека
     id: number;
     name: string;
     age: number;
@@ -18,32 +17,28 @@ interface Person {
 }
 
 interface PeopleState {
-    // Состояние, связанное с людьми
-    people: Person[]; // Массив людей
-    selectedPerson?: Person; // Выбранный человек (необязательный)
+    people: Person[];
+    selectedPerson?: Person;
 }
 
 const initialState: PeopleState = {
-    // Начальное состояние
-    people: [], // По умолчанию список людей пуст
+    people: [],
 };
 
 const peopleSlice = createSlice({
-    name: "people", // Имя слайса
-    initialState, // Начальное состояние
+    name: "people",
+    initialState,
     reducers: {
-        // Редьюсеры (логика изменения состояния)
         setPeople: (state, action: PayloadAction<Person[]>) => {
-            state.people = action.payload; // Обновляем список людей
+            state.people = action.payload;
         },
         selectPerson: (state, action: PayloadAction<number>) => {
             state.selectedPerson = state.people.find(
                 (person) => person.id === action.payload
             );
-            // Находим и выбираем человека по его id
         },
     },
 });
 
-export const { setPeople, selectPerson } = peopleSlice.actions; // Экспортируем действия
-export default peopleSlice.reducer; // Экспортируем редьюсер для Store
+export const { setPeople, selectPerson } = peopleSlice.actions;
+export default peopleSlice.reducer;

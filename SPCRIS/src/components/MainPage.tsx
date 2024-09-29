@@ -10,7 +10,6 @@ export const MainPage = () => {
     const people = useSelector((state: RootState) => state.people.people);
     const navigate = useNavigate();
 
-    // Заглушка данных, но в реальной жизни можно сделать fetch к API
     useEffect(() => {
         const mockPeople = [
             {

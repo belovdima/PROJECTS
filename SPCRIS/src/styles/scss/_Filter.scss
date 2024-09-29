@@ -1,97 +1,95 @@
 .filters {
-    width: 200px; // Ширина боковой панели с фильтрами
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    overflow-y: auto;
+    width: 200px;
     padding: 20px;
-    background-color: #2e2e2e;
     border-radius: 10px;
+    background-color: #2e2e2e;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    position: absolute; // Закрепляем фильтры сбоку
-    top: 100px; // Отступ сверху
-    left: 20px; // Отступ слева
-    overflow-y: auto; // Скролл при большом количестве фильтров
 
     label {
         display: block;
         margin-bottom: 10px;
         color: #f0f0f0;
-        font-family: Montserrat;
         text-transform: uppercase;
-        font-weight: bold;
+        font-family: Montserrat;
         font-size: 14px;
+        font-weight: bold;
     }
 
     select {
         display: block;
         width: 100%;
-        margin-bottom: 15px;
         padding: 8px;
-        background-color: #1e1e1e;
-        color: #f0f0f0;
+        margin-bottom: 15px;
         border: 1px solid #444;
         border-radius: 5px;
+        color: #f0f0f0;
+        background-color: #1e1e1e;
+        cursor: pointer;
         font-family: Montserrat;
         font-size: 14px;
-        cursor: pointer;
 
         &:hover {
             background-color: #3e3e3e;
         }
 
         &:focus {
-            outline: none;
             border-color: #1a73e8;
+            outline: none;
             box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.5);
         }
     }
 
     .filter-group {
-        margin-bottom: 20px;
         display: flex;
         flex-direction: column;
+        margin-bottom: 20px;
     }
 }
 
-// Обертка для контейнера таблицы
 .table-container {
-    margin-left: 230px; // Отступ слева, чтобы освободить место для фильтров
+    overflow-x: auto;
     padding: 10px;
-    background-color: #2e2e2e; // Темный фон для контейнера
+    margin-left: 230px;
     border-radius: 10px;
+    background-color: #2e2e2e;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    overflow-x: auto; // Добавляем прокрутку по оси X, если необходимо
 
     .people-table {
-        width: auto; // Убираем фиксированную ширину
+        width: auto;
+        background-color: #1e1e1e;
         border-collapse: collapse;
         text-align: left;
-        background-color: #1e1e1e;
 
         th,
         td {
-            padding: 8px 10px; // Уменьшаем отступы
+            position: relative;
+            padding: 8px 10px;
             border-bottom: 1px solid #3e3e3e;
-            color: #f0f0f0; // Светлый текст на темном фоне
+            color: #f0f0f0;
             font-family: Montserrat;
-            position: relative; // Позволяет позиционировать кнопку относительно заголовка
         }
 
         th {
-            background-color: #444;
-            font-weight: bold;
-            text-transform: uppercase;
 
-            // Отступ справа для заголовка, чтобы кнопка не накладывалась на текст
-            padding-right: 30px; // Добавляем отступ справа для заголовка
+            padding-right: 30px;
+            background-color: #444;
+            text-transform: uppercase;
+            font-weight: bold;
 
             button {
-                position: absolute; // Позиционируем кнопку относительно заголовка
-                right: 10px; // Располагаем кнопку справа от заголовка
-                top: 50%; // Центруем кнопку по вертикали
-                transform: translateY(-50%); // Центрирование по вертикали
-                background: none; // Убираем фон кнопки
-                border: none; // Убираем границы кнопки
-                color: #f0f0f0; // Цвет кнопки
-                cursor: pointer; // Указываем, что кнопка кликабельная
-                font-size: 16px; // Размер текста кнопки
+                position: absolute;
+                top: 50%;
+                right: 10px;
+                border: none;
+                color: #f0f0f0;
+                background: none;
+                cursor: pointer;
+                transform: translateY(-50%);
+                font-size: 16px;
             }
         }
 
@@ -101,7 +99,7 @@
 
         tr {
             &:hover {
-                background-color: #3e3e3e; // Изменение цвета строки при наведении
+                background-color: #3e3e3e;
             }
 
             img {
@@ -112,7 +110,7 @@
 
         tbody {
             tr:nth-child(even) {
-                background-color: #3a3a3a; // Полосатые строки
+                background-color: #3a3a3a;
             }
 
             tr:nth-child(odd) {
@@ -124,17 +122,17 @@
 
 .person-card__button {
     display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    font-family: Montserrat;
     width: 160px;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
 
     color: #fff;
     background-color: #1a73e8;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
     text-transform: uppercase;
+    font-family: Montserrat;
     font-weight: bold;
 
     &:hover {
