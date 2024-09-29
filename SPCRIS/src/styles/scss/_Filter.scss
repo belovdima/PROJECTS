@@ -1,0 +1,77 @@
+.table-container {
+    margin: 20px;
+    padding: 10px;
+    background-color: #2e2e2e; // Темный фон для контейнера
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+
+    .people-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        background-color: #1e1e1e;
+
+        th,
+        td {
+            padding: 10px 15px;
+            border-bottom: 1px solid #3e3e3e;
+            color: #f0f0f0; // Светлый текст на темном фоне
+            font-family: Montserrat;
+        }
+
+        th {
+            background-color: #444;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        td {
+            background-color: #2e2e2e;
+        }
+
+        tr {
+            &:hover {
+                background-color: #3e3e3e; // Изменение цвета строки при наведении
+            }
+
+            img {
+                border-radius: 50%;
+                box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+            }
+        }
+
+        tbody {
+            tr:nth-child(even) {
+                background-color: #3a3a3a; // Полосатые строки
+            }
+
+            tr:nth-child(odd) {
+                background-color: #2e2e2e;
+            }
+        }
+    }
+
+    .person-card__button {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 10px 20px;
+        font-family: Montserrat;
+
+        color: #fff;
+        background-color: #1a73e8;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-weight: bold;
+
+        &:hover {
+            background-color: #1665c1;
+        }
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.5);
+        }
+    }
+}

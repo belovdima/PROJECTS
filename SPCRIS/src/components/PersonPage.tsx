@@ -37,7 +37,7 @@ export const PersonPage = () => {
                     />
                 </div>
                 <div className="header__content">
-                    {/* <a href="./filter">Поиск по фильтрам</a> */}
+                    <a href="./filter">Поиск по фильтрам</a>
                     <a href="./">ABOUT</a>
                     <a href="./">LOCATION</a>
                 </div>

@@ -368,3 +368,68 @@ body {
 .person-card .person-card__info .person-card__button:hover {
   background-color: #0056b3;
 }
+
+.table-container {
+  margin: 20px;
+  padding: 10px;
+  background-color: #2e2e2e;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.table-container .people-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  background-color: #1e1e1e;
+}
+.table-container .people-table th,
+.table-container .people-table td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #3e3e3e;
+  color: #f0f0f0;
+  font-family: Montserrat;
+}
+.table-container .people-table th {
+  background-color: #444;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.table-container .people-table td {
+  background-color: #2e2e2e;
+}
+.table-container .people-table tr:hover {
+  background-color: #3e3e3e;
+}
+.table-container .people-table tr img {
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+          box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+.table-container .people-table tbody tr:nth-child(even) {
+  background-color: #3a3a3a;
+}
+.table-container .people-table tbody tr:nth-child(odd) {
+  background-color: #2e2e2e;
+}
+.table-container .person-card__button {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-family: Montserrat;
+  color: #fff;
+  background-color: #1a73e8;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.table-container .person-card__button:hover {
+  background-color: #1665c1;
+}
+.table-container .person-card__button:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.5);
+          box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.5);
+}
