@@ -367,14 +367,7 @@ export const Filter = () => {
                                         : "↑"}
                                 </button>
                             </th>
-                            <th>
-                                Дата рождения
-                                <button onClick={() => sortBy("birthday")}>
-                                    {sortConfig.direction === "ascending"
-                                        ? "↓"
-                                        : "↑"}
-                                </button>
-                            </th>
+                            <th>Дата рождения</th>
                             <th>Бывшее место работы</th>
                         </tr>
                     </thead>
