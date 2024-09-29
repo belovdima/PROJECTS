@@ -62,14 +62,14 @@
 
         & .people__inner--writing {
             display: grid;
-            justify-content: center; /* Центрирует по горизонтали */
+            justify-content: center;
             color: #f5f5f5;
             font-family: Montserrat;
             font-size: 30px;
             text-decoration: none;
 
             pointer-events: auto;
-            place-items: center; /* Центрирует по вертикали, если нужно */
+            place-items: center;
 
             & .writing--name {
                 font-family: Montserrat;

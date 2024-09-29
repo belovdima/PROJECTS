@@ -7,13 +7,12 @@ import { useNavigate } from "react-router-dom";
 
 export const PersonPage = () => {
     const navigate = useNavigate();
-    const { id } = useParams<{ id: string }>(); // Получаем параметр id из URL
+    const { id } = useParams<{ id: string }>();
     const dispatch = useDispatch<AppDispatch>();
     const selectedPerson = useSelector(
         (state: RootState) => state.people.selectedPerson
     );
 
-    // Выбираем человека по ID при монтировании компонента
     useEffect(() => {
         if (id) {
             dispatch(selectPerson(Number(id)));

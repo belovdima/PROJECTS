@@ -274,13 +274,13 @@ a:active {
   display: grid;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
-          justify-content: center; /* Центрирует по горизонтали */
+          justify-content: center;
   color: #f5f5f5;
   font-family: Montserrat;
   font-size: 30px;
   text-decoration: none;
   pointer-events: auto;
-  place-items: center; /* Центрирует по вертикали, если нужно */
+  place-items: center;
 }
 .people .people__inner .people__inner--writing .writing--name {
   font-family: Montserrat;
@@ -370,50 +370,49 @@ body {
 }
 
 .filters {
-  width: 200px;
-  padding: 20px;
-  background-color: #2e2e2e;
-  border-radius: 10px;
-  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   position: absolute;
   top: 100px;
   left: 20px;
   overflow-y: auto;
+  width: 200px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #2e2e2e;
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 .filters label {
   display: block;
   margin-bottom: 10px;
   color: #f0f0f0;
-  font-family: Montserrat;
   text-transform: uppercase;
-  font-weight: bold;
+  font-family: Montserrat;
   font-size: 14px;
+  font-weight: bold;
 }
 .filters select {
   display: block;
   width: 100%;
-  margin-bottom: 15px;
   padding: 8px;
-  background-color: #1e1e1e;
-  color: #f0f0f0;
+  margin-bottom: 15px;
   border: 1px solid #444;
   border-radius: 5px;
+  color: #f0f0f0;
+  background-color: #1e1e1e;
+  cursor: pointer;
   font-family: Montserrat;
   font-size: 14px;
-  cursor: pointer;
 }
 .filters select:hover {
   background-color: #3e3e3e;
 }
 .filters select:focus {
-  outline: none;
   border-color: #1a73e8;
+  outline: none;
   -webkit-box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.5);
           box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.5);
 }
 .filters .filter-group {
-  margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -421,48 +420,49 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  margin-bottom: 20px;
 }
 
 .table-container {
-  margin-left: 230px;
+  overflow-x: auto;
   padding: 10px;
-  background-color: #2e2e2e;
+  margin-left: 230px;
   border-radius: 10px;
+  background-color: #2e2e2e;
   -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  overflow-x: auto;
 }
 .table-container .people-table {
   width: auto;
+  background-color: #1e1e1e;
   border-collapse: collapse;
   text-align: left;
-  background-color: #1e1e1e;
 }
 .table-container .people-table th,
 .table-container .people-table td {
+  position: relative;
   padding: 8px 10px;
   border-bottom: 1px solid #3e3e3e;
   color: #f0f0f0;
   font-family: Montserrat;
-  position: relative;
 }
 .table-container .people-table th {
-  background-color: #444;
-  font-weight: bold;
-  text-transform: uppercase;
   padding-right: 30px;
+  background-color: #444;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 .table-container .people-table th button {
   position: absolute;
-  right: 10px;
   top: 50%;
+  right: 10px;
+  border: none;
+  color: #f0f0f0;
+  background: none;
+  cursor: pointer;
   -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
           transform: translateY(-50%);
-  background: none;
-  border: none;
-  color: #f0f0f0;
-  cursor: pointer;
   font-size: 16px;
 }
 .table-container .people-table td {
@@ -485,16 +485,16 @@ body {
 
 .person-card__button {
   display: inline-block;
-  margin-top: 15px;
-  padding: 10px 20px;
-  font-family: Montserrat;
   width: 160px;
-  color: #fff;
-  background-color: #1a73e8;
+  padding: 10px 20px;
+  margin-top: 15px;
   border: none;
   border-radius: 5px;
+  color: #fff;
+  background-color: #1a73e8;
   cursor: pointer;
   text-transform: uppercase;
+  font-family: Montserrat;
   font-weight: bold;
 }
 .person-card__button:hover {

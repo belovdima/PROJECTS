@@ -182,11 +182,8 @@ export const Filter = () => {
         }
     }, [dispatch, people]);
 
-    // Handle sorting
-    // Определение типа ключей объекта Person
     type PersonKeys = keyof Person;
 
-    // Обновленная функция сортировки
     const sortBy = (key: PersonKeys) => {
         let direction = "ascending";
         if (sortConfig.key === key && sortConfig.direction === "ascending") {
@@ -202,7 +199,6 @@ export const Filter = () => {
         setFilteredPeople(sortedPeople);
     };
 
-    // Handle filtering
     const handleFilterChange = (filterKey: string, value: string) => {
         setFilters((prev) => ({ ...prev, [filterKey]: value }));
     };
@@ -262,7 +258,6 @@ export const Filter = () => {
                     <option value="Accountant">Accountant</option>
                     <option value="Temp">Temp</option>
                     <option value="Warehouse Foreman">Warehouse Foreman</option>
-                    {/* Добавь другие должности */}
                 </select>
 
                 <label>Статус:</label>
@@ -272,7 +267,6 @@ export const Filter = () => {
                     }>
                     <option value="">Все</option>
                     <option value="employee">Employee</option>
-                    {/* Другие статусы */}
                 </select>
 
                 <label>Уровень:</label>
