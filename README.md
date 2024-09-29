@@ -16,5 +16,11 @@ https://github.com/user-attachments/assets/178a5928-b650-4eb9-9822-f8f83f981ef8
   <h1>Тестовое задание для ЗАО НПЦ ИРС</h1> 
 </div>
 
-https://github.com/user-attachments/assets/dba8a75b-41e8-4b52-aab7-2eb18d3ee9b1
+## SPA-приложение для просмотра и фильтрации объектов
+
+### Описание проекта
+
+Данный проект представляет собой одностраничное приложение (SPA), разработанное с использованием React, Typescript и Redux, которое позволяет просмотривать и фильтровать объекты(в данном случае сотрудники) по разным критериям.
+
+https://github.com/user-attachments/assets/8f7a5802-d174-4819-a098-9cadb827af82
 
