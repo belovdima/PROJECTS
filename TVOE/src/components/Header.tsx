@@ -40,10 +40,16 @@ export const Header = () => {
                     </svg>
                 </div>
                 <div className="header__left--buttons">
-                    <div className="left--buttons__main">Главная</div>
-                    <div className="left--buttons__films">Фильмы</div>
-                    <div className="left--buttons__serial">Сериалы</div>
-                    <div className="left--buttons__tv">ТВ</div>
+                    <div className="left--buttons left--buttons__main">
+                        Главная
+                    </div>
+                    <div className="left--buttons left--buttons__films">
+                        Фильмы
+                    </div>
+                    <div className="left--buttons left--buttons__serial">
+                        Сериалы
+                    </div>
+                    <div className="left--buttons left--buttons__tv">ТВ</div>
                 </div>
             </div>
             <div className="header__right">

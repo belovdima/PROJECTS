@@ -1,0 +1,97 @@
+.trailer {
+    & .trailer__img {
+        z-index: -10;
+    }
+
+    & .trailer__content {
+        position: absolute;
+        z-index: 10;
+        bottom: 327px;
+        left: 64px;
+        height: 220px;
+
+        & .trailer__content--info {
+            display: block;
+
+            & .trailer__content--stats {
+                display: flex;
+                align-items: center;
+                padding-top: 16px;
+                padding-bottom: 24px;
+                gap: 8px;
+
+                & .stars {
+                    display: flex;
+                    align-items: center;
+                    height: 34px;
+                    line-height: normal;
+                    padding: 9px 12px;
+                    border-radius: 8px;
+                    color: $white;
+                    background-color: $button-color-dark;
+                    text-align: right;
+                    font-family: "Rubik";
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    gap: 4px;
+                }
+                & .premier {
+                    display: flex;
+                    align-items: center;
+                    height: 34px;
+                    line-height: normal;
+                    padding: 9px 12px;
+                    border-radius: 8px;
+                    color: $white;
+                    background-color: $button-color-dark;
+                    text-align: right;
+                    font-family: "Rubik";
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    gap: 4px;
+                }
+                & .rate {
+                    display: flex;
+                    align-items: center;
+                    height: 34px;
+                    line-height: normal;
+                    padding: 9px 12px;
+                    border-radius: 8px;
+                    color: $white;
+                    background-color: $button-color-dark;
+                    text-align: right;
+                    font-family: "Rubik";
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    gap: 4px;
+                }
+                & .dot,
+                .stick {
+                    color: $grey;
+                }
+
+                & .year,
+                .season,
+                .genre,
+                .country,
+                .age {
+                    line-height: 100%;
+                    color: $white;
+                    letter-spacing: 0.1px;
+                    font-family: "Rubik";
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 400;
+                }
+            }
+        }
+
+        & .recommend {
+            display: flex;
+            gap: 16px;
+        }
+    }
+}

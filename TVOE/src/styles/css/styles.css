@@ -250,6 +250,9 @@ a:active {
   color: #ffffff;
   text-align: center;
 }
+.header .header__left .header__left--buttons .left--buttons {
+  cursor: pointer;
+}
 .header .header__right {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -291,6 +294,7 @@ a:active {
   border-radius: 12px;
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
   text-align: center;
   font-family: "Rubik";
   font-size: 16px;
@@ -320,6 +324,7 @@ a:active {
   color: #09090c;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#b4fd64), to(#f2f452));
   background-image: linear-gradient(#b4fd64, #f2f452);
+  cursor: pointer;
   text-align: center;
   font-family: "Rubik";
   font-size: 16px;
@@ -344,6 +349,7 @@ a:active {
   border-radius: 12px;
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
   text-align: center;
   font-family: "Rubik";
   font-size: 16px;
@@ -368,6 +374,7 @@ a:active {
   border-radius: 100px;
   color: #bababa;
   background-color: transparent;
+  cursor: pointer;
 }
 .header .header__right .header__right--buttons .right--buttons__login {
   display: -webkit-box;
@@ -385,10 +392,119 @@ a:active {
   border-radius: 12px;
   color: #bababa;
   background-color: transparent;
+  cursor: pointer;
   text-align: center;
   font-family: "Rubik";
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   gap: 8px;
+}
+
+.trailer .trailer__img {
+  z-index: -10;
+}
+.trailer .trailer__content {
+  position: absolute;
+  z-index: 10;
+  bottom: 327px;
+  left: 64px;
+  height: 220px;
+}
+.trailer .trailer__content .trailer__content--info {
+  display: block;
+}
+.trailer .trailer__content .trailer__content--info .trailer__content--stats {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 16px;
+  padding-bottom: 24px;
+  gap: 8px;
+}
+.trailer .trailer__content .trailer__content--info .trailer__content--stats .stars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 34px;
+  line-height: normal;
+  padding: 9px 12px;
+  border-radius: 8px;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  text-align: right;
+  font-family: "Rubik";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  gap: 4px;
+}
+.trailer .trailer__content .trailer__content--info .trailer__content--stats .premier {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 34px;
+  line-height: normal;
+  padding: 9px 12px;
+  border-radius: 8px;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  text-align: right;
+  font-family: "Rubik";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  gap: 4px;
+}
+.trailer .trailer__content .trailer__content--info .trailer__content--stats .rate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 34px;
+  line-height: normal;
+  padding: 9px 12px;
+  border-radius: 8px;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+  text-align: right;
+  font-family: "Rubik";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  gap: 4px;
+}
+.trailer .trailer__content .trailer__content--info .trailer__content--stats .dot,
+.trailer .trailer__content .trailer__content--info .trailer__content--stats .stick {
+  color: #bababa;
+}
+.trailer .trailer__content .trailer__content--info .trailer__content--stats .year,
+.trailer .trailer__content .trailer__content--info .trailer__content--stats .season,
+.trailer .trailer__content .trailer__content--info .trailer__content--stats .genre,
+.trailer .trailer__content .trailer__content--info .trailer__content--stats .country,
+.trailer .trailer__content .trailer__content--info .trailer__content--stats .age {
+  line-height: 100%;
+  color: #ffffff;
+  letter-spacing: 0.1px;
+  font-family: "Rubik";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+}
+.trailer .trailer__content .recommend {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 16px;
 }
