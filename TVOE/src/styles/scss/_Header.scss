@@ -1,0 +1,148 @@
+@import "_vars";
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 76px;
+    background-color: $black;
+    padding-inline: 64px;
+
+    & .header__left {
+        display: flex;
+        align-items: center;
+        width: 490px;
+        gap: 80px;
+
+        & .header__left--logo {
+            width: 115px;
+            height: 40px;
+            color: $white;
+        }
+
+        & .header__left--buttons {
+            display: flex;
+            align-items: center;
+            line-height: normal;
+            color: $grey;
+            font-family: "Rubik";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            gap: 28px;
+
+            & .left--buttons__main {
+                color: $white;
+                text-align: center;
+            }
+        }
+    }
+
+    & .header__right {
+        display: flex;
+        align-items: center;
+        width: 590px;
+
+        & .header__right--buttons {
+            display: flex;
+            align-items: center;
+            line-height: normal;
+            text-align: center;
+            font-family: "Rubik";
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            gap: 8px;
+
+            & .right--buttons__download {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 44px;
+                line-height: normal;
+                padding: 10px 16px;
+                border-color: transparent;
+                border-radius: 12px;
+                color: $white;
+                background-color: $button-color-dark;
+                text-align: center;
+                font-family: "Rubik";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                gap: 8px;
+            }
+
+            & .right--buttons__pay {
+                display: flex;
+                display: flex;
+                align-items: flex-start;
+                align-items: center;
+                justify-content: center;
+                height: 44px;
+                line-height: normal;
+                padding: 10px 16px;
+                border-color: transparent;
+                border-radius: 12px;
+                color: $black;
+                background-image: linear-gradient(#b4fd64, #f2f452);
+                text-align: center;
+                font-family: "Rubik";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 700;
+                gap: 8px;
+            }
+
+            & .right--buttons__promo {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 44px;
+                line-height: normal;
+                padding: 10px 16px;
+                border-color: transparent;
+                border-radius: 12px;
+                color: $white;
+                background-color: $button-color-dark;
+                text-align: center;
+                font-family: "Rubik";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                gap: 8px;
+            }
+
+            & .right--buttons__search {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                padding: 11px 8px;
+                border-color: transparent;
+                border-radius: 100px;
+                color: $grey;
+                background-color: transparent;
+            }
+
+            & .right--buttons__login {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 44px;
+                line-height: normal;
+                border-color: transparent;
+                border-radius: 12px;
+                color: $grey;
+                background-color: transparent;
+                text-align: center;
+                font-family: "Rubik";
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 500;
+                gap: 8px;
+            }
+        }
+    }
+}
