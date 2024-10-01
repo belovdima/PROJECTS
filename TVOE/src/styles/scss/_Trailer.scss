@@ -1,14 +1,16 @@
 .trailer {
     & .trailer__img {
+        position: absolute;
         z-index: -10;
+        top: 76px;
     }
 
     & .trailer__content {
         position: absolute;
         z-index: 10;
-        bottom: 327px;
+        top: 400px;
         left: 64px;
-        height: 220px;
+        height: 327px;
 
         & .trailer__content--info {
             display: block;

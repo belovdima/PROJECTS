@@ -1,9 +1,6 @@
 export const Trailer = () => {
     return (
         <div className="trailer">
-            <div className="trailer__img">
-                <img src="./../../public/TrailerImg.png" alt="" />
-            </div>
             <div className="trailer__content">
                 <div className="trailer__content--info">
                     <img src="./../../public/MovieLogo.png" alt="" />
@@ -105,6 +102,9 @@ export const Trailer = () => {
                     <img src="./../../public/Cover6.png" alt="" />
                     <img src="./../../public/Cover7.png" alt="" />
                 </div>
+            </div>
+            <div className="trailer__img">
+                <img src="./../../public/TrailerImg.png" alt="" />
             </div>
         </div>
     );
