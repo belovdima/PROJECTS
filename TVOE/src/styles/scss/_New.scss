@@ -1,0 +1,43 @@
+.new__writing {
+    line-height: normal;
+    padding-bottom: 20px;
+    color: $white;
+    font-family: "Rubik";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+}
+
+.new {
+    padding-top: 60px;
+    padding-left: 64px;
+    background-color: $black;
+}
+
+.new__element {
+    width: 280px;
+    height: 487px;
+
+    & .new__element--rating {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        padding: 5px 8px;
+        border-radius: 8px;
+        background-image: $gradient;
+        font-family: "Rubik";
+        font-size: 16px;
+        font-weight: 700;
+        gap: 10px;
+    }
+
+    & .new__poster {
+        width: 280px;
+        height: 425px;
+        border-radius: 20px;
+    }
+}
