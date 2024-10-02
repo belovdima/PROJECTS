@@ -322,8 +322,7 @@ a:active {
   border-color: transparent;
   border-radius: 12px;
   color: #09090c;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#b4fd64), to(#f2f452));
-  background-image: linear-gradient(#b4fd64, #f2f452);
+  background-image: linear-gradient(45deg, #f2f452 0%, #b4fd64 64%);
   cursor: pointer;
   text-align: center;
   font-family: "Rubik";
@@ -402,7 +401,6 @@ a:active {
 }
 
 .trailer .trailer__img {
-  position: absolute;
   z-index: -10;
   top: 76px;
 }
@@ -509,4 +507,52 @@ a:active {
   display: -ms-flexbox;
   display: flex;
   gap: 16px;
+}
+
+.new__writing {
+  line-height: normal;
+  padding-bottom: 20px;
+  color: #ffffff;
+  font-family: "Rubik";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.new {
+  padding-top: 60px;
+  padding-left: 64px;
+  background-color: #09090c;
+}
+
+.new__element {
+  width: 280px;
+  height: 487px;
+}
+.new__element .new__element--rating {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 40px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  background-image: linear-gradient(45deg, #f2f452 0%, #b4fd64 64%);
+  font-family: "Rubik";
+  font-size: 16px;
+  font-weight: 700;
+  gap: 10px;
+}
+.new__element .new__poster {
+  width: 280px;
+  height: 425px;
+  border-radius: 20px;
 }
