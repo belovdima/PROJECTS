@@ -8,17 +8,17 @@ export const Login = () => {
     const navigate = useNavigate();
 
     async function handleSubmit(e: FormEvent) {
-        e.preventDefault();
+        e.preventDefault(); //страница не будет перезагружаться при отправке формы
 
-        const form = e.target as HTMLFormElement;
-        const formData = new FormData(form);
-        const inputData = Object.fromEntries(formData.entries());
+        const form = e.target as HTMLFormElement; //типизирует форму для работы в TS
+        const formData = new FormData(form); //создание formData который содержит все данные из формы в виде пар "ключ-значение"
+        const inputData = Object.fromEntries(formData.entries()); //преобразует formData в обычный объект JS для удобства работы
 
         try {
             const response = await fetch(API_url, {
                 method: "POST",
                 headers: {
-                    "Content-Type": "application/json",
+                    "Content-Type": "application/json", //указываем что тело запроса будет в формате JSON
                 },
                 body: JSON.stringify({
                     username: inputData.Login,

@@ -88,7 +88,7 @@ export const Table = () => {
 
     // Состояние для новой записи
     const [newRow, setNewRow] = useState<DocumentData>({
-        id: "", // Идентификатор будет генерироваться сервером
+        id: "",
         companySigDate: "",
         companySignatureName: "",
         documentName: "",
@@ -166,7 +166,6 @@ export const Table = () => {
         if (question === true) {
             try {
                 const response = await fetch(`${API_DELETE_URL}/${id}`, {
-                    // Убрал фигурные скобки вокруг API_DELETE_URL
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -205,7 +204,6 @@ export const Table = () => {
 
         try {
             const response = await fetch(`${API_EDIT_URL}/${editingRow.id}`, {
-                // Убедись, что editingRow.id не undefined
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -367,7 +365,7 @@ export const Table = () => {
                         {data.map((item: DocumentData, index: number) => (
                             <tr
                                 key={item.id}
-                                className={index % 2 === 0 ? "even" : "odd"} // Применение классов even и odd
+                                className={index % 2 === 0 ? "even" : "odd"}
                                 onMouseEnter={() => setHoveredRow(index)}
                                 onMouseLeave={() => setHoveredRow(null)}>
                                 <td>
