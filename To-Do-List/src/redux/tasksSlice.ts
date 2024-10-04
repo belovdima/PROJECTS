@@ -21,8 +21,17 @@ const taskSlice = createSlice({
         deleteTask(state, action: PayloadAction<number>) {
             return state.filter((task) => task.id !== action.payload);
         },
+        toggleTask(state, action: PayloadAction<number>) {
+            const task = state.find((task) => task.id === action.payload);
+            if (task) {
+                task.completed = !task.completed;
+                task.completionTime = task.completed
+                    ? new Date().toISOString()
+                    : null; // Устанавливаем время выполнения
+            }
+        },
     },
 });
 
-export const { addTask, deleteTask } = taskSlice.actions;
+export const { addTask, deleteTask, toggleTask } = taskSlice.actions;
 export default taskSlice.reducer;
