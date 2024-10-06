@@ -17,10 +17,29 @@ export const List = () => {
     const tasks = useSelector((state: RootState) => state.tasks);
     const dispatch = useDispatch();
 
-    //стейты для фильтров
+    // состояния для фильтров
     const [status, setStatus] = useState("all");
-    const [deadline, setDeadline] = useState("new");
-    const [filterId, setFilterId] = useState("increase");
+    const [deadline, setDeadline] = useState("old");
+
+    const filteredTasks = tasks.filter((task) => {
+        if (status === "completed") {
+            return task.completed;
+        } else if (status === "notcompleted") {
+            return !task.completed;
+        }
+        return true; // "all" - возвращаем все задачи
+    });
+
+    const sortedByDeadline = filteredTasks.sort((a, b) => {
+        const dateA = new Date(a.deadline);
+        const dateB = new Date(b.deadline);
+
+        if (deadline === "new") {
+            return dateB.getTime() - dateA.getTime(); // Новые задачи будут выше
+        } else {
+            return dateA.getTime() - dateB.getTime(); // Старые задачи будут выше
+        }
+    });
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setNewTask(e.target.value);
@@ -60,7 +79,11 @@ export const List = () => {
                 <div className="filters">
                     <form className="filters__status">
                         <label htmlFor="status">Задачи:</label>
-                        <select id="status" name="status">
+                        <select
+                            id="status"
+                            name="status"
+                            value={status}
+                            onChange={(e) => setStatus(e.target.value)}>
                             <option value="all">Все</option>
                             <option value="completed">Выполненные</option>
                             <option value="notcompleted">Невыполненные</option>
@@ -68,16 +91,13 @@ export const List = () => {
                     </form>
                     <form className="filters__deadline">
                         <label htmlFor="deadline">Дедлайн:</label>
-                        <select id="deadline" name="deadline">
-                            <option value="new">Недавние</option>
-                            <option value="old">Старые</option>
-                        </select>
-                    </form>
-                    <form className="filters__id">
-                        <label htmlFor="id">Отсортировать по:</label>
-                        <select id="id" name="id">
-                            <option value="increase">Возрастанию</option>
-                            <option value="decrease">Убыванию</option>
+                        <select
+                            id="deadline"
+                            name="deadline"
+                            value={deadline}
+                            onChange={(e) => setDeadline(e.target.value)}>
+                            <option value="new">Несрочно</option>
+                            <option value="old">Срочно</option>
                         </select>
                     </form>
                 </div>
@@ -97,11 +117,11 @@ export const List = () => {
                 </button>
             </div>
             <ol>
-                {tasks.map((task: Task) => (
+                {sortedByDeadline.map((task: Task) => (
                     <li key={task.id}>
                         <span className={task.completed ? "completed" : "text"}>
                             {task.description} (Deadline:{" "}
-                            {task.deadline ? task.deadline : "None"})
+                            {task.deadline || "None"})
                         </span>
                         {task.completed && task.completionTime && (
                             <span className="completed-time">
