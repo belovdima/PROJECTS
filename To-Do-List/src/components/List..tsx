@@ -74,28 +74,34 @@ export const List = () => {
 
     return (
         <>
-            <div className="list">
-                <h1>To-Do List</h1>
+            <div className="todoList">
+                <h1 className="title">To-Do List</h1>
                 <div className="filters">
-                    <form className="filters__status">
-                        <label htmlFor="status">Задачи:</label>
+                    <form className="filter statusFilter">
+                        <label htmlFor="status" className="label">
+                            Задачи:
+                        </label>
                         <select
                             id="status"
                             name="status"
                             value={status}
-                            onChange={(e) => setStatus(e.target.value)}>
+                            onChange={(e) => setStatus(e.target.value)}
+                            className="select">
                             <option value="all">Все</option>
                             <option value="completed">Выполненные</option>
                             <option value="notcompleted">Невыполненные</option>
                         </select>
                     </form>
-                    <form className="filters__deadline">
-                        <label htmlFor="deadline">Дедлайн:</label>
+                    <form className="filter deadlineFilter">
+                        <label htmlFor="deadline" className="label">
+                            Дедлайн:
+                        </label>
                         <select
                             id="deadline"
                             name="deadline"
                             value={deadline}
-                            onChange={(e) => setDeadline(e.target.value)}>
+                            onChange={(e) => setDeadline(e.target.value)}
+                            className="select">
                             <option value="new">Несрочно</option>
                             <option value="old">Срочно</option>
                         </select>
@@ -103,42 +109,50 @@ export const List = () => {
                 </div>
                 <input
                     type="text"
-                    placeholder="Enter a task"
+                    placeholder="Введите задачу"
                     value={newTask}
                     onChange={handleInputChange}
+                    className="input"
                 />
                 <input
                     type="date"
                     value={newDeadline}
                     onChange={handleDeadlineChange}
+                    className="input"
                 />
-                <button className="add-button" onClick={handleAddTask}>
-                    Add
+                <button className="addButton" onClick={handleAddTask}>
+                    Добавить
                 </button>
             </div>
-            <ol>
+            <ol className="tasks">
                 {sortedByDeadline.map((task: Task) => (
-                    <li key={task.id}>
-                        <span className={task.completed ? "completed" : "text"}>
+                    <li key={task.id} className="task">
+                        <span
+                            className={
+                                task.completed
+                                    ? "taskStatus completed"
+                                    : "taskStatus"
+                            }>
                             {task.description} (Deadline:{" "}
                             {task.deadline || "None"})
                         </span>
                         {task.completed && task.completionTime && (
-                            <span className="completed-time">
-                                (Completed at:{" "}
+                            <span className="completedTime">
+                                (Завершено в:{" "}
                                 {new Date(task.completionTime).toLocaleString()}
                                 )
                             </span>
                         )}
                         <button
-                            className="delete"
+                            className="deleteButton"
                             onClick={() => handleDeleteTask(task.id)}>
-                            Delete
+                            Удалить
                         </button>
                         <input
                             type="checkbox"
                             checked={task.completed}
                             onChange={() => handleDoneTask(task.id)}
+                            className="checkbox"
                         />
                     </li>
                 ))}
