@@ -17,6 +17,11 @@ export const List = () => {
     const tasks = useSelector((state: RootState) => state.tasks);
     const dispatch = useDispatch();
 
+    //стейты для фильтров
+    const [status, setStatus] = useState("all");
+    const [deadline, setDeadline] = useState("new");
+    const [filterId, setFilterId] = useState("increase");
+
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setNewTask(e.target.value);
     };
@@ -52,6 +57,30 @@ export const List = () => {
         <>
             <div className="list">
                 <h1>To-Do List</h1>
+                <div className="filters">
+                    <form className="filters__status">
+                        <label htmlFor="status">Задачи:</label>
+                        <select id="status" name="status">
+                            <option value="all">Все</option>
+                            <option value="completed">Выполненные</option>
+                            <option value="notcompleted">Невыполненные</option>
+                        </select>
+                    </form>
+                    <form className="filters__deadline">
+                        <label htmlFor="deadline">Дедлайн:</label>
+                        <select id="deadline" name="deadline">
+                            <option value="new">Недавние</option>
+                            <option value="old">Старые</option>
+                        </select>
+                    </form>
+                    <form className="filters__id">
+                        <label htmlFor="id">Отсортировать по:</label>
+                        <select id="id" name="id">
+                            <option value="increase">Возрастанию</option>
+                            <option value="decrease">Убыванию</option>
+                        </select>
+                    </form>
+                </div>
                 <input
                     type="text"
                     placeholder="Enter a task"
