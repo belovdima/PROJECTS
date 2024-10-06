@@ -12,12 +12,11 @@ interface Task {
 }
 
 export const List = () => {
-    const [newTask, setNewTask] = useState(""); // Для описания задачи
-    const [newDeadline, setNewDeadline] = useState(""); // Для дедлайна
+    const [newTask, setNewTask] = useState("");
+    const [newDeadline, setNewDeadline] = useState("");
     const tasks = useSelector((state: RootState) => state.tasks);
     const dispatch = useDispatch();
 
-    // состояния для фильтров
     const [status, setStatus] = useState("all");
     const [deadline, setDeadline] = useState("old");
 
@@ -27,7 +26,7 @@ export const List = () => {
         } else if (status === "notcompleted") {
             return !task.completed;
         }
-        return true; // "all" - возвращаем все задачи
+        return true;
     });
 
     const sortedByDeadline = filteredTasks.sort((a, b) => {
@@ -35,9 +34,9 @@ export const List = () => {
         const dateB = new Date(b.deadline);
 
         if (deadline === "new") {
-            return dateB.getTime() - dateA.getTime(); // Новые задачи будут выше
+            return dateB.getTime() - dateA.getTime();
         } else {
-            return dateA.getTime() - dateB.getTime(); // Старые задачи будут выше
+            return dateA.getTime() - dateB.getTime();
         }
     });
 
@@ -46,7 +45,7 @@ export const List = () => {
     };
 
     const handleDeadlineChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setNewDeadline(e.target.value); // Устанавливаем значение дедлайна
+        setNewDeadline(e.target.value);
     };
 
     const handleAddTask = () => {
@@ -133,8 +132,10 @@ export const List = () => {
                                     ? "taskStatus completed"
                                     : "taskStatus"
                             }>
-                            {task.description} (Deadline:{" "}
-                            {task.deadline || "None"})
+                            {task.description}
+                            {task.deadline && task.deadline !== "None" && (
+                                <> (Выполнить до: {task.deadline})</>
+                            )}
                         </span>
                         {task.completed && task.completionTime && (
                             <span className="completedTime">
