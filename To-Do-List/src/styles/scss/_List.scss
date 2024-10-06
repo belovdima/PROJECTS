@@ -1,19 +1,16 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 500;
+    src: url(/src/assets/fonts/Montserrat-Medium.woff2);
+}
+
 // Нормализация
 html,
 body {
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
+    font-family: Roboto, sans-serif;
 }
 
 // Основные стили
@@ -24,11 +21,10 @@ body {
     border-radius: 8px;
     background-color: #f9f9f9;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: box-shadow 0.3s;
 
     &:hover {
         box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
-        transform: translateY(-5px);
     }
 }
 
@@ -41,6 +37,7 @@ body {
 
     &:hover {
         color: #4caf50;
+        text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
     }
 }
 
@@ -73,6 +70,11 @@ body {
             outline: none;
             box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
         }
+
+        &:hover {
+            border-color: #4caf50;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+        }
     }
 }
 
@@ -89,6 +91,11 @@ body {
         outline: none;
         box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
     }
+
+    &:hover {
+        border-color: #4caf50;
+        box-shadow: 0 0 5px rgba(76, 175, 80, 0.2);
+    }
 }
 
 .addButton {
@@ -99,12 +106,17 @@ body {
     color: white;
     background-color: #4caf50;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s, box-shadow 0.2s;
     font-size: 1.1rem;
 
     &:hover {
         background-color: #3d8b40;
-        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+        background-color: #3b8a38;
+        transform: scale(0.98);
     }
 }
 
@@ -121,7 +133,7 @@ body {
 
         &:hover {
             background-color: #f1f1f1;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         &:last-child {
@@ -152,11 +164,16 @@ body {
             color: white;
             background-color: #f44336;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
+            transition: background-color 0.3s, box-shadow 0.2s;
 
             &:hover {
                 background-color: #ea1c0d;
-                transform: translateY(-2px);
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            }
+
+            &:active {
+                background-color: #d12c2e;
+                transform: scale(0.98);
             }
         }
 
@@ -164,10 +181,14 @@ body {
             margin-left: 1rem;
             cursor: pointer;
             transition: transform 0.2s;
-            transform: scale(1.2);
 
             &:hover {
-                transform: scale(1.3);
+                transform: scale(1.2);
+                filter: brightness(1.2);
+            }
+
+            &:active {
+                transform: scale(1.1);
             }
         }
     }

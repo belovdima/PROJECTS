@@ -27,7 +27,7 @@ const taskSlice = createSlice({
                 task.completed = !task.completed;
                 task.completionTime = task.completed
                     ? new Date().toISOString()
-                    : null; // Устанавливаем время выполнения
+                    : null;
             }
         },
     },
