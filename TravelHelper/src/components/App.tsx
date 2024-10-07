@@ -1,7 +1,13 @@
-import { useState } from "react";
+import { Header } from "./Header";
+import { Footer } from "./Footer";
 
 function App() {
-    return <></>;
+    return (
+        <>
+            <Header />
+            <Footer />
+        </>
+    );
 }
 
 export default App;
