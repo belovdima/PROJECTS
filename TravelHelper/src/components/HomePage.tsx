@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export const HomePage = () => {
+    const navigate = useNavigate();
     return (
         <div className="home">
             <div className="home__content">
@@ -10,7 +13,11 @@ export const HomePage = () => {
                     выбрать страны, рассчитать бюджет, и получить информацию о
                     визовых требованиях.
                 </p>
-                <button className="home__btn">Выбрать моё путешествие</button>
+                <button
+                    className="home__btn"
+                    onClick={() => navigate("/mappage", { replace: true })}>
+                    Выбрать моё путешествие
+                </button>
             </div>
         </div>
     );
