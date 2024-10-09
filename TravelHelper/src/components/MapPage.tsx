@@ -21,7 +21,7 @@ export const MapPage = () => {
             }
 
             // Настраиваем вращение
-            const secondsPerRevolution = 120;
+            const secondsPerRevolution = 300;
             const maxSpinZoom = 5;
             const slowSpinZoom = 3;
             let userInteracting = false;
@@ -97,7 +97,7 @@ export const MapPage = () => {
         <div
             id="map-container"
             ref={mapContainerRef}
-            style={{ width: "100%", height: "500px" }}
+            style={{ width: "100%", height: "800px" }}
         />
     );
 };
