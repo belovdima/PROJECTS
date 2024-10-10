@@ -38,13 +38,9 @@
         left: 0;
         width: 100%;
         height: 100%;
+        background: none;
         z-index: 5;
         transition: transform 1s ease; // Плавное приближение карты
-        filter: blur(3px); // Размытие глобуса
-    }
-
-    &--closed .home__map-overlay {
-        filter: none; // Убираем размытие после нажатия
     }
 
     &__title {
