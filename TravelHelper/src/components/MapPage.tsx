@@ -12,7 +12,7 @@ export const MapPage = () => {
             mapRef.current = new mapboxgl.Map({
                 container: mapContainerRef.current,
                 center: [0, 0],
-                zoom: 1.1,
+                zoom: 1.5,
             });
 
             // Настраиваем скорость масштабирования
