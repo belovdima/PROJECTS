@@ -28,22 +28,27 @@ export const HomePage = () => {
             });
 
             // Вращение глобуса
-            const secondsPerRevolution = 300; // 300 секунд для одного полного оборота
+            const secondsPerRevolution = 200;
             function spinGlobe() {
-                const center = mapRef.current?.getCenter();
-                if (center) {
+                if (mapRef.current) {
+                    const center = mapRef.current.getCenter();
                     center.lng -= 360 / secondsPerRevolution;
-                    mapRef.current?.easeTo({
+                    mapRef.current.easeTo({
                         center,
-                        duration: 1000, // Скорость вращения анимации
-                        easing: (n) => n,
+                        duration: 1000,
+                        easing: (n) => n, // Линейное вращение
                     });
                 }
             }
 
-            // Вращаем глобус каждые 100 миллисекунд
-            const interval = setInterval(spinGlobe, 100); // Обновляем позицию каждые 100ms
-            return () => clearInterval(interval);
+            // Вращаем глобус через интервал
+            const interval = setInterval(spinGlobe, 1000);
+
+            // Очистка интервала при размонтировании компонента
+            return () => {
+                clearInterval(interval);
+                mapRef.current?.remove();
+            };
         }
     }, []);
 
