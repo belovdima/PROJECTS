@@ -1,21 +1,16 @@
 import { useState, useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
 import mapboxgl from "mapbox-gl";
 
 export const HomePage = () => {
-    const [menuOpen, setMenuOpen] = useState(true); // Состояние для меню
-    const navigate = useNavigate();
+    const [menuOpen, setMenuOpen] = useState(true); // Состояние для меню (открыто/закрыто)
     const mapContainerRef = useRef<HTMLDivElement | null>(null);
     const mapRef = useRef<mapboxgl.Map | null>(null);
 
     const handleClick = () => {
-        setMenuOpen(false);
-        setTimeout(() => {
-            navigate("/mappage", { replace: true });
-        }, 1000); // Переход через 1 секунду после анимации
+        setMenuOpen(!menuOpen); // Переключение состояния меню
     };
 
-    // Инициализация карты
+    // Загрузка и настройка карты
     useEffect(() => {
         if (mapContainerRef.current) {
             mapboxgl.accessToken =
@@ -28,7 +23,9 @@ export const HomePage = () => {
             });
 
             // Вращение глобуса
-            const secondsPerRevolution = 200;
+            const secondsPerRevolution = 300;
+            let animationFrameId: number;
+
             function spinGlobe() {
                 if (mapRef.current) {
                     const center = mapRef.current.getCenter();
@@ -38,15 +35,14 @@ export const HomePage = () => {
                         duration: 1000,
                         easing: (n) => n, // Линейное вращение
                     });
+                    animationFrameId = requestAnimationFrame(spinGlobe);
                 }
             }
 
-            // Вращаем глобус через интервал
-            const interval = setInterval(spinGlobe, 1000);
+            spinGlobe();
 
-            // Очистка интервала при размонтировании компонента
             return () => {
-                clearInterval(interval);
+                cancelAnimationFrame(animationFrameId);
                 mapRef.current?.remove();
             };
         }
@@ -55,13 +51,21 @@ export const HomePage = () => {
     return (
         <div className={`home ${menuOpen ? "home--open" : "home--closed"}`}>
             <div className="home__glass-menu">
-                <h1 className="home__title">Добро пожаловать!</h1>
-                <p className="home__description">
-                    Выберите путешествие и начните исследовать мир.
-                </p>
-                <button className="home__btn" onClick={handleClick}>
-                    Выбрать путешествие
-                </button>
+                {menuOpen ? (
+                    <>
+                        <h1 className="home__title">Добро пожаловать!</h1>
+                        <p className="home__description">
+                            Выберите путешествие и начните исследовать мир.
+                        </p>
+                        <button className="home__btn" onClick={handleClick}>
+                            Выбрать путешествие
+                        </button>
+                    </>
+                ) : (
+                    <button className="home__btn" onClick={handleClick}>
+                        Вернуться назад
+                    </button>
+                )}
             </div>
             <div
                 className="home__map-overlay"

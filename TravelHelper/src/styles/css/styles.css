@@ -297,17 +297,12 @@ a:active {
   left: 0;
   width: 100%;
   height: 100%;
+  background: none;
   z-index: 5;
   -webkit-transition: -webkit-transform 1s ease;
   transition: -webkit-transform 1s ease;
   transition: transform 1s ease;
   transition: transform 1s ease, -webkit-transform 1s ease;
-  -webkit-filter: blur(3px);
-          filter: blur(3px);
-}
-.home--closed .home__map-overlay {
-  -webkit-filter: none;
-          filter: none;
 }
 .home__title {
   color: white;
