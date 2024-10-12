@@ -16,6 +16,7 @@ export const HomePage = () => {
 
     const handleClick = () => {
         dispatch(toggleMenu()); // Переключаем состояние меню
+
     };
 
     // Загрузка и настройка карты
@@ -56,9 +57,10 @@ export const HomePage = () => {
     }, []);
 
     return (
-        <div className={`home ${isOpen ? "home--open" : "home--closed"}`}>
+
+        <div className={`home ${menuOpen ? "home--open" : "home--closed"}`}>
             <div className="home__glass-menu">
-                {isOpen ? (
+                {menuOpen ? (
                     <>
                         <h1 className="home__title">Добро пожаловать!</h1>
                         <p className="home__description">
