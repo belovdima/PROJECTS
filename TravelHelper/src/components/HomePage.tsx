@@ -16,9 +16,7 @@ export const HomePage = () => {
 
     const handleClick = () => {
         dispatch(toggleMenu()); // Переключаем состояние меню
-
     };
-
     // Загрузка и настройка карты
     useEffect(() => {
         if (mapContainerRef.current) {
@@ -57,10 +55,9 @@ export const HomePage = () => {
     }, []);
 
     return (
-
-        <div className={`home ${menuOpen ? "home--open" : "home--closed"}`}>
+        <div className={`home ${isOpen ? "home--open" : "home--closed"}`}>
             <div className="home__glass-menu">
-                {menuOpen ? (
+                {isOpen ? (
                     <>
                         <h1 className="home__title">Добро пожаловать!</h1>
                         <p className="home__description">
@@ -76,10 +73,8 @@ export const HomePage = () => {
                     </button>
                 )}
             </div>
-            <div
-                className="home__map-overlay"
-                id="map-container"
-                ref={mapContainerRef}></div>
+            <div className="home__map-overlay" id="map-container" ref={mapContainerRef}></div>
         </div>
     );
+    
 };
