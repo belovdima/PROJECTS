@@ -6,6 +6,8 @@ export const HomePage = () => {
     const mapContainerRef = useRef<HTMLDivElement | null>(null);
     const mapRef = useRef<mapboxgl.Map | null>(null);
 
+    const mapboxToken = import.meta.env.VITE_MAPBOX_TOKEN;
+
     const handleClick = () => {
         setMenuOpen(!menuOpen); // Переключение состояния меню
     };
@@ -13,8 +15,7 @@ export const HomePage = () => {
     // Загрузка и настройка карты
     useEffect(() => {
         if (mapContainerRef.current) {
-            mapboxgl.accessToken =
-                "pk.eyJ1IjoiYmVsb3ZkaW1hIiwiYSI6ImNtMjBpbmhscDBqa3cyam9lempzNDRwbjIifQ.Mgf7Th-mTg07hZ_-qKYIUw";
+            mapboxgl.accessToken = mapboxToken;
             mapRef.current = new mapboxgl.Map({
                 container: mapContainerRef.current,
                 center: [0, 0],
