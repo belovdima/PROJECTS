@@ -330,3 +330,8 @@ a:active {
 .home__btn:active {
   background-color: #1d4ed8;
 }
+
+.home__map-overlay {
+  width: 100%;
+  height: 100vh; /* или другая нужная высота */
+}

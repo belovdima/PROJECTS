@@ -1,15 +1,21 @@
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import mapboxgl from "mapbox-gl";
 
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "./../redux/store";
+import { toggleMenu } from "./../redux/menuSlice";
+
+const mapboxToken = import.meta.env.VITE_MAPBOX_TOKEN;
+
 export const HomePage = () => {
-    const [menuOpen, setMenuOpen] = useState(true); // Состояние для меню (открыто/закрыто)
     const mapContainerRef = useRef<HTMLDivElement | null>(null);
     const mapRef = useRef<mapboxgl.Map | null>(null);
 
-    const mapboxToken = import.meta.env.VITE_MAPBOX_TOKEN;
+    const isOpen = useSelector((state: RootState) => state.menu.isOpen);
+    const dispatch = useDispatch();
 
     const handleClick = () => {
-        setMenuOpen(!menuOpen); // Переключение состояния меню
+        dispatch(toggleMenu()); // Переключаем состояние меню
     };
 
     // Загрузка и настройка карты
@@ -50,9 +56,9 @@ export const HomePage = () => {
     }, []);
 
     return (
-        <div className={`home ${menuOpen ? "home--open" : "home--closed"}`}>
+        <div className={`home ${isOpen ? "home--open" : "home--closed"}`}>
             <div className="home__glass-menu">
-                {menuOpen ? (
+                {isOpen ? (
                     <>
                         <h1 className="home__title">Добро пожаловать!</h1>
                         <p className="home__description">
