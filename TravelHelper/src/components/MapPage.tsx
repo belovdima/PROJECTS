@@ -98,6 +98,7 @@ export const MapPage = () => {
             id="map-container"
             ref={mapContainerRef}
             style={{ width: "100%", height: "800px" }}
+            className="mappage"
         />
     );
 };

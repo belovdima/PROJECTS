@@ -252,21 +252,22 @@ a:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: calc(100vh - 120px);
-  position: relative;
+  height: 800px;
+  position: absolute;
   overflow: hidden;
+  z-index: 10;
+  -webkit-transition: width 1s ease;
+  transition: width 1s ease;
 }
-.home--open .home__glass-menu {
+.home--open {
   width: 50%;
 }
-.home--closed .home__glass-menu {
+.home--closed {
   width: 25%;
 }
 .home__glass-menu {
   position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
+  height: 800px;
   background: rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
@@ -291,18 +292,11 @@ a:active {
       -ms-flex-align: center;
           align-items: center;
 }
-.home__map-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: none;
-  z-index: 5;
-  -webkit-transition: -webkit-transform 1s ease;
-  transition: -webkit-transform 1s ease;
-  transition: transform 1s ease;
-  transition: transform 1s ease, -webkit-transform 1s ease;
+.home__glass-menu--open {
+  width: 50%;
+}
+.home__glass-menu--closed {
+  width: 25%;
 }
 .home__title {
   color: white;
@@ -331,7 +325,11 @@ a:active {
   background-color: #1d4ed8;
 }
 
-.home__map-overlay {
-  width: 100%;
-  height: 100vh; /* или другая нужная высота */
+.mappage {
+  position: absolute;
+  z-index: 1;
+}
+
+.middle {
+  height: 800px;
 }
