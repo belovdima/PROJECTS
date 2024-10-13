@@ -1,18 +1,22 @@
 import { useRef, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
+import { useSelector } from "react-redux";
+import { RootState } from "./../redux/store"; // Импортируем RootState для типизации
 
 export const MapPage = () => {
     const mapRef = useRef<mapboxgl.Map | null>(null);
+    const zoom = useSelector((state: RootState) => state.zoom.zoom);
+
+    const mapboxToken = import.meta.env.VITE_MAPBOX_TOKEN;
     const mapContainerRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
         if (mapContainerRef.current) {
-            mapboxgl.accessToken =
-                "pk.eyJ1IjoiYmVsb3ZkaW1hIiwiYSI6ImNtMjBpbmhscDBqa3cyam9lempzNDRwbjIifQ.Mgf7Th-mTg07hZ_-qKYIUw";
+            mapboxgl.accessToken = mapboxToken;
             mapRef.current = new mapboxgl.Map({
                 container: mapContainerRef.current,
                 center: [0, 48.429201],
-                zoom: 1.5,
+                zoom: zoom,
             });
 
             // Настраиваем скорость масштабирования
@@ -92,6 +96,13 @@ export const MapPage = () => {
             mapRef.current?.remove();
         };
     }, []);
+
+    useEffect(() => {
+        if (mapRef.current) {
+            // Обновляем уровень приближения напрямую
+            mapRef.current.setZoom(zoom);
+        }
+    }, [zoom]);
 
     return (
         <div
