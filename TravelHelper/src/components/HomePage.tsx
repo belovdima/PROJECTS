@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import mapboxgl from "mapbox-gl";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -13,10 +13,17 @@ export const HomePage = () => {
 
     const isOpen = useSelector((state: RootState) => state.menu.isOpen);
     const dispatch = useDispatch();
+    const [interactive, setInteractive] = useState(false);
+
+    // Используем useEffect для обновления интерактивности глобуса при изменении isOpen
+    useEffect(() => {
+        setInteractive(!isOpen); // Если меню открыто - отключаем интерактивность
+    }, [isOpen]);
 
     const handleClick = () => {
         dispatch(toggleMenu()); // Переключаем состояние меню
     };
+
     // Загрузка и настройка карты
     useEffect(() => {
         if (mapContainerRef.current) {
@@ -25,34 +32,87 @@ export const HomePage = () => {
                 container: mapContainerRef.current,
                 center: [0, 0],
                 zoom: 1.5,
-                interactive: false, // Глобус не интерактивен
+                interactive: interactive, // Глобус не интерактивен
             });
 
-            // Вращение глобуса
             const secondsPerRevolution = 300;
-            let animationFrameId: number;
+            const maxSpinZoom = 5;
+            const slowSpinZoom = 3;
+            let userInteracting = false;
+            let isMouseOver = false; // Флаг для отслеживания, наведен ли курсор на карту
 
             function spinGlobe() {
-                if (mapRef.current) {
-                    const center = mapRef.current.getCenter();
-                    center.lng -= 360 / secondsPerRevolution;
-                    mapRef.current.easeTo({
-                        center,
-                        duration: 1000,
-                        easing: (n) => n, // Линейное вращение
-                    });
-                    animationFrameId = requestAnimationFrame(spinGlobe);
+                const zoom = mapRef.current?.getZoom();
+                if (
+                    !userInteracting &&
+                    !isMouseOver &&
+                    zoom &&
+                    zoom < maxSpinZoom
+                ) {
+                    let distancePerSecond = 360 / secondsPerRevolution;
+                    if (zoom > slowSpinZoom) {
+                        const zoomDif =
+                            (maxSpinZoom - zoom) / (maxSpinZoom - slowSpinZoom);
+                        distancePerSecond *= zoomDif;
+                    }
+                    const center = mapRef.current?.getCenter();
+                    if (center) {
+                        center.lng -= distancePerSecond;
+                        mapRef.current?.easeTo({
+                            center,
+                            duration: 1000,
+                            easing: (n) => n,
+                        });
+                    }
                 }
             }
 
+            // Останавливаем вращение при наведении мыши на карту, только если меню закрыто
+            mapRef.current.on("mousemove", () => {
+                if (!isOpen) {
+                    isMouseOver = true; // Наведена мышь на карту
+                }
+            });
+
+            // Возобновляем вращение, когда мышь выходит за пределы карты, только если меню закрыто
+            mapRef.current.on("mouseout", () => {
+                if (!isOpen) {
+                    isMouseOver = false; // Мышь убрана с карты
+                    spinGlobe();
+                }
+            });
+
+            // Останавливаем вращение при взаимодействии с картой
+            mapRef.current.on("mousedown", () => {
+                userInteracting = true;
+            });
+
+            // Возобновляем вращение при завершении взаимодействия
+            mapRef.current.on("mouseup", () => {
+                userInteracting = false;
+                spinGlobe();
+            });
+
+            mapRef.current.on("dragend", () => {
+                userInteracting = false;
+                spinGlobe();
+            });
+
+            mapRef.current.on("moveend", () => {
+                spinGlobe();
+            });
+
+            // Плавное масштабирование
+            mapRef.current.scrollZoom.setZoomRate(0.2);
+
+            // Запускаем вращение
             spinGlobe();
 
             return () => {
-                cancelAnimationFrame(animationFrameId);
                 mapRef.current?.remove();
             };
         }
-    }, []);
+    }, [interactive]);
 
     return (
         <div className={`home ${isOpen ? "home--open" : "home--closed"}`}>
@@ -73,8 +133,10 @@ export const HomePage = () => {
                     </button>
                 )}
             </div>
-            <div className="home__map-overlay" id="map-container" ref={mapContainerRef}></div>
+            <div
+                className="home__map-overlay"
+                id="map-container"
+                ref={mapContainerRef}></div>
         </div>
     );
-    
 };
