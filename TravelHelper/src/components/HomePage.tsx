@@ -114,7 +114,7 @@ export const HomePage = () => {
                 mapRef.current?.remove();
             };
         }
-    }, []); //TODO пофиксить монтирование карты
+    }, [interactive, isOpen]);
 
     return (
         <div className={`home ${isOpen ? "home--open" : "home--closed"}`}>
