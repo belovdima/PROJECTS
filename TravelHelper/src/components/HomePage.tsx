@@ -32,7 +32,7 @@ export const HomePage = () => {
                 container: mapContainerRef.current,
                 center: [0, 0],
                 zoom: 1.5,
-                interactive: interactive, // Глобус не интерактивен
+                interactive: interactive,
             });
 
             const secondsPerRevolution = 300;
@@ -84,7 +84,9 @@ export const HomePage = () => {
 
             // Останавливаем вращение при взаимодействии с картой
             mapRef.current.on("mousedown", () => {
-                userInteracting = true;
+                if (!isOpen) {
+                    userInteracting = true;
+                }
             });
 
             // Возобновляем вращение при завершении взаимодействия
@@ -112,7 +114,7 @@ export const HomePage = () => {
                 mapRef.current?.remove();
             };
         }
-    }, [interactive]);
+    }, [interactive, isOpen]);
 
     return (
         <div className={`home ${isOpen ? "home--open" : "home--closed"}`}>
