@@ -104,6 +104,26 @@ export const MapPage = () => {
         }
     }, [zoom]);
 
+    useEffect(() => {
+        if (mapRef.current) {
+            // Функция, которая будет логировать текущий зум
+            const logZoom = () => {
+                const currZoom = mapRef.current?.getZoom();
+                console.log(currZoom);
+            };
+
+            // Подписка на событие изменения зума
+            mapRef.current.on("zoomend", logZoom);
+
+            // Убираем подписку при размонтировании компонента
+            return () => {
+                if (mapRef.current) {
+                    mapRef.current.off("zoomend", logZoom);
+                }
+            };
+        }
+    }, []);
+
     return (
         <div
             id="map-container"
