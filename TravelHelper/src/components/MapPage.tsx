@@ -11,7 +11,7 @@ export const MapPage = () => {
                 "pk.eyJ1IjoiYmVsb3ZkaW1hIiwiYSI6ImNtMjBpbmhscDBqa3cyam9lempzNDRwbjIifQ.Mgf7Th-mTg07hZ_-qKYIUw";
             mapRef.current = new mapboxgl.Map({
                 container: mapContainerRef.current,
-                center: [0, 0],
+                center: [0, 48.429201],
                 zoom: 1.5,
             });
 
