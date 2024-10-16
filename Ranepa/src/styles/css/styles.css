@@ -666,15 +666,76 @@ input:focus ~ .help-request-form .form-group .focus-border, textarea:focus ~ .he
 }
 
 .help-outer {
+  padding-bottom: 40px;
   background-color: #1f1f1f;
 }
 
-.c__ready {
-  height: 500px;
-  background-color: #555555;
-  font-family: Rubik, sans-serif;
-  font-size: 100px;
-  font-weight: 700;
+.resources-library {
+  max-width: 800px;
+  padding: 50px;
+  margin: 0 auto;
+  border-radius: 15px;
+  color: #fff;
+  background: linear-gradient(145deg, #222, #333);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  font-family: "Rubik", sans-serif;
+}
+.resources-library__title {
+  margin-bottom: 40px;
+  color: #ff4d4d;
+  text-align: center;
+  font-size: 36px;
+}
+.resources-library__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+.resources-library__item {
+  padding: 20px;
+  border-radius: 10px;
+  background: #444;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+.resources-library__item:hover {
+  background: #555;
+}
+.resources-library__item-title {
+  margin-bottom: 10px;
+  color: #ff4d4d;
+  font-size: 24px;
+}
+.resources-library__item-description {
+  margin-bottom: 15px;
+  color: #ddd;
+  font-size: 16px;
+}
+.resources-library__item-link {
+  padding: 10px 15px;
+  border: 2px solid #ff4d4d;
+  border-radius: 5px;
+  color: #ff4d4d;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+  font-weight: bold;
+  text-decoration: none;
+}
+.resources-library__item-link:hover {
+  color: #fff;
+  background: #ff4d4d;
+}
+
+.ready-outer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #1f1f1f;
 }
 
 .c__project {

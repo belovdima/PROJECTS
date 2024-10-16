@@ -1,7 +1,67 @@
-.c__ready {
-    height: 500px;
-    background-color: #555555;
-    font-family: Rubik, sans-serif;
-    font-size: 100px;
-    font-weight: 700;
+.resources-library {
+    max-width: 800px;
+    padding: 50px;
+    margin: 0 auto;
+    border-radius: 15px;
+    color: #fff;
+    background: linear-gradient(145deg, #222, #333);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    font-family: "Rubik", sans-serif;
+
+    &__title {
+        margin-bottom: 40px;
+        color: #ff4d4d;
+        text-align: center;
+        font-size: 36px;
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__item {
+        padding: 20px;
+        border-radius: 10px;
+        background: #444;
+        transition: background 0.3s ease;
+
+        &:hover {
+            background: #555;
+        }
+
+        &-title {
+            margin-bottom: 10px;
+            color: #ff4d4d;
+            font-size: 24px;
+        }
+
+        &-description {
+            margin-bottom: 15px;
+            color: #ddd;
+            font-size: 16px;
+        }
+
+        &-link {
+            padding: 10px 15px;
+            border: 2px solid #ff4d4d;
+            border-radius: 5px;
+            color: #ff4d4d;
+            transition: background 0.3s ease;
+            font-weight: bold;
+            text-decoration: none;
+
+            &:hover {
+                color: #fff;
+                background: #ff4d4d;
+            }
+        }
+    }
+}
+
+.ready-outer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #1f1f1f;
 }
