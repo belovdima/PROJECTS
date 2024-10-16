@@ -13,7 +13,7 @@ import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
 export const Caseorium = () => {
     return (
-        <div className="project-showcase-outer">
+        <div className="project-showcase-outer" id="caseorium">
             <div className="c__project-showcase">
                 <Swiper
                     slidesPerView={1} // Отображение только одного слайда

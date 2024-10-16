@@ -41,7 +41,9 @@ const classesData: ClassItem[] = [
 export const Classes = () => {
     return (
         <div className="classes">
-            <h2 className="classes__title">Наши Классы</h2>
+            <h2 className="classes__title" id="classes">
+                Наши Классы
+            </h2>
             <div className="classes__list">
                 {classesData.map((classItem, index) => (
                     <div key={index} className="classes__item">

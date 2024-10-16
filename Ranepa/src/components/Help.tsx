@@ -19,7 +19,7 @@ export const Help: React.FC = () => {
     };
 
     return (
-        <div className="help-outer">
+        <div className="help-outer" id="help">
             <div className="help-request-form">
                 <h2 className="form-title">Заявка на помощь</h2>
                 <form onSubmit={handleSubmit} className="form">

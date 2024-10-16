@@ -2,7 +2,7 @@ import React from "react";
 
 export const Project: React.FC = () => {
     return (
-        <div className="project-outer">
+        <div className="project-outer" id="project">
             <div className="curiosity-project">
                 <div className="curiosity-project__header">
                     <h1 className="curiosity-project__title">

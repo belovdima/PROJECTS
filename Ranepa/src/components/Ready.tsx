@@ -32,7 +32,7 @@ const resourcesData: Resource[] = [
 
 export const Ready: React.FC = () => {
     return (
-        <div className="ready-outer">
+        <div className="ready-outer" id="ready">
             <div className="resources-library">
                 <h1 className="resources-library__title">
                     Готовые материалы в помощь гостеприимщику РФ

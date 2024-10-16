@@ -33,7 +33,7 @@ export const FAQ: React.FC = () => {
     };
 
     return (
-        <div className="faq-outer">
+        <div className="faq-outer" id="faq">
             <div className="faq">
                 <h1 className="faq__title">Часто задаваемые вопросы</h1>
                 <div className="faq__questions">

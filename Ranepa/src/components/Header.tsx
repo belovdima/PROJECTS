@@ -10,17 +10,19 @@ export const Header = () => {
             <div className="header__links">
                 {/* Секция услуг */}
                 <div className="header__section--services">
-                    <a className="header__links--main" href="#">
+                    <a className="header__links--main" href="#services">
                         Услуги
                     </a>
                     <div className="header__dropdown">
-                        <a className="header__links--classes" href="#">
+                        <a className="header__links--classes" href="#classes">
                             Классы
                         </a>
-                        <a className="header__links--experts" href="#">
+                        <a className="header__links--experts" href="#expert">
                             Эксперты лабы
                         </a>
-                        <a className="header__links--caseorium" href="#">
+                        <a
+                            className="header__links--caseorium"
+                            href="#caseorium">
                             Кейсориум исполненного
                         </a>
                     </div>
@@ -28,14 +30,14 @@ export const Header = () => {
 
                 {/* Секция помощи */}
                 <div className="header__section--help">
-                    <a className="header__links--main" href="#">
+                    <a className="header__links--main" href="#faq">
                         Помощь
                     </a>
                     <div className="header__dropdown">
-                        <a className="header__links--help" href="#">
+                        <a className="header__links--help" href="#help">
                             Заявка на помощь
                         </a>
-                        <a className="header__links--ready" href="#">
+                        <a className="header__links--ready" href="#ready">
                             Готовые материалы в помощь гостеприимщику РФ
                         </a>
                     </div>
@@ -43,14 +45,14 @@ export const Header = () => {
 
                 {/* Секция контактов */}
                 <div className="header__section--contacts">
-                    <a className="header__links--main" href="#">
+                    <a className="header__links--main" href="#project">
                         Контакты
                     </a>
                     <div className="header__dropdown">
-                        <a className="header__links--project" href="#">
+                        <a className="header__links--project" href="#project">
                             Контактный спецпроект "любопытства ради"
                         </a>
-                        <a className="header__links--contacts" href="#">
+                        <a className="header__links--contacts" href="#contacts">
                             Контакты
                         </a>
                     </div>
