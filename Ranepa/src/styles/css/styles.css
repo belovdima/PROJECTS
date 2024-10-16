@@ -166,6 +166,18 @@ a:active {
   text-decoration: none;
 }
 
+@font-face {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/src/assets/fonts/Rubik-Regular.woff);
+}
+@font-face {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 700;
+  src: url(/src/assets/fonts/Rubik-Bold.woff);
+}
 .header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -268,18 +280,62 @@ a:active {
   outline: 2px solid #ff4d4d; /* Красная обводка при фокусе через клавиатуру */
 }
 
-@font-face {
-  font-family: Rubik;
-  font-style: normal;
-  font-weight: 400;
-  src: url(/src/assets/fonts/Rubik-Regular.woff);
-}
-@font-face {
-  font-family: Rubik;
-  font-style: normal;
+.c__classes {
+  height: 500px;
+  background-color: #555555;
+  font-family: Rubik, sans-serif;
+  font-size: 100px;
   font-weight: 700;
-  src: url(/src/assets/fonts/Rubik-Bold.woff);
 }
+
+.c__expert {
+  height: 500px;
+  background-color: #373737;
+  font-family: Rubik, sans-serif;
+  font-size: 100px;
+  font-weight: 700;
+}
+
+.c__caseorium {
+  height: 500px;
+  background-color: #555555;
+  font-family: Rubik, sans-serif;
+  font-size: 100px;
+  font-weight: 700;
+}
+
+.c__help {
+  height: 500px;
+  background-color: #373737;
+  font-family: Rubik, sans-serif;
+  font-size: 100px;
+  font-weight: 700;
+}
+
+.c__ready {
+  height: 500px;
+  background-color: #555555;
+  font-family: Rubik, sans-serif;
+  font-size: 100px;
+  font-weight: 700;
+}
+
+.c__project {
+  height: 500px;
+  background-color: #373737;
+  font-family: Rubik, sans-serif;
+  font-size: 100px;
+  font-weight: 700;
+}
+
+.c__contact {
+  height: 500px;
+  background-color: #555555;
+  font-family: Rubik, sans-serif;
+  font-size: 100px;
+  font-weight: 700;
+}
+
 .footer {
   padding: 40px 40px 20px;
   color: #f0f0f0; /* Светлый цвет текста */
@@ -347,12 +403,4 @@ a:active {
 }
 .footer__bottom p {
   margin: 0;
-}
-
-.c__classes {
-  height: 500px;
-  background-color: #555555;
-  font-family: Rubik, sans-serif;
-  font-size: 100px;
-  font-weight: 700;
 }
