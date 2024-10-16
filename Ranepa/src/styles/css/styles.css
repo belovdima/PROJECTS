@@ -424,19 +424,30 @@ a:active {
 }
 
 .c__expert {
-  height: 500px;
-  background-color: #555555;
+  height: auto;
+  border-radius: 20px;
+  background-color: #333;
   font-family: Rubik, sans-serif;
   font-size: 100px;
   font-weight: 700;
 }
 
+.expert-outer {
+  padding-bottom: 40px;
+  background-color: #1f1f1f;
+}
+
 .c__caseorium {
   height: 500px;
-  background-color: #555555;
+  background-color: #333;
   font-family: Rubik, sans-serif;
   font-size: 100px;
   font-weight: 700;
+}
+
+.project-showcase-outer {
+  padding-bottom: 40px;
+  background-color: #1f1f1f;
 }
 
 .faq {
