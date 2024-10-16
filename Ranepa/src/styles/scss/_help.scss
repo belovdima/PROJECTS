@@ -1,7 +1,101 @@
-.c__help {
-    height: 500px;
-    background-color: #373737;
-    font-family: Rubik, sans-serif;
-    font-size: 100px;
-    font-weight: 700;
+.help-request-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 600px;
+    padding: 50px;
+    margin: 0 auto;
+    border-radius: 15px;
+    background: linear-gradient(145deg, #222, #333);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+
+    .form-title {
+        margin-bottom: 30px;
+        color: #ff4d4d;
+        text-align: center;
+        font-family: "Rubik", sans-serif;
+        font-size: 32px;
+    }
+
+    .form {
+        width: 100%;
+    }
+
+    .form-group {
+        position: relative;
+        width: 100%;
+        margin-bottom: 30px;
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px 10px 10px 0;
+            border: none;
+            border-bottom: 2px solid #666;
+            outline: none;
+            color: #fff;
+            background: transparent;
+            transition: all 0.3s ease;
+            font-size: 18px;
+
+            &:focus {
+                border-bottom: 2px solid #ff4d4d;
+            }
+
+            &:focus + label,
+            &:not(:placeholder-shown) + label {
+                top: -25px;
+                left: 0;
+                color: #ff4d4d;
+                font-size: 14px;
+            }
+        }
+
+        label {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            color: #aaa;
+            transition: 0.3s ease;
+            font-family: "Rubik", sans-serif; /* Добавляем шрифт Rubik для label */
+            font-size: 18px;
+            pointer-events: none;
+        }
+
+        .focus-border {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #ff4d4d;
+            transition: width 0.3s ease;
+
+            input:focus ~ &,
+            textarea:focus ~ & {
+                width: 100%;
+            }
+        }
+    }
+
+    .submit-button {
+        width: 100%;
+        padding: 15px;
+        border: none;
+        border-radius: 25px;
+        color: #fff;
+        background-color: #ff4d4d;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        font-family: "Rubik", sans-serif;
+        font-size: 18px;
+
+        &:hover {
+            background-color: #4d4dff;
+        }
+    }
+}
+
+.help-outer {
+    background-color: #1f1f1f;
 }

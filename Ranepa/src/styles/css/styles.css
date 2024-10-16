@@ -553,12 +553,120 @@ a:active {
   opacity: 1;
 }
 
-.c__help {
-  height: 500px;
-  background-color: #373737;
-  font-family: Rubik, sans-serif;
-  font-size: 100px;
-  font-weight: 700;
+.help-request-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 600px;
+  padding: 50px;
+  margin: 0 auto;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #222, #333);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.help-request-form .form-title {
+  margin-bottom: 30px;
+  color: #ff4d4d;
+  text-align: center;
+  font-family: "Rubik", sans-serif;
+  font-size: 32px;
+}
+.help-request-form .form {
+  width: 100%;
+}
+.help-request-form .form-group {
+  position: relative;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.help-request-form .form-group input,
+.help-request-form .form-group textarea {
+  width: 100%;
+  padding: 10px 10px 10px 0;
+  border: none;
+  border-bottom: 2px solid #666;
+  outline: none;
+  color: #fff;
+  background: transparent;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-size: 18px;
+}
+.help-request-form .form-group input:focus,
+.help-request-form .form-group textarea:focus {
+  border-bottom: 2px solid #ff4d4d;
+}
+.help-request-form .form-group input:not(:-moz-placeholder-shown) + label, .help-request-form .form-group textarea:not(:-moz-placeholder-shown) + label {
+  top: -25px;
+  left: 0;
+  color: #ff4d4d;
+  font-size: 14px;
+}
+.help-request-form .form-group input:not(:-ms-input-placeholder) + label, .help-request-form .form-group textarea:not(:-ms-input-placeholder) + label {
+  top: -25px;
+  left: 0;
+  color: #ff4d4d;
+  font-size: 14px;
+}
+.help-request-form .form-group input:focus + label, .help-request-form .form-group input:not(:placeholder-shown) + label,
+.help-request-form .form-group textarea:focus + label,
+.help-request-form .form-group textarea:not(:placeholder-shown) + label {
+  top: -25px;
+  left: 0;
+  color: #ff4d4d;
+  font-size: 14px;
+}
+.help-request-form .form-group label {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  color: #aaa;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+  font-family: "Rubik", sans-serif; /* Добавляем шрифт Rubik для label */
+  font-size: 18px;
+  pointer-events: none;
+}
+.help-request-form .form-group .focus-border {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #ff4d4d;
+  -webkit-transition: width 0.3s ease;
+  transition: width 0.3s ease;
+}
+input:focus ~ .help-request-form .form-group .focus-border, textarea:focus ~ .help-request-form .form-group .focus-border {
+  width: 100%;
+}
+.help-request-form .submit-button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  background-color: #ff4d4d;
+  cursor: pointer;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+}
+.help-request-form .submit-button:hover {
+  background-color: #4d4dff;
+}
+
+.help-outer {
+  background-color: #1f1f1f;
 }
 
 .c__ready {
