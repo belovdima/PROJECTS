@@ -223,6 +223,7 @@ a:active {
 .header .header__dropdown a {
   display: block;
   padding: 8px 12px;
+  border-radius: 5px;
   color: #f0f0f0; /* Светлый текст для ссылок в меню */
 }
 .header .header__dropdown a:hover {
