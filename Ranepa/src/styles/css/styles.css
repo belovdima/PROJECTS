@@ -734,16 +734,132 @@ input:focus ~ .help-request-form .form-group .focus-border, textarea:focus ~ .he
 
 .ready-outer {
   padding-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
   background-color: #1f1f1f;
 }
 
-.c__project {
-  height: 500px;
-  background-color: #373737;
-  font-family: Rubik, sans-serif;
-  font-size: 100px;
-  font-weight: 700;
+.curiosity-project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 1200px;
+  padding: 50px;
+  margin: 0 auto;
+  border-radius: 15px;
+  color: #fff;
+  background: linear-gradient(135deg, #222, #333);
+  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  font-family: "Rubik", sans-serif;
+}
+.curiosity-project__header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+.curiosity-project__header__title {
+  margin-bottom: 10px;
+  color: #ff4d4d;
+  -webkit-animation: fadeIn 0.5s ease;
+          animation: fadeIn 0.5s ease;
+  font-size: 48px;
+}
+.curiosity-project__header__subtitle {
+  color: #ddd;
+  -webkit-animation: fadeIn 0.5s ease 0.3s forwards;
+          animation: fadeIn 0.5s ease 0.3s forwards;
+  font-size: 24px;
+}
+.curiosity-project__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  gap: 30px;
+}
+.curiosity-project__section {
+  padding: 30px;
+  border-radius: 10px;
+  background: #444;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+}
+.curiosity-project__section:hover {
+  background: #555;
+  -webkit-box-shadow: 0 5px 15px rgba(255, 77, 77, 0.5);
+          box-shadow: 0 5px 15px rgba(255, 77, 77, 0.5);
+}
+.curiosity-project__section-title {
+  margin-bottom: 10px;
+  color: #ff4d4d;
+  font-size: 32px;
+}
+.curiosity-project__section-description {
+  color: #ddd;
+  font-size: 18px;
+}
+.curiosity-project__button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 25px;
+  color: #fff;
+  background-color: #ff4d4d;
+  cursor: pointer;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+  font-size: 18px;
+}
+.curiosity-project__button:hover {
+  background-color: #4d4dff;
+}
+.curiosity-project__email {
+  color: #ff4d4d;
+  text-decoration: underline;
+}
+.curiosity-project__email:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+            transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+.project-outer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #1f1f1f;
 }
 
 .c__contact {

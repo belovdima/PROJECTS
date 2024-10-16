@@ -1,7 +1,104 @@
-.c__project {
-    height: 500px;
-    background-color: #373737;
-    font-family: Rubik, sans-serif;
-    font-size: 100px;
-    font-weight: 700;
+.curiosity-project {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 1200px;
+    padding: 50px;
+    margin: 0 auto;
+    border-radius: 15px;
+    color: #fff;
+    background: linear-gradient(135deg, #222, #333);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    font-family: "Rubik", sans-serif;
+
+    &__header {
+        margin-bottom: 40px;
+        text-align: center;
+
+        &__title {
+            margin-bottom: 10px;
+            color: #ff4d4d;
+            animation: fadeIn 0.5s ease;
+            font-size: 48px;
+        }
+
+        &__subtitle {
+            color: #ddd;
+            animation: fadeIn 0.5s ease 0.3s forwards;
+            font-size: 24px;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 30px;
+    }
+
+    &__section {
+        padding: 30px;
+        border-radius: 10px;
+        background: #444;
+        transition: background 0.3s ease;
+
+        &:hover {
+            background: #555;
+            box-shadow: 0 5px 15px rgba(255, 77, 77, 0.5);
+        }
+
+        &-title {
+            margin-bottom: 10px;
+            color: #ff4d4d;
+            font-size: 32px;
+        }
+
+        &-description {
+            color: #ddd;
+            font-size: 18px;
+        }
+    }
+
+    &__button {
+        padding: 15px 30px;
+        border: none;
+        border-radius: 25px;
+        color: #fff;
+        background-color: #ff4d4d;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        font-size: 18px;
+
+        &:hover {
+            background-color: #4d4dff;
+        }
+    }
+
+    &__email {
+        color: #ff4d4d;
+        text-decoration: underline;
+
+        &:hover {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+}
+
+// Анимация появления заголовка
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.project-outer {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #1f1f1f;
 }
