@@ -1,7 +1,85 @@
-.c__classes {
-    height: 500px;
-    background-color: #555555;
+.classes {
+    padding: 40px;
+    color: #f0f0f0; /* Светлый цвет текста */
+    background-color: #1f1f1f; /* Тёмно-серый фон */
     font-family: Rubik, sans-serif;
-    font-size: 100px;
-    font-weight: 700;
+
+    &__title {
+        margin-bottom: 30px;
+        text-align: center; /* Центрирование заголовка */
+        text-transform: uppercase; /* Преобразование текста в верхний регистр */
+        letter-spacing: 2px; /* Межбуквенное расстояние */
+        font-size: 32px; /* Большой заголовок */
+        font-weight: 700;
+    }
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap; /* Позволяет элементам переходить на новую строку */
+        justify-content: center; /* Центрирует элементы */
+        gap: 30px; /* Промежуток между элементами */
+    }
+
+    &__item {
+        position: relative; /* Позиционирование для псевдоэлементов */
+        width: 300px; /* Ширина элементов */
+        padding: 20px;
+        border-radius: 12px; /* Скругление углов */
+        background: linear-gradient(
+            135deg,
+            #ff4d4d 0%,
+            #ffb84d 100%
+        ); /* Градиентный фон */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Тень для элементов */
+        transition: transform 0.3s, box-shadow 0.3s; /* Плавный переход для эффектов */
+
+        &:hover {
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6); /* Увеличение тени при наведении */
+            transform: translateY(-5px); /* Подъем элемента при наведении */
+        }
+
+        &-image {
+            position: relative;
+            display: flex;
+            overflow: hidden; /* Скрытие переполнения */
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 180px; /* Высота для изображения */
+            border-radius: 8px; /* Скругление углов */
+            background-color: #444; /* Фон для пустого места */
+
+            .classes__placeholder {
+                position: absolute;
+                color: #f0f0f0; /* Светлый цвет текста */
+                font-size: 16px; /* Размер текста для плейсхолдера */
+                font-weight: bold;
+            }
+        }
+
+        &-title {
+            margin: 10px 0;
+            text-align: center; /* Центрирование текста заголовка */
+            font-size: 22px; /* Размер заголовка класса */
+            font-weight: 600;
+        }
+
+        &-description {
+            line-height: 1.5;
+            margin: 10px 0;
+            text-align: center; /* Центрирование текста описания */
+            font-size: 14px; /* Размер текста описания */
+        }
+
+        &__details {
+            margin-top: 15px;
+            text-align: center; /* Центрирование текста расписания и цены */
+
+            &-schedule,
+            &-price {
+                margin: 5px 0;
+                font-size: 14px; /* Размер текста расписания и цены */
+            }
+        }
+    }
 }

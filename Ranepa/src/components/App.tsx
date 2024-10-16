@@ -2,6 +2,7 @@ import { Caseorium } from "./Caseorium";
 import { Classes } from "./Classes";
 import { Contact } from "./Contact";
 import { Expert } from "./Expert";
+import { FAQ } from "./FAQ";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { Help } from "./Help";
@@ -17,6 +18,7 @@ function App() {
             <Classes />
             <Expert />
             <Caseorium />
+            <FAQ />
             <Help />
             <Ready />
             <Project />

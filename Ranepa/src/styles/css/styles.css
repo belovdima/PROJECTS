@@ -334,17 +334,98 @@ a:active {
   font-size: 16px;
 }
 
-.c__classes {
-  height: 500px;
-  background-color: #555555;
+.classes {
+  padding: 40px;
+  color: #f0f0f0; /* Светлый цвет текста */
+  background-color: #1f1f1f; /* Тёмно-серый фон */
   font-family: Rubik, sans-serif;
-  font-size: 100px;
+}
+.classes__title {
+  margin-bottom: 30px;
+  text-align: center; /* Центрирование заголовка */
+  text-transform: uppercase; /* Преобразование текста в верхний регистр */
+  letter-spacing: 2px; /* Межбуквенное расстояние */
+  font-size: 32px; /* Большой заголовок */
   font-weight: 700;
+}
+.classes__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; /* Позволяет элементам переходить на новую строку */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; /* Центрирует элементы */
+  gap: 30px; /* Промежуток между элементами */
+}
+.classes__item {
+  position: relative; /* Позиционирование для псевдоэлементов */
+  width: 300px; /* Ширина элементов */
+  padding: 20px;
+  border-radius: 12px; /* Скругление углов */
+  background: linear-gradient(135deg, #ff4d4d 0%, #ffb84d 100%); /* Градиентный фон */
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Тень для элементов */
+  -webkit-transition: -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+  transition: -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s; /* Плавный переход для эффектов */
+}
+.classes__item:hover {
+  -webkit-box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+          box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6); /* Увеличение тени при наведении */
+  -webkit-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+          transform: translateY(-5px); /* Подъем элемента при наведении */
+}
+.classes__item-image {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden; /* Скрытие переполнения */
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 180px; /* Высота для изображения */
+  border-radius: 8px; /* Скругление углов */
+  background-color: #444; /* Фон для пустого места */
+}
+.classes__item-image .classes__placeholder {
+  position: absolute;
+  color: #f0f0f0; /* Светлый цвет текста */
+  font-size: 16px; /* Размер текста для плейсхолдера */
+  font-weight: bold;
+}
+.classes__item-title {
+  margin: 10px 0;
+  text-align: center; /* Центрирование текста заголовка */
+  font-size: 22px; /* Размер заголовка класса */
+  font-weight: 600;
+}
+.classes__item-description {
+  line-height: 1.5;
+  margin: 10px 0;
+  text-align: center; /* Центрирование текста описания */
+  font-size: 14px; /* Размер текста описания */
+}
+.classes__item__details {
+  margin-top: 15px;
+  text-align: center; /* Центрирование текста расписания и цены */
+}
+.classes__item__details-schedule, .classes__item__details-price {
+  margin: 5px 0;
+  font-size: 14px; /* Размер текста расписания и цены */
 }
 
 .c__expert {
   height: 500px;
-  background-color: #373737;
+  background-color: #555555;
   font-family: Rubik, sans-serif;
   font-size: 100px;
   font-weight: 700;
@@ -356,6 +437,104 @@ a:active {
   font-family: Rubik, sans-serif;
   font-size: 100px;
   font-weight: 700;
+}
+
+.faq {
+  width: 100%;
+  max-width: 1200px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 50px;
+  margin: 0 auto;
+  border-radius: 20px;
+  color: #fff;
+  background: linear-gradient(135deg, #222, #333);
+  -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  font-family: "Rubik", sans-serif;
+}
+
+.faq__title {
+  margin-bottom: 40px;
+  color: #ff4d4d;
+  text-align: center;
+  font-size: 36px;
+}
+
+.faq__questions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 15px;
+}
+
+.faq__question-card {
+  position: relative;
+  padding: 20px;
+  border-radius: 15px;
+  background: #333;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.faq__question-card:hover {
+  background: linear-gradient(135deg, #ff4d4d, #4d4dff);
+  -webkit-box-shadow: 0 5px 15px rgba(255, 77, 77, 0.5);
+          box-shadow: 0 5px 15px rgba(255, 77, 77, 0.5);
+  -webkit-transform: scale(1.03);
+      -ms-transform: scale(1.03);
+          transform: scale(1.03);
+}
+.faq__question-card.active {
+  background: linear-gradient(135deg, #4d4dff, #ff4d4d);
+}
+.faq__question-card__question {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+}
+.faq__question-card__icon {
+  color: #ff4d4d;
+  font-size: 24px;
+}
+.faq__question-card__answer {
+  overflow: hidden;
+  margin-top: 15px;
+  opacity: 0;
+  color: #ddd;
+  -webkit-transition: max-height 0.3s ease, opacity 0.3s ease;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  font-size: 16px;
+}
+.faq__question-card.active .faq__answer {
+  opacity: 1;
+}
+
+.faq-outer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+  background-color: #1f1f1f;
 }
 
 .c__help {
