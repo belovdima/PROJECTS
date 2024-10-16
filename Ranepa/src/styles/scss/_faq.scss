@@ -77,3 +77,18 @@
     min-height: 100vh;
     background-color: #1f1f1f;
 }
+
+.faq__answer {
+    overflow: hidden;
+    max-height: 0;
+    line-height: 1.6;
+    margin-top: 15px;
+    opacity: 0;
+    color: #ddd;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    font-size: 16px;
+}
+
+.faq__question-card.active .faq__answer {
+    opacity: 1;
+}

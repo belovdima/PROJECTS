@@ -26,7 +26,7 @@ const questionsData: Question[] = [
 
 export const FAQ: React.FC = () => {
     const [activeQuestion, setActiveQuestion] = useState<number | null>(null);
-    const answerRef = useRef<HTMLDivElement | null>(null);
+    const answerRefs = useRef<{ [key: number]: HTMLDivElement | null }>({}); // Ref для хранения всех вопросов
 
     const toggleQuestion = (id: number) => {
         setActiveQuestion(activeQuestion === id ? null : id);
@@ -51,15 +51,16 @@ export const FAQ: React.FC = () => {
                                 </span>
                             </div>
                             <div
-                                ref={answerRef}
-                                className={`faq__answer`}
+                                ref={(el) =>
+                                    (answerRefs.current[question.id] = el)
+                                }
+                                className="faq__answer"
                                 style={{
                                     maxHeight:
                                         activeQuestion === question.id
-                                            ? answerRef.current?.scrollHeight
-                                            : 0,
-                                    opacity:
-                                        activeQuestion === question.id ? 1 : 0,
+                                            ? answerRefs.current[question.id]
+                                                  ?.scrollHeight + "px"
+                                            : "0px",
                                 }}>
                                 {question.answer}
                             </div>
