@@ -14,7 +14,7 @@ export const MapPage = () => {
             mapRef.current = new mapboxgl.Map({
                 container: mapContainerRef.current, // Теперь container точно HTMLDivElement
                 center: [0, 0], // Указываем начальные координаты
-                zoom: 2, // Указываем начальный зум
+                zoom: 1, // Указываем начальный зум
             });
         }
 
