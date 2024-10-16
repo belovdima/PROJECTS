@@ -7,11 +7,13 @@ import { Header } from "./Header";
 import { Help } from "./Help";
 import { Project } from "./Project";
 import { Ready } from "./Ready";
+import { Services } from "./Services";
 
 function App() {
     return (
         <>
             <Header />
+            <Services />
             <Classes />
             <Expert />
             <Caseorium />

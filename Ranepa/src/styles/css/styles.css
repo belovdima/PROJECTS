@@ -280,6 +280,60 @@ a:active {
   outline: 2px solid #ff4d4d; /* Красная обводка при фокусе через клавиатуру */
 }
 
+.services {
+  padding: 40px;
+  color: #f0f0f0; /* Светлый цвет текста */
+  background-color: #1f1f1f; /* Тёмно-серый фон */
+  font-family: Rubik, sans-serif;
+}
+.services__title {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+}
+.services__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; /* Позволяет элементам переходить на новую строку */
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; /* Центрирует кубики */
+  gap: 20px; /* Промежуток между кубиками */
+}
+.services__item {
+  width: 250px; /* Ширина кубиков */
+  padding: 20px;
+  border-radius: 8px; /* Скругление углов */
+  background-color: #333; /* Тёмный фон для каждого элемента */
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Тень для кубиков */
+  -webkit-transition: -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+  transition: -webkit-transform 0.3s, -webkit-box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, -webkit-transform 0.3s, -webkit-box-shadow 0.3s; /* Плавный переход для эффектов */
+}
+.services__item:hover {
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Увеличение тени при наведении */
+  -webkit-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+          transform: translateY(-5px); /* Подъем кубика при наведении */
+}
+.services__item-title {
+  margin-bottom: 10px;
+  text-align: center; /* Центрирование текста заголовка */
+  font-size: 20px;
+  font-weight: 600;
+}
+.services__item-description {
+  line-height: 1.5;
+  text-align: center; /* Центрирование текста описания */
+  font-size: 16px;
+}
+
 .c__classes {
   height: 500px;
   background-color: #555555;
