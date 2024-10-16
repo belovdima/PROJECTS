@@ -1,22 +1,37 @@
-import { useNavigate } from "react-router-dom";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "./../redux/store";
+import { toggleMenu } from "./../redux/menuSlice";
+import { increaseZoom, decreaseZoom } from "./../redux/zoomSlice";
 
 export const HomePage = () => {
-    const navigate = useNavigate();
+    const isOpen = useSelector((state: RootState) => state.menu.isOpen);
+    const dispatch = useDispatch();
+
+    const handleToggleMenu = () => {
+        dispatch(toggleMenu());
+    };
+
     return (
-        <div className="home">
-            <div className="home__content">
-                <h1 className="home__title">
-                    Добро пожаловать в Планировщик Путешествий!
-                </h1>
+        <div>
+            <div
+                className={`home__glass-menu ${
+                    isOpen
+                        ? "home__glass-menu--open"
+                        : "home__glass-menu--closed"
+                }`}>
+                <h1 className="home__title">Добро пожаловать!</h1>
                 <p className="home__description">
-                    Наш сайт поможет вам спланировать идеальное путешествие,
-                    выбрать страны, рассчитать бюджет, и получить информацию о
-                    визовых требованиях.
+                    Выберите путешествие и начните исследовать мир.
                 </p>
-                <button
-                    className="home__btn"
-                    onClick={() => navigate("/mappage", { replace: true })}>
-                    Выбрать моё путешествие
+                <button className="home__btn" onClick={handleToggleMenu}>
+                    {isOpen ? "Скрыть меню" : "Показать меню"}
+                </button>
+                <button onClick={() => dispatch(increaseZoom())}>
+                    Приблизить
+                </button>
+                <button onClick={() => dispatch(decreaseZoom())}>
+                    Удалить
                 </button>
             </div>
         </div>

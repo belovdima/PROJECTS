@@ -1,41 +1,67 @@
 .home {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: calc(100vh - 120px);
-    background: linear-gradient(135deg, #e0eafc, #758eb0);
+    height: 800px; // Используем 100vh, чтобы занимать всю высоту экрана
+    position: absolute;
+    overflow: hidden;
+    z-index: 10;
+    transition: width 1s ease; // Плавное изменение ширины
 
-    &__content {
-        max-width: 600px;
+    // Убираем fixed ширину
+    &--open {
+        width: 50%; // Меню открыто
+    }
+
+    &--closed {
+        width: 25%; // Меню закрыто
+    }
+
+    &__glass-menu {
+        position: absolute;
+
+        height: 800px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px); // Стеклянный эффект
+        border-right: 1px solid rgba(255, 255, 255, 0.3);
         padding: 20px;
-        border-radius: 10px;
-        background-color: #ffffff;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        text-align: center;
+        box-sizing: border-box;
+        z-index: 10;
+        transition: width 1s ease; // Плавное изменение ширины
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        // Установка ширины для открытого и закрытого состояния
+        &--open {
+            width: 50%; // Меню открыто
+        }
+
+        &--closed {
+            width: 25%; // Меню закрыто
+        }
     }
 
     &__title {
-        margin-bottom: 20px;
-        color: #1f2937;
+        color: white;
         font-size: 36px;
-        font-weight: 700;
+        margin-bottom: 20px;
     }
 
     &__description {
+        color: white;
         margin-bottom: 30px;
-        color: #4b5563;
-        font-size: 18px;
     }
 
     &__btn {
         padding: 10px 20px;
+        background-color: #3b82f6;
+        color: white;
         border: none;
         border-radius: 8px;
-        color: white;
-        background-color: #3b82f6;
+        font-size: 18px;
         cursor: pointer;
         transition: background-color 0.3s ease;
-        font-size: 18px;
 
         &:hover {
             background-color: #2563eb;

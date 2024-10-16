@@ -187,6 +187,7 @@ a:active {
   color: #f3f4f6;
   letter-spacing: 2px;
   text-transform: uppercase;
+  cursor: pointer;
 }
 .header a {
   font-size: 18px;
@@ -251,49 +252,84 @@ a:active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  height: 800px;
+  position: absolute;
+  overflow: hidden;
+  z-index: 10;
+  -webkit-transition: width 1s ease;
+  transition: width 1s ease;
+}
+.home--open {
+  width: 50%;
+}
+.home--closed {
+  width: 25%;
+}
+.home__glass-menu {
+  position: absolute;
+  height: 800px;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 10;
+  -webkit-transition: width 1s ease;
+  transition: width 1s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: calc(100vh - 120px);
-  background: linear-gradient(135deg, #e0eafc, #758eb0);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
-.home__content {
-  max-width: 600px;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #ffffff;
-  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  text-align: center;
+.home__glass-menu--open {
+  width: 50%;
+}
+.home__glass-menu--closed {
+  width: 25%;
 }
 .home__title {
-  margin-bottom: 20px;
-  color: #1f2937;
+  color: white;
   font-size: 36px;
-  font-weight: 700;
+  margin-bottom: 20px;
 }
 .home__description {
+  color: white;
   margin-bottom: 30px;
-  color: #4b5563;
-  font-size: 18px;
 }
 .home__btn {
   padding: 10px 20px;
+  background-color: #3b82f6;
+  color: white;
   border: none;
   border-radius: 8px;
-  color: white;
-  background-color: #3b82f6;
+  font-size: 18px;
   cursor: pointer;
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
-  font-size: 18px;
 }
 .home__btn:hover {
   background-color: #2563eb;
 }
 .home__btn:active {
   background-color: #1d4ed8;
+}
+
+.mappage {
+  position: absolute;
+  z-index: 1;
+}
+
+.middle {
+  height: 800px;
 }
