@@ -165,3 +165,117 @@ a:hover {
 a:active {
   text-decoration: none;
 }
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 90px;
+  padding: 10px 40px;
+  background-color: #1f1f1f; /* Тёмно-серый фон */
+  font-family: Rubik, sans-serif;
+  font-weight: 700;
+}
+.header__logo {
+  width: 80px;
+  height: 80px;
+}
+.header__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 100px;
+}
+.header__links > div {
+  position: relative;
+}
+.header__links > div:hover .header__dropdown {
+  display: block;
+}
+.header a {
+  color: #f0f0f0; /* Светлый цвет текста */
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+.header a:hover {
+  color: #ff4d4d; /* Красный при наведении */
+}
+.header .header__dropdown {
+  position: absolute;
+  z-index: 1;
+  top: 100%;
+  left: 0;
+  display: none;
+  line-height: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #333333; /* Тёмно-серый для выпадающего меню */
+  -webkit-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+.header .header__dropdown a {
+  display: block;
+  padding: 8px 12px;
+  color: #f0f0f0; /* Светлый текст для ссылок в меню */
+}
+.header .header__dropdown a:hover {
+  color: #fff;
+  background-color: #ff4d4d; /* Красный при наведении */
+}
+
+.header__button--button {
+  position: relative;
+  padding: 12px 24px;
+  border: 2px solid #ff4d4d; /* Красная рамка */
+  border-radius: 30px; /* Округлые края */
+  outline: none; /* Убираем стандартные обводки */
+  color: #fff;
+  background-color: #1f1f1f; /* Тёмный фон кнопки */
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лёгкая тень по умолчанию */
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease; /* Плавный переход для всех изменений */
+  font-family: Rubik, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+.header__button--button:hover {
+  color: #fff; /* Белый цвет текста */
+  background-color: #ff4d4d; /* Меняем фон на красный при наведении */
+  -webkit-box-shadow: 0 10px 20px rgba(161, 48, 48, 0.8);
+          box-shadow: 0 10px 20px rgba(161, 48, 48, 0.8); /* Красная тень */
+  -webkit-transform: scale(1.05);
+      -ms-transform: scale(1.05);
+          transform: scale(1.05); /* Лёгкое увеличение кнопки при наведении */
+}
+.header__button--button:active {
+  -webkit-box-shadow: 0 6px 10px rgba(255, 77, 77, 0.6);
+          box-shadow: 0 6px 10px rgba(255, 77, 77, 0.6); /* Тень при нажатии */
+  -webkit-transform: scale(0.98);
+      -ms-transform: scale(0.98);
+          transform: scale(0.98); /* Эффект нажатия — уменьшение */
+}
+.header__button--button:focus-visible {
+  outline: 2px solid #ff4d4d; /* Красная обводка при фокусе через клавиатуру */
+}
+
+@font-face {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 400;
+  src: url(/src/assets/fonts/Rubik-Regular.woff);
+}
+@font-face {
+  font-family: Rubik;
+  font-style: normal;
+  font-weight: 700;
+  src: url(/src/assets/fonts/Rubik-Bold.woff);
+}
