@@ -1,7 +1,7 @@
 .c__expert {
     height: auto;
     border-radius: 20px;
-    background-color: #333;
+    background-color: $black;
     font-family: Rubik, sans-serif;
     font-size: 100px;
     font-weight: 700;
@@ -10,4 +10,13 @@
 .expert-outer {
     padding: 40px;
     background-color: $black;
+}
+
+.c__expert--writing {
+    display: flex;
+    justify-content: center;
+    color: $white;
+    font-family: Rubik, sans-serif;
+    font-size: 100px;
+    font-weight: 700;
 }

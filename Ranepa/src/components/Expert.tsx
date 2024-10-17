@@ -14,6 +14,7 @@ import { Pagination, Navigation, Autoplay } from "swiper/modules";
 export const Expert = () => {
     return (
         <div className="expert-outer" id="expert">
+            <div className="c__expert--writing">Наши эксперты</div>
             <div className="c__expert">
                 <Swiper
                     slidesPerView={3}

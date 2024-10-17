@@ -434,7 +434,7 @@ a:active {
   text-align: center; /* Центрирование заголовка */
   text-transform: uppercase; /* Преобразование текста в верхний регистр */
   letter-spacing: 2px; /* Межбуквенное расстояние */
-  font-size: 32px; /* Большой заголовок */
+  font-size: 100px; /* Большой заголовок */
   font-weight: 700s;
 }
 .classes__list {
@@ -515,7 +515,7 @@ a:active {
 .c__expert {
   height: auto;
   border-radius: 20px;
-  background-color: #333;
+  background-color: #010409;
   font-family: Rubik, sans-serif;
   font-size: 100px;
   font-weight: 700;
@@ -524,6 +524,19 @@ a:active {
 .expert-outer {
   padding: 40px;
   background-color: #010409;
+}
+
+.c__expert--writing {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #ffffff;
+  font-family: Rubik, sans-serif;
+  font-size: 100px;
+  font-weight: 700;
 }
 
 .c__caseorium {
