@@ -14,11 +14,12 @@ import { Pagination, Navigation, Autoplay } from "swiper/modules";
 export const Expert = () => {
     return (
         <div className="expert-outer" id="expert">
-            <div className="c__expert--writing">Наши эксперты</div>
+            <div className="c__expert--writing">НАШИ ЭКСПЕРТЫ</div>
             <div className="c__expert">
                 <Swiper
                     slidesPerView={3}
                     spaceBetween={30}
+                    loop={true}
                     autoplay={{
                         delay: 3000, // Время между переключениями слайдов в миллисекундах
                         disableOnInteraction: false, // Продолжать автоматическое переключение после взаимодействия

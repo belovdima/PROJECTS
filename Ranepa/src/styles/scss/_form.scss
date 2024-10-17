@@ -1,0 +1,105 @@
+.application-form {
+    max-width: 700px;
+    padding: 50px;
+    margin: 0 auto;
+    border-radius: 20px;
+    background: linear-gradient(135deg, $black, $red);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease;
+    transform: scale(1);
+
+    &:hover {
+        transform: scale(1.02);
+    }
+
+    h2 {
+        margin-bottom: 30px;
+        color: $white;
+        text-align: center;
+        font-size: 2.5rem;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+
+            label {
+                margin-bottom: 8px;
+                color: $white;
+                font-size: 1.2rem;
+            }
+
+            input,
+            select {
+                padding: 15px;
+                border: 2px solid $white;
+                border-radius: 12px;
+                color: $white;
+                background: $black;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+                transition: all 0.3s ease;
+                font-size: 1.1rem;
+
+                &:focus {
+                    border-color: $red;
+                    outline: none;
+                    background: lighten($black, 5%);
+                    transform: translateY(-3px);
+                }
+
+                &:hover {
+                    border-color: $red;
+                }
+            }
+        }
+
+        button {
+            position: relative;
+            overflow: hidden;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 12px;
+            color: $white;
+            background: linear-gradient(90deg, $red 0%, darken($red, 10%) 100%);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.5rem;
+
+            &:hover {
+                background: linear-gradient(
+                    90deg,
+                    lighten($red, 10%) 0%,
+                    $red 100%
+                );
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+                transform: translateY(-5px);
+            }
+
+            &:hover::before {
+                left: 100%;
+            }
+
+            &::before {
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 200%;
+                height: 100%;
+                background: rgba(255, 255, 255, 0.2);
+                content: "";
+                transition: left 0.5s ease;
+            }
+        }
+    }
+}
+
+.form-outer {
+    padding: 40px;
+    background-color: $black;
+}

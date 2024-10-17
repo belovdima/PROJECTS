@@ -350,20 +350,31 @@ a:active {
   font-family: Rubik;
 }
 .about .about-text1 {
-  line-height: 1.6;
+  line-height: 1.1;
   margin-bottom: 20px;
   color: #ffffff;
-  font-size: 1.2rem;
+  background-image: linear-gradient(145deg, #ffffff 0%, #5c5c5c 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  background-size: 100%;
+  font-size: 40px;
+  font-weight: 700;
+  -webkit-text-fill-color: transparent;
 }
 
 .about-text2 {
   line-height: 1.3;
   margin-top: 30px;
-  color: #ff0000;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ff4242), to(#6c6c6c));
+  background-image: linear-gradient(180deg, #ff4242 0%, #6c6c6c 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  background-size: 100%;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 2rem;
+  font-size: 65px;
   font-weight: bold;
+  -webkit-text-fill-color: transparent;
 }
 
 .services {
@@ -430,12 +441,17 @@ a:active {
 }
 .classes__title {
   margin-bottom: 30px;
-  color: #ffffff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#000000));
+  background-image: linear-gradient(180deg, #ffffff 0%, #000000 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  background-size: 100%;
   text-align: center; /* Центрирование заголовка */
   text-transform: uppercase; /* Преобразование текста в верхний регистр */
   letter-spacing: 2px; /* Межбуквенное расстояние */
   font-size: 100px; /* Большой заголовок */
   font-weight: 700s;
+  -webkit-text-fill-color: transparent;
 }
 .classes__list {
   display: -webkit-box;
@@ -533,10 +549,15 @@ a:active {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: #ffffff;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#000000));
+  background-image: linear-gradient(180deg, #ffffff 0%, #000000 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  background-size: 100%;
   font-family: Rubik, sans-serif;
   font-size: 100px;
   font-weight: 700;
+  -webkit-text-fill-color: transparent;
 }
 
 .c__caseorium {
@@ -550,6 +571,128 @@ a:active {
 .project-showcase-outer {
   padding-bottom: 40px;
   background-color: #1f1f1f;
+}
+
+.application-form {
+  max-width: 700px;
+  padding: 50px;
+  margin: 0 auto;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #010409, #ff0000);
+  -webkit-box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  -webkit-transition: -webkit-transform 0.4s ease;
+  transition: -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+.application-form:hover {
+  -webkit-transform: scale(1.02);
+      -ms-transform: scale(1.02);
+          transform: scale(1.02);
+}
+.application-form h2 {
+  margin-bottom: 30px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 2.5rem;
+}
+.application-form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 20px;
+}
+.application-form form .form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.application-form form .form-group label {
+  margin-bottom: 8px;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+.application-form form .form-group input,
+.application-form form .form-group select {
+  padding: 15px;
+  border: 2px solid #ffffff;
+  border-radius: 12px;
+  color: #ffffff;
+  background: #010409;
+  -webkit-box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+}
+.application-form form .form-group input:focus,
+.application-form form .form-group select:focus {
+  border-color: #ff0000;
+  outline: none;
+  background: #040e20;
+  -webkit-transform: translateY(-3px);
+      -ms-transform: translateY(-3px);
+          transform: translateY(-3px);
+}
+.application-form form .form-group input:hover,
+.application-form form .form-group select:hover {
+  border-color: #ff0000;
+}
+.application-form form button {
+  position: relative;
+  overflow: hidden;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 12px;
+  color: #ffffff;
+  background: -webkit-gradient(linear, left top, right top, from(#ff0000), to(#cc0000));
+  background: linear-gradient(90deg, #ff0000 0%, #cc0000 100%);
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  font-size: 1.5rem;
+}
+.application-form form button:hover {
+  background: -webkit-gradient(linear, left top, right top, from(#ff3333), to(#ff0000));
+  background: linear-gradient(90deg, #ff3333 0%, #ff0000 100%);
+  -webkit-box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  -webkit-transform: translateY(-5px);
+      -ms-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+.application-form form button:hover::before {
+  left: 100%;
+}
+.application-form form button::before {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  content: "";
+  -webkit-transition: left 0.5s ease;
+  transition: left 0.5s ease;
+}
+
+.form-outer {
+  padding: 40px;
+  background-color: #010409;
 }
 
 .faq {

@@ -6,12 +6,15 @@
 
     &__title {
         margin-bottom: 30px;
-        color: $white;
+        background-image: linear-gradient(180deg, #ffffff 0%, #000000 100%);
+        background-clip: text;
+        background-size: 100%;
         text-align: center; /* Центрирование заголовка */
         text-transform: uppercase; /* Преобразование текста в верхний регистр */
         letter-spacing: 2px; /* Межбуквенное расстояние */
         font-size: 100px; /* Большой заголовок */
         font-weight: 700s;
+        -webkit-text-fill-color: transparent;
     }
 
     &__list {

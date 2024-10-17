@@ -7,6 +7,7 @@ import { Expert } from "./Expert";
 // import { FAQ } from "./FAQ";
 import { Footer } from "./Footer";
 import { About } from "./About";
+import { Form } from "./Form";
 // import { Header } from "./Header";
 // import { Help } from "./Help";
 // import { Project } from "./Project";
@@ -23,11 +24,12 @@ function App() {
             {/* <Services /> */}
             <Classes />
             <Expert />
+            <Form />
             {/*<Caseorium />
             <FAQ />
             <Help />
-            <Ready />
-            <Project /> */}
+            <Ready />*/}
+            {/* <Project /> */}
             <Footer />
         </>
     );
