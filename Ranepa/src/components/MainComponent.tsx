@@ -22,8 +22,8 @@ export const MainComponent = () => {
                     <a href="">Классы</a>
                     <a href="">Наши кейсы</a>
                     <a href="">Наши эксперты</a>
-                    <a href="">Контакты</a>
                     <a href="">Анонсы</a>
+                    <a href="">Контакты</a>
                 </div>
             </div>
 
