@@ -1,16 +1,17 @@
 .classes {
     padding: 40px;
-    color: #f0f0f0; /* Светлый цвет текста */
-    background-color: #1f1f1f; /* Тёмно-серый фон */
+    color: $black; /* Светлый цвет текста */
+    background-color: $black; /* Тёмно-серый фон */
     font-family: Rubik, sans-serif;
 
     &__title {
         margin-bottom: 30px;
+        color: $white;
         text-align: center; /* Центрирование заголовка */
         text-transform: uppercase; /* Преобразование текста в верхний регистр */
         letter-spacing: 2px; /* Межбуквенное расстояние */
         font-size: 32px; /* Большой заголовок */
-        font-weight: 700;
+        font-weight: 700s;
     }
 
     &__list {
@@ -27,14 +28,14 @@
         border-radius: 12px; /* Скругление углов */
         background: linear-gradient(
             135deg,
-            #ff4d4d 0%,
-            #ffb84d 100%
+            #ffffff 0%,
+            #373737 100%
         ); /* Градиентный фон */
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4); /* Тень для элементов */
         transition: transform 0.3s, box-shadow 0.3s; /* Плавный переход для эффектов */
 
         &:hover {
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6); /* Увеличение тени при наведении */
+            box-shadow: 0 15px 25px rgba(133, 133, 133, 0.6); /* Увеличение тени при наведении */
             transform: translateY(-5px); /* Подъем элемента при наведении */
         }
 

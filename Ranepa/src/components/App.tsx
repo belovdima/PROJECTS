@@ -1,11 +1,12 @@
 // import { Background } from "./Background";
 import { MainComponent } from "./MainComponent";
 // import { Caseorium } from "./Caseorium";
-// import { Classes } from "./Classes";
+import { Classes } from "./Classes";
 // import { Contact } from "./Contact";
-// import { Expert } from "./Expert";
+import { Expert } from "./Expert";
 // import { FAQ } from "./FAQ";
 import { Footer } from "./Footer";
+import { About } from "./About";
 // import { Header } from "./Header";
 // import { Help } from "./Help";
 // import { Project } from "./Project";
@@ -16,12 +17,13 @@ function App() {
     return (
         <>
             <MainComponent />
+            <About />
             {/* <Background />
             <Header /> */}
-            {/* <Services />
+            {/* <Services /> */}
             <Classes />
             <Expert />
-            <Caseorium />
+            {/*<Caseorium />
             <FAQ />
             <Help />
             <Ready />
