@@ -1,7 +1,9 @@
 .services {
+    position: relative;
+    z-index: 20;
     padding: 40px;
     color: #f0f0f0; /* Светлый цвет текста */
-    background-color: #1f1f1f; /* Тёмно-серый фон */
+    background-color: transparent; /* Тёмно-серый фон */
     font-family: Rubik, sans-serif;
 
     &__title {

@@ -1,0 +1,83 @@
+.main-component {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Rubik;
+
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.3); // Легкое затемнение всей картинки
+        }
+
+        // Псевдоэлемент для затемнения боков
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+            background: linear-gradient(
+                to right,
+                rgba(0, 0, 0, 0.8) 0%,
+                // Темный левый край
+                rgba(0, 0, 0, 0) 20%,
+                // Переход к прозрачности
+                rgba(0, 0, 0, 0) 80%,
+                // Центральная часть прозрачная
+                rgba(0, 0, 0, 0.8) 100% // Темный правый край
+            );
+        }
+    }
+
+    &__header {
+        position: relative;
+        z-index: 3; // Поверх фона
+        display: flex;
+        gap: 100px;
+        align-items: center;
+        height: 110px;
+        justify-content: center;
+        padding: 1rem 2rem;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(10px);
+        color: $white;
+
+        .header__logo img {
+            height: 250px;
+        }
+
+        .header__links a {
+            color: $white;
+            margin-left: 1rem;
+            text-decoration: none;
+            font-size: 1rem;
+
+            &:hover {
+                color: $red;
+            }
+        }
+    }
+
+    &__title {
+        position: relative;
+        z-index: 3;
+        font-size: 3rem;
+        color: $white;
+        text-align: center;
+        padding: 2rem;
+        margin-top: 5rem;
+    }
+}

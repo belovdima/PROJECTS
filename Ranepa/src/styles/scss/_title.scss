@@ -1,0 +1,10 @@
+// Title Styles
+.title {
+    position: relative;
+    z-index: 2;
+    font-size: 3rem; // Увеличенный размер шрифта
+    color: $white;
+    text-align: center;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.5); // Затемнение фона за титлом
+}

@@ -179,111 +179,125 @@ a:active {
   src: url(/src/assets/fonts/Rubik-Bold.woff);
 }
 .header {
+  position: relative;
+  z-index: 2;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 90px;
-  padding: 10px 40px;
-  background-color: #1f1f1f; /* Тёмно-серый фон */
-  font-family: Rubik, sans-serif;
-  font-weight: 700;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  color: #ffffff;
 }
-.header__logo {
-  width: 80px;
-  height: 80px;
+.header__logo img {
+  height: 50px;
 }
-.header__links {
+.header__links a {
+  color: #ffffff;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-size: 1rem;
+}
+.header__links a:hover {
+  color: #ff0000;
+}
+
+.title {
+  position: relative;
+  z-index: 2;
+  font-size: 3rem;
+  color: #ffffff;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.main-component {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  font-family: Rubik;
+}
+.main-component__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.main-component__background img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-filter: brightness(0.3);
+          filter: brightness(0.3);
+}
+.main-component__background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.8)), color-stop(20%, rgba(0, 0, 0, 0)), color-stop(80%, rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.8)));
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 0.8) 100%);
+}
+.main-component__header {
+  position: relative;
+  z-index: 3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 110px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  color: #ffffff;
 }
-.header__links > div {
-  position: relative;
+.main-component__header .header__logo img {
+  height: 250px;
 }
-.header__links > div:hover .header__dropdown {
-  display: block;
-}
-.header a {
-  color: #f0f0f0; /* Светлый цвет текста */
-  -webkit-transition: color 0.3s ease;
-  transition: color 0.3s ease;
+.main-component__header .header__links a {
+  color: #ffffff;
+  margin-left: 1rem;
   text-decoration: none;
+  font-size: 1rem;
 }
-.header a:hover {
-  color: #ff4d4d; /* Красный при наведении */
+.main-component__header .header__links a:hover {
+  color: #ff0000;
 }
-.header .header__dropdown {
-  position: absolute;
-  z-index: 1;
-  top: 100%;
-  left: 0;
-  display: none;
-  line-height: 15px;
-  padding: 10px;
-  border-radius: 4px;
-  background-color: #333333; /* Тёмно-серый для выпадающего меню */
-  -webkit-box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-}
-.header .header__dropdown a {
-  display: block;
-  padding: 8px 12px;
-  border-radius: 5px;
-  color: #f0f0f0; /* Светлый текст для ссылок в меню */
-}
-.header .header__dropdown a:hover {
-  color: #fff;
-  background-color: #ff4d4d; /* Красный при наведении */
-}
-
-.header__button--button {
+.main-component__title {
   position: relative;
-  padding: 12px 24px;
-  border: 2px solid #ff4d4d; /* Красная рамка */
-  border-radius: 30px; /* Округлые края */
-  outline: none; /* Убираем стандартные обводки */
-  color: #fff;
-  background-color: #1f1f1f; /* Тёмный фон кнопки */
-  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лёгкая тень по умолчанию */
-  cursor: pointer;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease; /* Плавный переход для всех изменений */
-  font-family: Rubik, sans-serif;
-  font-size: 16px;
-  font-weight: 700;
-}
-.header__button--button:hover {
-  color: #fff; /* Белый цвет текста */
-  background-color: #ff4d4d; /* Меняем фон на красный при наведении */
-  -webkit-box-shadow: 0 10px 20px rgba(161, 48, 48, 0.8);
-          box-shadow: 0 10px 20px rgba(161, 48, 48, 0.8); /* Красная тень */
-  -webkit-transform: scale(1.05);
-      -ms-transform: scale(1.05);
-          transform: scale(1.05); /* Лёгкое увеличение кнопки при наведении */
-}
-.header__button--button:active {
-  -webkit-box-shadow: 0 6px 10px rgba(255, 77, 77, 0.6);
-          box-shadow: 0 6px 10px rgba(255, 77, 77, 0.6); /* Тень при нажатии */
-  -webkit-transform: scale(0.98);
-      -ms-transform: scale(0.98);
-          transform: scale(0.98); /* Эффект нажатия — уменьшение */
-}
-.header__button--button:focus-visible {
-  outline: 2px solid #ff4d4d; /* Красная обводка при фокусе через клавиатуру */
+  z-index: 3;
+  font-size: 3rem;
+  color: #ffffff;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 5rem;
 }
 
 .services {
+  position: relative;
+  z-index: 20;
   padding: 40px;
   color: #f0f0f0; /* Светлый цвет текста */
-  background-color: #1f1f1f; /* Тёмно-серый фон */
+  background-color: transparent; /* Тёмно-серый фон */
   font-family: Rubik, sans-serif;
 }
 .services__title {
@@ -948,4 +962,26 @@ input:focus ~ .help-request-form .form-group .focus-border, textarea:focus ~ .he
 }
 .footer__bottom p {
   margin: 0;
+}
+
+.background__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+  overflow: hidden;
+}
+.background__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-filter: brightness(0.7);
+          filter: brightness(0.7);
+  -webkit-mask-image: -webkit-gradient(linear, left top, right top, from(rgb(0, 0, 0)), color-stop(40%, rgba(0, 0, 0, 0)), color-stop(60%, rgba(0, 0, 0, 0)), to(rgb(0, 0, 0)));
+  -webkit-mask-image: linear-gradient(to right, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 60%, rgb(0, 0, 0) 100%);
+          mask-image: -webkit-gradient(linear, left top, right top, from(rgb(0, 0, 0)), color-stop(40%, rgba(0, 0, 0, 0)), color-stop(60%, rgba(0, 0, 0, 0)), to(rgb(0, 0, 0)));
+          mask-image: linear-gradient(to right, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 60%, rgb(0, 0, 0) 100%);
 }
