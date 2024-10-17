@@ -5,7 +5,7 @@ import { MainComponent } from "./MainComponent";
 // import { Contact } from "./Contact";
 // import { Expert } from "./Expert";
 // import { FAQ } from "./FAQ";
-// import { Footer } from "./Footer";
+import { Footer } from "./Footer";
 // import { Header } from "./Header";
 // import { Help } from "./Help";
 // import { Project } from "./Project";
@@ -26,7 +26,7 @@ function App() {
             <Help />
             <Ready />
             <Project /> */}
-            {/* <Footer /> */}
+            <Footer />
         </>
     );
 }

@@ -81,3 +81,44 @@
         margin-top: 5rem;
     }
 }
+
+.main-component__button {
+    padding: 12px 24px;
+    z-index: 4;
+    width: 300px;
+    height: 70px;
+    position: relative;
+    left: 40%;
+    border: 2px solid $red; /* Красная рамка */
+    border-radius: 30px; /* Округлые края */
+    outline: none; /* Убираем стандартные обводки */
+    color: #fff;
+    background-color: $black; /* Тёмный фон кнопки */
+    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лёгкая тень по умолчанию */
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease; /* Плавный переход для всех изменений */
+    font-family: Rubik, sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+}
+.main-component__button:hover {
+    color: #fff; /* Белый цвет текста */
+    background-color: $red; /* Меняем фон на красный при наведении */
+    -webkit-box-shadow: 0 10px 20px rgba(161, 48, 48, 0.8);
+    box-shadow: 0 10px 20px rgba(161, 48, 48, 0.8); /* Красная тень */
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05); /* Лёгкое увеличение кнопки при наведении */
+}
+.main-component__button:active {
+    -webkit-box-shadow: 0 6px 10px rgba(255, 77, 77, 0.6);
+    box-shadow: 0 6px 10px rgba(255, 77, 77, 0.6); /* Тень при нажатии */
+    -webkit-transform: scale(0.98);
+    -ms-transform: scale(0.98);
+    transform: scale(0.98); /* Эффект нажатия — уменьшение */
+}
+.main-component__button:focus-visible {
+    outline: 2px solid #ff4d4d; /* Красная обводка при фокусе через клавиатуру */
+}

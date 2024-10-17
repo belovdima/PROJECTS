@@ -32,6 +32,10 @@ export const MainComponent = () => {
                 Лаборатория гостеприимства - первый в России проект по
                 разработке стратегии продвижения в сфере гостеприимства
             </div>
+
+            <button type="button" className="main-component__button">
+                Заполни заявку
+            </button>
         </div>
     );
 };
