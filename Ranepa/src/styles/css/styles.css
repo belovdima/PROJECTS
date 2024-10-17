@@ -1262,3 +1262,37 @@ input:focus ~ .help-request-form .form-group .focus-border, textarea:focus ~ .he
           mask-image: -webkit-gradient(linear, left top, right top, from(rgb(0, 0, 0)), color-stop(40%, rgba(0, 0, 0, 0)), color-stop(60%, rgba(0, 0, 0, 0)), to(rgb(0, 0, 0)));
           mask-image: linear-gradient(to right, rgb(0, 0, 0) 0%, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0) 60%, rgb(0, 0, 0) 100%);
 }
+
+.scroll-to-top {
+  position: fixed;
+  z-index: 1000;
+  right: 50px; /* Расположение кнопки справа */
+  bottom: 50px; /* Расположение кнопки снизу */
+  opacity: 0; /* Начальное значение для анимации */
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease; /* Плавное появление кнопки */
+  /* Когда кнопка видима, изменяем opacity */
+}
+.scroll-to-top__button {
+  padding: 15px 20px;
+  border: none;
+  border-radius: 50px;
+  color: #000; /* Черный цвет текста для контраста */
+  background: #fff; /* Белый фон кнопки */
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Тень для кнопки */
+  cursor: pointer;
+  -webkit-transition: background 0.3s ease, opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: background 0.3s ease, opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease, opacity 0.3s ease, -webkit-transform 0.3s ease;
+}
+.scroll-to-top__button:hover {
+  background: rgba(255, 255, 255, 0.9); /* Светлее при наведении */
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1); /* Легкое увеличение при наведении */
+}
+.scroll-to-top.is-visible {
+  opacity: 1; /* Кнопка становится видимой */
+}

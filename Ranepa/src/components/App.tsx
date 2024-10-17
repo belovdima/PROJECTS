@@ -9,6 +9,7 @@ import { Footer } from "./Footer";
 import { About } from "./About";
 import { Form } from "./Form";
 import { Cases } from "./Cases";
+import Scroll from "./Scroll";
 // import { Header } from "./Header";
 // import { Help } from "./Help";
 // import { Project } from "./Project";
@@ -18,6 +19,8 @@ import { Cases } from "./Cases";
 function App() {
     return (
         <>
+            <Scroll />
+
             <MainComponent />
             <About />
             {/* <Background />

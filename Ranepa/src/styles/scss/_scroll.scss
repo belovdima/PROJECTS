@@ -1,0 +1,29 @@
+.scroll-to-top {
+    position: fixed;
+    z-index: 1000;
+    right: 50px; /* Расположение кнопки справа */
+    bottom: 50px; /* Расположение кнопки снизу */
+    opacity: 0; /* Начальное значение для анимации */
+    transition: opacity 0.3s ease; /* Плавное появление кнопки */
+
+    &__button {
+        padding: 15px 20px;
+        border: none;
+        border-radius: 50px;
+        color: #000; /* Черный цвет текста для контраста */
+        background: #fff; /* Белый фон кнопки */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Тень для кнопки */
+        cursor: pointer;
+        transition: background 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.9); /* Светлее при наведении */
+            transform: scale(1.1); /* Легкое увеличение при наведении */
+        }
+    }
+
+    /* Когда кнопка видима, изменяем opacity */
+    &.is-visible {
+        opacity: 1; /* Кнопка становится видимой */
+    }
+}
