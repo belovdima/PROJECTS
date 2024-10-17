@@ -65,3 +65,18 @@
         }
     }
 }
+
+.telegram {
+    width: 50px;
+    background-color: white;
+}
+.whatsapp {
+    width: 50px;
+
+    background-color: black;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+}

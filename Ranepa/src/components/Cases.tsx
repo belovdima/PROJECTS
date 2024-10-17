@@ -6,19 +6,20 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation"; // Импорт навигации
-import "./../styles/swiper/caseorium.css";
+import "./../styles/swiper/expert.css";
 
-// Import required modules
+// import required modules
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
-export const Caseorium = () => {
+export const Cases = () => {
     return (
-        <div className="project-showcase-outer" id="caseorium">
-            <div className="project__name">АНОНСЫ</div>
-            <div className="c__project-showcase">
+        <div className="expert-outer" id="expert">
+            <div className="c__expert--writing">НАШИ КЕЙСЫ</div>
+            <div className="c__expert">
                 <Swiper
-                    slidesPerView={1} // Отображение только одного слайда
+                    slidesPerView={3}
                     spaceBetween={30}
+                    loop={true}
                     autoplay={{
                         delay: 3000, // Время между переключениями слайдов в миллисекундах
                         disableOnInteraction: false, // Продолжать автоматическое переключение после взаимодействия
@@ -30,27 +31,33 @@ export const Caseorium = () => {
                     modules={[Pagination, Navigation, Autoplay]} // Добавьте модули
                     className="mySwiper">
                     <SwiperSlide>
-                        <div className="project-card">
-                            <h3>Успешный проект 1</h3>
-                            <p>Описание успешного проекта 1.</p>
+                        <div className="expert-card">
+                            <h3>Кейс 1</h3>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="project-card">
-                            <h3>Успешный проект 2</h3>
-                            <p>Описание успешного проекта 2.</p>
+                        <div className="expert-card">
+                            <h3>Кейс 2</h3>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="project-card">
-                            <h3>Успешный проект 3</h3>
-                            <p>Описание успешного проекта 3.</p>
+                        <div className="expert-card">
+                            <h3>Кейс 3</h3>
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="project-card">
-                            <h3>Успешный проект 4</h3>
-                            <p>Описание успешного проекта 4.</p>
+                        <div className="expert-card">
+                            <h3>Кейс 4</h3>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="expert-card">
+                            <h3>Кейс 5</h3>
+                        </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                        <div className="expert-card">
+                            <h3>Кейс 6</h3>
                         </div>
                     </SwiperSlide>
                 </Swiper>

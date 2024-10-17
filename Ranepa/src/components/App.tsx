@@ -1,6 +1,6 @@
 // import { Background } from "./Background";
 import { MainComponent } from "./MainComponent";
-// import { Caseorium } from "./Caseorium";
+import { Caseorium } from "./Caseorium";
 import { Classes } from "./Classes";
 // import { Contact } from "./Contact";
 import { Expert } from "./Expert";
@@ -8,6 +8,7 @@ import { Expert } from "./Expert";
 import { Footer } from "./Footer";
 import { About } from "./About";
 import { Form } from "./Form";
+import { Cases } from "./Cases";
 // import { Header } from "./Header";
 // import { Help } from "./Help";
 // import { Project } from "./Project";
@@ -25,8 +26,9 @@ function App() {
             <Classes />
             <Expert />
             <Form />
-            {/*<Caseorium />
-            <FAQ />
+            <Cases />
+            <Caseorium />
+            {/*<FAQ />
             <Help />
             <Ready />*/}
             {/* <Project /> */}
