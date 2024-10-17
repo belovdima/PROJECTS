@@ -228,11 +228,16 @@ a:active {
   left: 0;
   width: 100%;
   height: 100%;
+  -webkit-filter: blur(3px);
+          filter: blur(3px);
   z-index: 1;
 }
 .main-component__background img {
   width: 100%;
   height: 100%;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
   -o-object-fit: cover;
      object-fit: cover;
   -webkit-filter: brightness(0.3);
