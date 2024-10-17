@@ -13,7 +13,7 @@ import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
 export const Caseorium = () => {
     return (
-        <div className="project-showcase-outer" id="caseorium">
+        <div className="project-showcase-outer" id="anons">
             <div className="project__name">АНОНСЫ</div>
             <div className="c__project-showcase">
                 <Swiper

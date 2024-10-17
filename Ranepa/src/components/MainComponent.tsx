@@ -18,20 +18,27 @@ export const MainComponent = () => {
                     />
                 </div>
                 <div className="header__links">
-                    <a href="">О проекте</a>
-                    <a href="">Классы</a>
-                    <a href="">Наши кейсы</a>
-                    <a href="">Наши эксперты</a>
-                    <a href="">Анонсы</a>
-                    <a href="">Контакты</a>
+                    <a href="#about">О проекте</a>
+                    <a href="#classes">Классы</a>
+                    <a href="#cases">Наши кейсы</a>
+                    <a href="#expert">Наши эксперты</a>
+                    <a href="#anons">Анонсы</a>
+                    <a href="#contacts">Контакты</a>
                 </div>
             </div>
 
             {/* Title */}
             <div className="main-component__title">
-                Лаборатория гостеприимства - первый в России проект по
-                разработке стратегии продвижения в сфере гостеприимства
+                ЛАБОРАТОРИЯ ГОСТЕПРИИМСТВА
+                <br />
+                <span>
+                    — первый в России проект по разработке стратегии продвижения
+                    в сфере гостеприимства
+                </span>
             </div>
+
+            <br></br>
+            <br></br>
 
             <button type="button" className="main-component__button">
                 Заполни заявку

@@ -1,6 +1,6 @@
 export const Classes = () => {
     return (
-        <div className="classes">
+        <div className="classes" id="classes">
             <h2 className="classes__title" id="classes">
                 Наши Классы
             </h2>

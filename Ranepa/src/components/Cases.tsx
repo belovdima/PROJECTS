@@ -13,7 +13,7 @@ import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
 export const Cases = () => {
     return (
-        <div className="expert-outer" id="expert">
+        <div className="expert-outer" id="cases">
             <div className="c__expert--writing">НАШИ КЕЙСЫ</div>
             <div className="c__expert">
                 <Swiper
