@@ -6,6 +6,8 @@ import { increaseZoom, decreaseZoom } from "./../redux/zoomSlice";
 
 export const HomePage = () => {
     const isOpen = useSelector((state: RootState) => state.menu.isOpen);
+    const zoom = useSelector((state: RootState) => state.zoom.zoom); // Получаем текущий зум из Redux
+
     const dispatch = useDispatch();
 
     const handleToggleMenu = () => {
@@ -27,10 +29,14 @@ export const HomePage = () => {
                 <button className="home__btn" onClick={handleToggleMenu}>
                     {isOpen ? "Скрыть меню" : "Показать меню"}
                 </button>
-                <button onClick={() => dispatch(increaseZoom())}>
+                <button
+                    className="home__btn"
+                    onClick={() => dispatch(increaseZoom(zoom))}>
                     Приблизить
                 </button>
-                <button onClick={() => dispatch(decreaseZoom())}>
+                <button
+                    className="home__btn"
+                    onClick={() => dispatch(decreaseZoom(zoom))}>
                     Удалить
                 </button>
             </div>

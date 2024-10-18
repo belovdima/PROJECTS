@@ -309,6 +309,7 @@ a:active {
 }
 .home__btn {
   padding: 10px 20px;
+  margin: 10px;
   background-color: #3b82f6;
   color: white;
   border: none;
@@ -322,7 +323,7 @@ a:active {
   background-color: #2563eb;
 }
 .home__btn:active {
-  background-color: #1d4ed8;
+  background-color: #ff7f7f;
 }
 
 .mappage {

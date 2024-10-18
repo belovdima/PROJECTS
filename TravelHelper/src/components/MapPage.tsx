@@ -1,11 +1,13 @@
 import { useRef, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "./../redux/store"; // Импортируем RootState для типизации
+import { setZoom } from "./../redux/zoomSlice";
 
 export const MapPage = () => {
     const mapRef = useRef<mapboxgl.Map | null>(null);
     const zoom = useSelector((state: RootState) => state.zoom.zoom);
+    const dispatch = useDispatch();
 
     const mapboxToken = import.meta.env.VITE_MAPBOX_TOKEN;
     const mapContainerRef = useRef<HTMLDivElement | null>(null);
@@ -23,6 +25,18 @@ export const MapPage = () => {
             if (mapRef.current) {
                 mapRef.current.scrollZoom.setZoomRate(0.2); // Плавное масштабирование
             }
+
+            // Логируем текущий зум при изменении
+            const logZoom = () => {
+                const currZoom = mapRef.current?.getZoom();
+                if (currZoom) {
+                    console.log(`Current zoom: ${currZoom}`);
+                    dispatch(setZoom(currZoom)); // Обновляем Redux при изменении зума
+                }
+            };
+
+            // Подписка на изменение зума
+            mapRef.current.on("zoomend", logZoom);
 
             // Настраиваем вращение
             const secondsPerRevolution = 300;
@@ -99,8 +113,7 @@ export const MapPage = () => {
 
     useEffect(() => {
         if (mapRef.current) {
-            // Обновляем уровень приближения напрямую
-            mapRef.current.setZoom(zoom);
+            mapRef.current.setZoom(zoom); // Обновляем зум карты, если он изменился
         }
     }, [zoom]);
 
