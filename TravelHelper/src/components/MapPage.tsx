@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "./../redux/store"; // Импортируем RootState для типизации
+import { RootState } from "./../redux/store";
 import { setZoom } from "./../redux/zoomSlice";
 
 export const MapPage = () => {
@@ -21,30 +21,12 @@ export const MapPage = () => {
                 zoom: zoom,
             });
 
-            // Настраиваем скорость масштабирования
-            if (mapRef.current) {
-                mapRef.current.scrollZoom.setZoomRate(0.2); // Плавное масштабирование
-            }
-
-            // Логируем текущий зум при изменении
-            const logZoom = () => {
-                const currZoom = mapRef.current?.getZoom();
-                if (currZoom) {
-                    console.log(`Current zoom: ${currZoom}`);
-                    dispatch(setZoom(currZoom)); // Обновляем Redux при изменении зума
-                }
-            };
-
-            // Подписка на изменение зума
-            mapRef.current.on("zoomend", logZoom);
-
-            // Настраиваем вращение
+            //Вращение глобуса
             const secondsPerRevolution = 300;
             const maxSpinZoom = 5;
             const slowSpinZoom = 3;
             let userInteracting = false;
-            let isMouseOver = false; // Добавляем флаг для отслеживания, наведен ли курсор на карту
-
+            let isMouseOver = false;
             function spinGlobe() {
                 const zoom = mapRef.current?.getZoom();
                 if (
@@ -70,40 +52,41 @@ export const MapPage = () => {
                     }
                 }
             }
-
-            // Останавливаем вращение при наведении мыши на карту
             mapRef.current.on("mousemove", () => {
-                isMouseOver = true; // Наведена мышь на карту
+                isMouseOver = true;
             });
-
-            // Возобновляем вращение, когда мышь выходит за пределы карты
             mapRef.current.on("mouseout", () => {
-                isMouseOver = false; // Мышь убрана с карты
+                isMouseOver = false;
                 spinGlobe();
             });
-
-            // Останавливаем вращение при взаимодействии с картой
             mapRef.current.on("mousedown", () => {
                 userInteracting = true;
             });
-
-            // Возобновляем вращение при завершении взаимодействия
             mapRef.current.on("mouseup", () => {
                 userInteracting = false;
                 spinGlobe();
             });
-
             mapRef.current.on("dragend", () => {
                 userInteracting = false;
                 spinGlobe();
             });
-
             mapRef.current.on("moveend", () => {
                 spinGlobe();
             });
-
-            // Запускаем вращение
             spinGlobe();
+
+            //Изменение Zoom
+            if (mapRef.current) {
+                mapRef.current.scrollZoom.setZoomRate(0.2);
+            }
+            const logZoom = () => {
+                const currZoom = mapRef.current?.getZoom();
+                if (currZoom) {
+                    console.log(`Current zoom: ${currZoom}`);
+                    dispatch(setZoom(currZoom));
+                }
+            };
+            mapRef.current.on("zoomend", logZoom);
         }
 
         return () => {
@@ -111,31 +94,12 @@ export const MapPage = () => {
         };
     }, []);
 
+    //Изменение Zoom
     useEffect(() => {
         if (mapRef.current) {
-            mapRef.current.setZoom(zoom); // Обновляем зум карты, если он изменился
+            mapRef.current.setZoom(zoom);
         }
     }, [zoom]);
-
-    useEffect(() => {
-        if (mapRef.current) {
-            // Функция, которая будет логировать текущий зум
-            const logZoom = () => {
-                const currZoom = mapRef.current?.getZoom();
-                console.log(currZoom);
-            };
-
-            // Подписка на событие изменения зума
-            mapRef.current.on("zoomend", logZoom);
-
-            // Убираем подписку при размонтировании компонента
-            return () => {
-                if (mapRef.current) {
-                    mapRef.current.off("zoomend", logZoom);
-                }
-            };
-        }
-    }, []);
 
     return (
         <div
