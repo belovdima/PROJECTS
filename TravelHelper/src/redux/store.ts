@@ -1,11 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
-import menuReducer from "./menuSlice"; // Наш редьюсер для меню
+import menuReducer from "./menuSlice";
 import zoomReducer from "./zoomSlice";
+import labelReducer from "./labelSlice";
 
 const store = configureStore({
     reducer: {
         menu: menuReducer,
         zoom: zoomReducer,
+        label: labelReducer,
     },
 });
 

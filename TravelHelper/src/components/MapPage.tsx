@@ -3,6 +3,7 @@ import mapboxgl from "mapbox-gl";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "./../redux/store";
 import { setZoom } from "./../redux/zoomSlice";
+import { toggleLabel } from "../redux/labelSlice";
 
 export const MapPage = () => {
     const mapRef = useRef<mapboxgl.Map | null>(null);
@@ -11,6 +12,9 @@ export const MapPage = () => {
 
     const mapboxToken = import.meta.env.VITE_MAPBOX_TOKEN;
     const mapContainerRef = useRef<HTMLDivElement | null>(null);
+    const labelsVisible = useSelector(
+        (state: RootState) => state.label.isVisible
+    ); // Получаем видимость названий
 
     useEffect(() => {
         if (mapContainerRef.current) {
@@ -93,6 +97,24 @@ export const MapPage = () => {
             mapRef.current?.remove();
         };
     }, []);
+
+    // useEffect(() => {
+    //     if (mapRef.current) {
+    //         const mapStyle = mapRef.current.getStyle();
+    //         if (mapStyle && mapStyle.layers) {
+    //             const visibility = labelsVisible ? "visible" : "none";
+    //             mapStyle.layers.forEach((layer) => {
+    //                 if (layer.type === "symbol") {
+    //                     mapRef.current?.setLayoutProperty(
+    //                         layer.id,
+    //                         "visibility",
+    //                         visibility
+    //                     );
+    //                 }
+    //             });
+    //         }
+    //     }
+    // }, [labelsVisible]);
 
     //Изменение Zoom
     useEffect(() => {

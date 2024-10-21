@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "./../redux/store";
 import { toggleMenu } from "./../redux/menuSlice";
 import { increaseZoom, decreaseZoom } from "./../redux/zoomSlice";
+import { toggleLabel } from "../redux/labelSlice";
 
 export const HomePage = () => {
     const isOpen = useSelector((state: RootState) => state.menu.isOpen);
@@ -38,6 +39,11 @@ export const HomePage = () => {
                     className="home__btn"
                     onClick={() => dispatch(decreaseZoom(zoom))}>
                     Удалить
+                </button>
+                <button
+                    className="home__btn"
+                    onClick={() => dispatch(toggleLabel())}>
+                    Изменить стиль
                 </button>
             </div>
         </div>
