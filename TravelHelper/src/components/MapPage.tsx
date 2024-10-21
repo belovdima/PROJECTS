@@ -98,23 +98,11 @@ export const MapPage = () => {
         };
     }, []);
 
-    // useEffect(() => {
-    //     if (mapRef.current) {
-    //         const mapStyle = mapRef.current.getStyle();
-    //         if (mapStyle && mapStyle.layers) {
-    //             const visibility = labelsVisible ? "visible" : "none";
-    //             mapStyle.layers.forEach((layer) => {
-    //                 if (layer.type === "symbol") {
-    //                     mapRef.current?.setLayoutProperty(
-    //                         layer.id,
-    //                         "visibility",
-    //                         visibility
-    //                     );
-    //                 }
-    //             });
-    //         }
-    //     }
-    // }, [labelsVisible]);
+    useEffect(() => {
+        if (labelsVisible) {
+            console.log("HI");
+        }
+    }, [labelsVisible]);
 
     //Изменение Zoom
     useEffect(() => {
