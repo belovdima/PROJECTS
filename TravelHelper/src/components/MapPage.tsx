@@ -3,7 +3,6 @@ import mapboxgl from "mapbox-gl";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "./../redux/store";
 import { setZoom } from "./../redux/zoomSlice";
-import { toggleLabel } from "../redux/labelSlice";
 
 export const MapPage = () => {
     const mapRef = useRef<mapboxgl.Map | null>(null);
