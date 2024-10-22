@@ -1,15 +1,18 @@
 import { useRef, useEffect } from "react";
 import mapboxgl from "mapbox-gl";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { RootState } from "./../redux/store";
-import { setZoom } from "./../redux/zoomSlice";
+
+import ZoomControl from "@mapbox-controls/zoom";
 
 export const MapPage = () => {
     const mapRef = useRef<mapboxgl.Map | null>(null);
     const zoom = useSelector((state: RootState) => state.zoom.zoom);
-    const dispatch = useDispatch();
 
     const mapboxToken = import.meta.env.VITE_MAPBOX_TOKEN;
+    // const fixerApiKey = import.meta.env.VITE_FIXER_API_KEY;
+    // const openWeatherApiKey = import.meta.env.VITE_OPENWEATHER_API_KEY;
+
     const mapContainerRef = useRef<HTMLDivElement | null>(null);
     const labelsVisible = useSelector(
         (state: RootState) => state.label.isVisible
@@ -23,6 +26,8 @@ export const MapPage = () => {
                 center: [0, 48.429201],
                 zoom: zoom,
             });
+
+            mapRef.current.addControl(new ZoomControl(), "bottom-right");
 
             //Вращение глобуса
             const secondsPerRevolution = 300;
@@ -77,19 +82,6 @@ export const MapPage = () => {
                 spinGlobe();
             });
             spinGlobe();
-
-            //Изменение Zoom
-            if (mapRef.current) {
-                mapRef.current.scrollZoom.setZoomRate(0.2);
-            }
-            const logZoom = () => {
-                const currZoom = mapRef.current?.getZoom();
-                if (currZoom) {
-                    console.log(`Current zoom: ${currZoom}`);
-                    dispatch(setZoom(currZoom));
-                }
-            };
-            mapRef.current.on("zoomend", logZoom);
         }
 
         return () => {
@@ -102,13 +94,6 @@ export const MapPage = () => {
             console.log("HI");
         }
     }, [labelsVisible]);
-
-    //Изменение Zoom
-    useEffect(() => {
-        if (mapRef.current) {
-            mapRef.current.setZoom(zoom);
-        }
-    }, [zoom]);
 
     return (
         <div

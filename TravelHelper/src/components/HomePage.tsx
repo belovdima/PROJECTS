@@ -2,12 +2,10 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "./../redux/store";
 import { toggleMenu } from "./../redux/menuSlice";
-import { increaseZoom, decreaseZoom } from "./../redux/zoomSlice";
 import { toggleLabel } from "../redux/labelSlice";
 
 export const HomePage = () => {
     const isOpen = useSelector((state: RootState) => state.menu.isOpen);
-    const zoom = useSelector((state: RootState) => state.zoom.zoom); // Получаем текущий зум из Redux
 
     const dispatch = useDispatch();
 
@@ -30,16 +28,7 @@ export const HomePage = () => {
                 <button className="home__btn" onClick={handleToggleMenu}>
                     {isOpen ? "Скрыть меню" : "Показать меню"}
                 </button>
-                <button
-                    className="home__btn"
-                    onClick={() => dispatch(increaseZoom(zoom))}>
-                    Приблизить
-                </button>
-                <button
-                    className="home__btn"
-                    onClick={() => dispatch(decreaseZoom(zoom))}>
-                    Удалить
-                </button>
+
                 <button
                     className="home__btn"
                     onClick={() => dispatch(toggleLabel())}>
