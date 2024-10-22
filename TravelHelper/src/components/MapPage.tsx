@@ -27,6 +27,56 @@ export const MapPage = () => {
                 zoom: zoom,
             });
 
+            mapRef.current?.on("load", () => {
+                mapRef.current?.addSource("countries", {
+                    type: "geojson",
+                    data: "/public/stations.geojson",
+                });
+
+                mapRef.current?.addLayer({
+                    id: "countries-layer",
+                    type: "fill",
+                    source: "countries",
+                    paint: {
+                        "fill-color": "#627BC1",
+                        "fill-opacity": [
+                            "case",
+                            ["boolean", ["feature-state", "hover"], false],
+                            1,
+                            0.5,
+                        ],
+                    },
+                });
+
+                let hoveredCountryId: any = null;
+
+                mapRef.current?.on("mousemove", "countries-layer", (e) => {
+                    if (e.features && e.features.length > 0) {
+                        if (hoveredCountryId !== null) {
+                            mapRef.current?.setFeatureState(
+                                { source: "countries", id: hoveredCountryId },
+                                { hover: false }
+                            );
+                        }
+                        hoveredCountryId = e.features[0].id;
+                        mapRef.current?.setFeatureState(
+                            { source: "countries", id: hoveredCountryId },
+                            { hover: true }
+                        );
+                    }
+                });
+
+                mapRef.current?.on("mouseleave", "countries-layer", () => {
+                    if (hoveredCountryId !== null) {
+                        mapRef.current?.setFeatureState(
+                            { source: "countries", id: hoveredCountryId },
+                            { hover: false }
+                        );
+                    }
+                    hoveredCountryId = null;
+                });
+            });
+
             mapRef.current.addControl(new ZoomControl(), "bottom-right");
 
             //Вращение глобуса
