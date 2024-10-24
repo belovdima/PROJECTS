@@ -60,7 +60,6 @@ const SkillsGraph: React.FC = () => {
                 mainSkills: ["Sketch", "Figma"],
                 otherSkills: ["Shopify", "HQL"],
             },
-
             {
                 name: "Продуктовый аналитик",
                 mainSkills: [
@@ -73,7 +72,6 @@ const SkillsGraph: React.FC = () => {
                 ],
                 otherSkills: ["HQL", "Tableau", "R", "Machine learning"],
             },
-
             {
                 name: "Руководитель финансового продукта",
                 mainSkills: ["Visio"],
@@ -91,7 +89,6 @@ const SkillsGraph: React.FC = () => {
                 ],
                 otherSkills: ["Tilda", "Photoshop", "Xenu", "Python"],
             },
-
             {
                 name: "Менеджер по цифровой трансформации",
                 mainSkills: [
@@ -107,96 +104,99 @@ const SkillsGraph: React.FC = () => {
         ];
 
         // Обработка данных для диаграммы
-        const categories = data.map((item, index) => ({
-            name: item.name,
-        }));
-
         const nodes = data.flatMap((item, index) => {
             const mainSkillNodes = item.mainSkills.map((skill, skillIndex) => ({
-                name: `${item.name}-${skill}`, // Добавление имени компетенции к навыку
+                name: `${skill}_${item.name}`, // Уникальное имя
                 category: 1,
-                symbolSize: 30,
-                value: 200, // Радиус для внешнего кольца
+                symbolSize: 20,
+                value: 100,
+                // Расположение в круге для основных навыков
+                x:
+                    300 +
+                    80 *
+                        Math.cos(
+                            (2 * Math.PI * skillIndex) / item.mainSkills.length
+                        ),
+                y:
+                    300 +
+                    80 *
+                        Math.sin(
+                            (2 * Math.PI * skillIndex) / item.mainSkills.length
+                        ),
             }));
 
-            const otherSkillNodes = item.otherSkills.map((skill) => ({
-                name: `${item.name}-${skill}`, // Аналогично для других навыков
-                category: 2,
-                symbolSize: 25,
-                value: 200, // Радиус для внешнего кольца
-            }));
+            const otherSkillNodes = item.otherSkills.map(
+                (skill, skillIndex) => ({
+                    name: `${skill}_${item.name}`, // Уникальное имя
+                    category: 2,
+                    symbolSize: 15,
+                    value: 100,
+                    // Расположение в круге для дополнительных навыков
+                    x:
+                        300 +
+                        120 *
+                            Math.cos(
+                                (2 * Math.PI * skillIndex) /
+                                    item.otherSkills.length
+                            ),
+                    y:
+                        300 +
+                        120 *
+                            Math.sin(
+                                (2 * Math.PI * skillIndex) /
+                                    item.otherSkills.length
+                            ),
+                })
+            );
 
             return [
                 {
                     name: item.name,
                     category: 0,
-                    symbolSize: 60,
-                    value: 100, // Радиус для внутреннего кольца (компетенции)
+                    symbolSize: 40,
+                    value: 100,
+                    // Фиксированное положение для компетенции
+                    x: 300,
+                    y: 300,
                 },
                 ...mainSkillNodes,
                 ...otherSkillNodes,
             ];
         });
 
-        const links = data.flatMap((item) => {
-            const mainSkillLinks = item.mainSkills.map((skill) => ({
-                source: item.name,
-                target: `${item.name}-${skill}`, // Используй полное имя с компетенцией
-                lineStyle: { color: "orange" },
-            }));
-
-            const otherSkillLinks = item.otherSkills.map((skill) => ({
-                source: item.name,
-                target: `${item.name}-${skill}`, // То же самое для других навыков
-                lineStyle: { color: "purple" },
-            }));
-
-            return [...mainSkillLinks, ...otherSkillLinks];
-        });
-
         const option = {
             title: {
-                text: "Skills and Competencies",
+                text: "Навыки и компетенции",
             },
             tooltip: {},
-            legend: [
-                {
-                    data: ["Competencies", "Main Skills", "Other Skills"],
-                },
-            ],
             series: [
                 {
                     type: "graph",
-                    layout: "circular",
-                    circular: {
-                        rotateLabel: true,
-                    },
+                    layout: "none", // Фиксированное расположение
                     data: nodes,
-                    links: links,
                     categories: [
-                        { name: "Competencies" },
-                        { name: "Main Skills" },
-                        { name: "Other Skills" },
+                        { name: "Компетенции" },
+                        { name: "Основные навыки" },
+                        { name: "Дополнительные навыки" },
                     ],
                     roam: true,
                     label: {
                         position: "right",
-                        formatter: function (params: {
-                            data: { name: string };
-                        }) {
-                            const name = params.data.name.split("-")[1];
-                            return name || params.data.name;
-                        },
+                        formatter: (params: { data: { name: string } }) =>
+                            params.data.name,
                     },
                     lineStyle: {
-                        width: 2,
-                        curveness: 0.3,
+                        width: 1,
+                        curveness: 0.2,
                     },
                 },
             ],
         };
 
-        chart.setOption(option);
+        // Проверка на существующий график и установка параметров
+        if (chart) {
+            chart.setOption(option);
+        }
 
         return () => {
             chart.dispose();
