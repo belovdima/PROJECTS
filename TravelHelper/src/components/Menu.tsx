@@ -1,10 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "./../redux/store";
-import { toggleMenu } from "./../redux/menuSlice";
+import { RootState } from "../redux/store";
+import { toggleMenu } from "../redux/menuSlice";
 import { toggleLabel } from "../redux/labelSlice";
 
-export const HomePage = () => {
+export const Menu = () => {
     const isOpen = useSelector((state: RootState) => state.menu.isOpen);
 
     const dispatch = useDispatch();

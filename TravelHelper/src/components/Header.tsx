@@ -7,10 +7,14 @@ export const Header = () => {
         <div className="header">
             <div
                 className="header__logo"
-                onClick={() => navigate("/homepage", { replace: true })}>
+                onClick={() => navigate("/middle", { replace: true })}>
                 Logo
             </div>
-            <a href="">Конвертер валют</a>
+            <a
+                href=""
+                onClick={() => navigate("/converter", { replace: true })}>
+                Конвертер валют
+            </a>
         </div>
     );
 };
