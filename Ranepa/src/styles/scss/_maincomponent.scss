@@ -80,12 +80,9 @@
         position: relative;
         z-index: 3;
         text-align: center;
-        background-image: linear-gradient(180deg, #ffffff 0%, #848484 100%);
-        background-clip: text;
-        background-size: 100%;
-        font-weight: 700;
-        -webkit-text-fill-color: transparent;
 
+        font-weight: 700;
+        color: white;
         line-height: 1.3;
         padding: 0 2rem;
 
