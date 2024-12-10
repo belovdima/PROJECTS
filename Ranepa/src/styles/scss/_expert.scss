@@ -15,12 +15,10 @@
 .c__expert--writing {
     display: flex;
     justify-content: center;
-    background-image: linear-gradient(180deg, #ffffff 0%, #000000 100%);
-    background-clip: text;
-    background-size: 100%;
+    color: white;
+
     font-family: Rubik, sans-serif;
     font-size: 100px;
 
     font-weight: 700;
-    -webkit-text-fill-color: transparent;
 }

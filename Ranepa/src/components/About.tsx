@@ -1,6 +1,7 @@
 export const About = () => {
     return (
         <div className="about" id="about">
+            <div className="about-w">О нас</div>
             <div className="about-text1">
                 Лаборатория гостеприимства — уникальный проект студентов
                 Президентской Академии факультета гостеприимства, созданный для

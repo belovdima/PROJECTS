@@ -1,10 +1,10 @@
 import { MapPage } from "./MapPage";
-import { HomePage } from "./HomePage";
+import { Menu } from "./Menu";
 
 export const Middle = () => {
     return (
         <div className="middle">
-            <HomePage />
+            <Menu />
             <MapPage />
         </div>
     );

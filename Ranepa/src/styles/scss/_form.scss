@@ -3,7 +3,7 @@
     padding: 50px;
     margin: 0 auto;
     border-radius: 20px;
-    background: linear-gradient(135deg, $black, $red);
+    background: $red;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     transition: transform 0.4s ease;
     transform: scale(1);
@@ -54,6 +54,50 @@
 
                 &:hover {
                     border-color: $red;
+                }
+            }
+
+            /* Кастомный селект */
+            .custom-select {
+                position: relative;
+                width: 100%;
+
+                .select-selected {
+                    padding: 15px;
+                    border: 2px solid $white;
+                    border-radius: 12px;
+                    color: $white;
+                    background: $black;
+                    cursor: pointer;
+
+                    &:hover {
+                        background: lighten($black, 5%);
+                    }
+                }
+
+                .select-items {
+                    position: absolute;
+                    z-index: 1;
+                    display: none; /* Изначально скрыто */
+                    border: 2px solid $white;
+                    border-radius: 12px;
+                    background-color: $black; /* Цвет фона для списка */
+
+                    div {
+                        padding: 15px; /* Отступы для опций */
+                        color: $white;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $black; /* Цвет текста при наведении */
+                            background-color: $red; /* Цвет фона при наведении */
+                        }
+
+                        &.selected {
+                            color: $black; /* Цвет текста для выбранного элемента */
+                            background-color: $red; /* Цвет фона для выбранного элемента */
+                        }
+                    }
                 }
             }
         }

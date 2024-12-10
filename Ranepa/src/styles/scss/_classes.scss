@@ -6,15 +6,12 @@
 
     &__title {
         margin-bottom: 30px;
-        background-image: linear-gradient(180deg, #ffffff 0%, #000000 100%);
-        background-clip: text;
-        background-size: 100%;
+        color: white;
         text-align: center;
         text-transform: uppercase;
         letter-spacing: 2px;
         font-size: 100px;
         font-weight: 700;
-        -webkit-text-fill-color: transparent;
     }
 
     &__list {

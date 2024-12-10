@@ -48,6 +48,7 @@ export const MapPage = () => {
                     },
                 });
 
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 let hoveredCountryId: any = null;
 
                 mapRef.current?.on("mousemove", "countries-layer", (e) => {
